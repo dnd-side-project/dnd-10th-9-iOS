@@ -1,5 +1,75 @@
 # dnd-10th-9-iOS
+# 💻 Code Convention
 
+## 🩷 빈 줄
+
+- 빈 줄에는 공백이 포함되지 않도록 합니다.
+- `주석` 위에는 빈 줄이 필요합니다.
+- 함수, 클래스, 구조체, 익스텐션, 프로토콜, 열거형은 빈 줄로 구분합니다.
+- 인스턴스는 기본적으로 빈 줄을 넣지 않으나 목적에 따라 빈 줄로 구분합니다.
+- 빈 줄이 있어야 가독성이 좋아지는 부분은 **주관적으로 판단 후** 빈 줄을 삽입합니다.
+
+## 🧡 네이밍
+
+- temp, profile1, a, i, 등의 의미없는 네이밍은 지양합니다.
+- UpperCamelCase
+  ```
+  클래스, 구조체, 익스텐션, 프로토콜, 열거형(enum) 등
+  ``` 
+- lowerCamelCase
+  ```
+  함수, 메서드, 인스턴스, 열거형(enum)의 각 case 등
+  ```
+
+### 함수
+
+- 함수는 `동사 + 목적어` 형태를 사용합니다.
+- `didTap~` 은 `.touchUpInside`에 대응합니다.
+- UI 세팅, 어쩌고 세팅 등은 `set + 목적어` 형태를 사용합니다.
+  ```
+  func setTableView()
+  func setCollectionView()
+  func setData()
+  ```
+
+### 약어
+
+- ID와 Id
+  ```
+  userId (o) (추후 서버와의 협의를 통해 변경될 수 있음)
+  userID (x)
+
+  imageUrl(o)
+  imageURL(x)
+  ```
+- 약어 사용 범위 외의 것들은 모두 full name으로 표기합니다.
+  ```
+  password (pw (x))
+  button (btn (x))
+  image (img (x))
+  ```
+## 💛 타입
+
+- `Array<T>`와 `Dictionary<T: U>` 보다는 `[T]`, `[T: U]`를 사용합니다.
+  ```
+  var messages: [String]?
+  var names: [Int: String]?
+  ```
+## 💚 주석
+
+- `// MARK:` `// TODO:` 주석은 자유롭게 사용합니다.
+- `///` 문서화에 사용되는 주석을 남깁니다.
+
+## 🩵 파일명
+
+- Class, Struct, Enum, Protocol 등의 이름으로 파일명을 정합니다.
+- extension 파일의 경우, 파일명 뒤에 + 를 추가합니다.
+  ```
+  UIView+.swift
+  String+.swift
+  ```
+
+# ⛙ Git Convention
 ## 🩷 Issue
 
 - 템플릿을 사용합니다.
