@@ -1,4 +1,7 @@
 # dnd-10th-9-iOS
+#  Architecture
+![image](https://github.com/dnd-side-project/dnd-10th-9-iOS/assets/43312096/a19c31de-845d-41c0-8ff1-9765d06b9e6e)
+
 # 💻 Code Convention
 
 ## 🩷 빈 줄
