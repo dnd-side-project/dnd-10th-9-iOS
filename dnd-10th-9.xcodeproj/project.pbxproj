@@ -17,6 +17,7 @@
 		FF8689852B6A5A2D00D51EF4 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FF8689842B6A5A2D00D51EF4 /* Moya */; };
 		FF8689872B6A5A2D00D51EF4 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FF8689862B6A5A2D00D51EF4 /* ReactiveMoya */; };
 		FF8689892B6A5A2D00D51EF4 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FF8689882B6A5A2D00D51EF4 /* RxMoya */; };
+		FF86898C2B6A5A7D00D51EF4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF86898B2B6A5A7D00D51EF4 /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 				FF8689892B6A5A2D00D51EF4 /* RxMoya in Frameworks */,
 				FF86897E2B6A59AE00D51EF4 /* SnapKit in Frameworks */,
 				FF8689802B6A59AE00D51EF4 /* SnapKit-Dynamic in Frameworks */,
+				FF86898C2B6A5A7D00D51EF4 /* KeychainSwift in Frameworks */,
 				FF8689852B6A5A2D00D51EF4 /* Moya in Frameworks */,
 				FF8689872B6A5A2D00D51EF4 /* ReactiveMoya in Frameworks */,
 				FF8689832B6A5A2D00D51EF4 /* CombineMoya in Frameworks */,
@@ -102,6 +104,7 @@
 				FF8689842B6A5A2D00D51EF4 /* Moya */,
 				FF8689862B6A5A2D00D51EF4 /* ReactiveMoya */,
 				FF8689882B6A5A2D00D51EF4 /* RxMoya */,
+				FF86898B2B6A5A7D00D51EF4 /* KeychainSwift */,
 			);
 			productName = "dnd-10th-9";
 			productReference = 1031EC6A2B6691370016655B /* dnd-10th-9.app */;
@@ -134,6 +137,7 @@
 			packageReferences = (
 				FF86897C2B6A59AE00D51EF4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FF8689812B6A5A2D00D51EF4 /* XCRemoteSwiftPackageReference "Moya" */,
+				FF86898A2B6A5A7D00D51EF4 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 1031EC6B2B6691370016655B /* Products */;
 			projectDirPath = "";
@@ -384,6 +388,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		FF86898A2B6A5A7D00D51EF4 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -416,6 +428,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF8689812B6A5A2D00D51EF4 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		FF86898B2B6A5A7D00D51EF4 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF86898A2B6A5A7D00D51EF4 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
