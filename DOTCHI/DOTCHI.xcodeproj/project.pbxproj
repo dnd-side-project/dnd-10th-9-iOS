@@ -37,6 +37,7 @@
 		FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944A2B710457003F1F3C /* LuckyType.swift */; };
 		FFD5944D2B710460003F1F3C /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944C2B710460003F1F3C /* a.swift */; };
 		FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */; };
+		FFD594522B710736003F1F3C /* aa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594512B710736003F1F3C /* aa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +79,7 @@
 		FFD5944A2B710457003F1F3C /* LuckyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyType.swift; sourceTree = "<group>"; };
 		FFD5944C2B710460003F1F3C /* a.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
 		FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+.swift"; sourceTree = "<group>"; };
+		FFD594512B710736003F1F3C /* aa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			children = (
 				FFD5943B2B710370003F1F3C /* Components */,
 				FFD594382B710355003F1F3C /* Home */,
+				FFD594502B71072B003F1F3C /* My */,
 				FFAA7D342B70F36600C7620E /* ContentView.swift */,
 			);
 			path = Screens;
@@ -302,6 +305,14 @@
 				FFD594462B7103EF003F1F3C /* ImageCacheManager.swift */,
 			);
 			path = Singletons;
+			sourceTree = "<group>";
+		};
+		FFD594502B71072B003F1F3C /* My */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594512B710736003F1F3C /* aa.swift */,
+			);
+			path = My;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +415,7 @@
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
+				FFD594522B710736003F1F3C /* aa.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				FFD5943D2B710386003F1F3C /* aaa.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
