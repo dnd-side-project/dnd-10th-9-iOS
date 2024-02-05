@@ -13,7 +13,24 @@
 		FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */; };
 		FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D412B70F42200C7620E /* SnapKit */; };
 		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
+		FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FD2B70FCDD003F1F3C /* CombineMoya */; };
+		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
+		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
+		FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594032B70FCDD003F1F3C /* RxMoya */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FFAA7D5C2B70F49100C7620E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,8 +45,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */,
 				FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */,
 				FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */,
+				FFD594002B70FCDD003F1F3C /* Moya in Frameworks */,
+				FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */,
+				FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +102,7 @@
 				FFAA7D2B2B70F36600C7620E /* Sources */,
 				FFAA7D2C2B70F36600C7620E /* Frameworks */,
 				FFAA7D2D2B70F36600C7620E /* Resources */,
+				FFAA7D5C2B70F49100C7620E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -90,6 +112,10 @@
 			packageProductDependencies = (
 				FFAA7D412B70F42200C7620E /* SnapKit */,
 				FFAA7D442B70F44500C7620E /* KeychainSwift */,
+				FFD593FD2B70FCDD003F1F3C /* CombineMoya */,
+				FFD593FF2B70FCDD003F1F3C /* Moya */,
+				FFD594012B70FCDD003F1F3C /* ReactiveMoya */,
+				FFD594032B70FCDD003F1F3C /* RxMoya */,
 			);
 			productName = DOTCHI;
 			productReference = FFAA7D2F2B70F36600C7620E /* DOTCHI.app */;
@@ -122,6 +148,7 @@
 			packageReferences = (
 				FFAA7D402B70F42200C7620E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = FFAA7D302B70F36600C7620E /* Products */;
 			projectDirPath = "";
@@ -374,6 +401,14 @@
 				minimumVersion = 21.0.0;
 			};
 		};
+		FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -386,6 +421,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		FFD593FD2B70FCDD003F1F3C /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		FFD593FF2B70FCDD003F1F3C /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		FFD594012B70FCDD003F1F3C /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		FFD594032B70FCDD003F1F3C /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
