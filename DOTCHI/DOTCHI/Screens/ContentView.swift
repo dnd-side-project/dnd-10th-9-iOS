@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  dnd-10th-9
+//  DOTCHI
 //
-//  Created by yubin on 1/28/24.
+//  Created by Jungbin on 2/5/24.
 //
 
 import SwiftUI

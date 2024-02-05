@@ -1,14 +1,14 @@
 //
-//  dnd_10th_9App.swift
-//  dnd-10th-9
+//  DOTCHIApp.swift
+//  DOTCHI
 //
-//  Created by yubin on 1/28/24.
+//  Created by Jungbin on 2/5/24.
 //
 
 import SwiftUI
 
 @main
-struct dnd_10th_9App: App {
+struct DOTCHIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
