@@ -28,6 +28,7 @@
 		FFD5942F2B7101D0003F1F3C /* SocialLoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5942E2B7101D0003F1F3C /* SocialLoginResponseDTO.swift */; };
 		FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */; };
 		FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594322B710218003F1F3C /* NetworkLoggerPlugin.swift */; };
+		FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD594352B710311003F1F3C /* Colorsets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		FFD5942E2B7101D0003F1F3C /* SocialLoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginResponseDTO.swift; sourceTree = "<group>"; };
 		FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginRequestDTO.swift; sourceTree = "<group>"; };
 		FFD594322B710218003F1F3C /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		FFD594352B710311003F1F3C /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,7 @@
 				FFD594152B70FF14003F1F3C /* Supports */,
 				FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */,
 				FFAA7D342B70F36600C7620E /* ContentView.swift */,
-				FFAA7D362B70F36700C7620E /* Assets.xcassets */,
+				FFD594342B7102FC003F1F3C /* Resources */,
 				FFAA7D382B70F36700C7620E /* Preview Content */,
 			);
 			path = DOTCHI;
@@ -197,6 +199,15 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		FFD594342B7102FC003F1F3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA7D362B70F36700C7620E /* Assets.xcassets */,
+				FFD594352B710311003F1F3C /* Colorsets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
+				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
 				FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
