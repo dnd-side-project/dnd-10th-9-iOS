@@ -12,6 +12,7 @@
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
 		FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */; };
 		FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D412B70F42200C7620E /* SnapKit */; };
+		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */,
 				FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +89,7 @@
 			name = DOTCHI;
 			packageProductDependencies = (
 				FFAA7D412B70F42200C7620E /* SnapKit */,
+				FFAA7D442B70F44500C7620E /* KeychainSwift */,
 			);
 			productName = DOTCHI;
 			productReference = FFAA7D2F2B70F36600C7620E /* DOTCHI.app */;
@@ -118,6 +121,7 @@
 			mainGroup = FFAA7D262B70F36600C7620E;
 			packageReferences = (
 				FFAA7D402B70F42200C7620E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = FFAA7D302B70F36600C7620E /* Products */;
 			projectDirPath = "";
@@ -362,6 +366,14 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -369,6 +381,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFAA7D402B70F42200C7620E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FFAA7D442B70F44500C7620E /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
