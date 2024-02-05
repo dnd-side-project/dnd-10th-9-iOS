@@ -18,6 +18,16 @@
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
 		FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594032B70FCDD003F1F3C /* RxMoya */; };
 		FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594172B70FF2A003F1F3C /* Environment.swift */; };
+		FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */; };
+		FFD594202B710135003F1F3C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5941F2B710135003F1F3C /* BaseService.swift */; };
+		FFD594222B710147003F1F3C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594212B710147003F1F3C /* AuthService.swift */; };
+		FFD594242B710166003F1F3C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594232B710166003F1F3C /* APIConstants.swift */; };
+		FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594252B710173003F1F3C /* BaseResponseType.swift */; };
+		FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594272B710183003F1F3C /* DotchiMoyaProvider.swift */; };
+		FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594292B7101A2003F1F3C /* NetworkResult.swift */; };
+		FFD5942F2B7101D0003F1F3C /* SocialLoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5942E2B7101D0003F1F3C /* SocialLoginResponseDTO.swift */; };
+		FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */; };
+		FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594322B710218003F1F3C /* NetworkLoggerPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +50,16 @@
 		FFAA7D362B70F36700C7620E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		FFD594212B710147003F1F3C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FFD594232B710166003F1F3C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		FFD594252B710173003F1F3C /* BaseResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseType.swift; sourceTree = "<group>"; };
+		FFD594272B710183003F1F3C /* DotchiMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiMoyaProvider.swift; sourceTree = "<group>"; };
+		FFD594292B7101A2003F1F3C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		FFD5942E2B7101D0003F1F3C /* SocialLoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginResponseDTO.swift; sourceTree = "<group>"; };
+		FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginRequestDTO.swift; sourceTree = "<group>"; };
+		FFD594322B710218003F1F3C /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +127,74 @@
 		FFD594162B70FF20003F1F3C /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				FFD5941C2B70FF57003F1F3C /* Routers */,
+				FFD5941B2B70FF50003F1F3C /* Services */,
+				FFD5941A2B70FF4C003F1F3C /* Essentials */,
+				FFD594192B70FF47003F1F3C /* DTO */,
+				FFD594322B710218003F1F3C /* NetworkLoggerPlugin.swift */,
 			);
 			path = Networks;
+			sourceTree = "<group>";
+		};
+		FFD594192B70FF47003F1F3C /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5942B2B7101B0003F1F3C /* Auth */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		FFD5941A2B70FF4C003F1F3C /* Essentials */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594232B710166003F1F3C /* APIConstants.swift */,
+				FFD594252B710173003F1F3C /* BaseResponseType.swift */,
+				FFD594272B710183003F1F3C /* DotchiMoyaProvider.swift */,
+				FFD594292B7101A2003F1F3C /* NetworkResult.swift */,
+			);
+			path = Essentials;
+			sourceTree = "<group>";
+		};
+		FFD5941B2B70FF50003F1F3C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5941F2B710135003F1F3C /* BaseService.swift */,
+				FFD594212B710147003F1F3C /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FFD5941C2B70FF57003F1F3C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		FFD5942B2B7101B0003F1F3C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5942D2B7101BF003F1F3C /* Response */,
+				FFD5942C2B7101B9003F1F3C /* Request */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FFD5942C2B7101B9003F1F3C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FFD5942D2B7101BF003F1F3C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5942E2B7101D0003F1F3C /* SocialLoginResponseDTO.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +281,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD5942F2B7101D0003F1F3C /* SocialLoginResponseDTO.swift in Sources */,
+				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
 				FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */,
+				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
+				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
+				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
+				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
+				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
+				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
+				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
+				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
