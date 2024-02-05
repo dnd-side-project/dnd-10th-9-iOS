@@ -9,7 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+           Color.black.ignoresSafeArea()
+            
+            ScrollView {
+                Text("메인 홈")
+                    .foregroundStyle(Color.white)
+                    .padding(.top, 300)
+            }
+        }
     }
 }
 
