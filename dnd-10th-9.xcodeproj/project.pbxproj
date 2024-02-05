@@ -11,6 +11,11 @@
 		1031EC702B6691370016655B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1031EC6F2B6691370016655B /* ContentView.swift */; };
 		1031EC722B6691390016655B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1031EC712B6691390016655B /* Assets.xcassets */; };
 		1031EC752B6691390016655B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1031EC742B6691390016655B /* Preview Assets.xcassets */; };
+		FF1A6C2C2B6C758B00B6D156 /* DotchiMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C2B2B6C758B00B6D156 /* DotchiMoyaProvider.swift */; };
+		FF1A6C2E2B6C760F00B6D156 /* BaseResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C2D2B6C760F00B6D156 /* BaseResponseType.swift */; };
+		FF1A6C302B6FE6DE00B6D156 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C2F2B6FE6DE00B6D156 /* APIConstants.swift */; };
+		FF1A6C322B6FE6F300B6D156 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C312B6FE6F300B6D156 /* NetworkResult.swift */; };
+		FF1A6C352B7098BB00B6D156 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C342B7098BB00B6D156 /* Environment.swift */; };
 		FF86897E2B6A59AE00D51EF4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF86897D2B6A59AE00D51EF4 /* SnapKit */; };
 		FF8689802B6A59AE00D51EF4 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FF86897F2B6A59AE00D51EF4 /* SnapKit-Dynamic */; };
 		FF8689832B6A5A2D00D51EF4 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FF8689822B6A5A2D00D51EF4 /* CombineMoya */; };
@@ -36,6 +41,11 @@
 		1031EC6F2B6691370016655B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1031EC712B6691390016655B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1031EC742B6691390016655B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF1A6C2B2B6C758B00B6D156 /* DotchiMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiMoyaProvider.swift; sourceTree = "<group>"; };
+		FF1A6C2D2B6C760F00B6D156 /* BaseResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseType.swift; sourceTree = "<group>"; };
+		FF1A6C2F2B6FE6DE00B6D156 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		FF1A6C312B6FE6F300B6D156 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		FF1A6C342B7098BB00B6D156 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,8 @@
 		1031EC6C2B6691370016655B /* dnd-10th-9 */ = {
 			isa = PBXGroup;
 			children = (
+				FF1A6C332B7098AB00B6D156 /* Supprots */,
+				FF8689A22B6A645C00D51EF4 /* Network */,
 				1031EC6D2B6691370016655B /* dnd_10th_9App.swift */,
 				1031EC6F2B6691370016655B /* ContentView.swift */,
 				1031EC712B6691390016655B /* Assets.xcassets */,
@@ -99,6 +111,57 @@
 				1031EC742B6691390016655B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF1A6C332B7098AB00B6D156 /* Supprots */ = {
+			isa = PBXGroup;
+			children = (
+				FF1A6C342B7098BB00B6D156 /* Environment.swift */,
+			);
+			path = Supprots;
+			sourceTree = "<group>";
+		};
+		FF8689A22B6A645C00D51EF4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF8689A52B6A649A00D51EF4 /* Essentials */,
+				FF8689A32B6A647700D51EF4 /* Services */,
+				FF8689A42B6A648400D51EF4 /* Routers */,
+				FF8689A62B6A64B200D51EF4 /* DTO */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF8689A32B6A647700D51EF4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FF8689A42B6A648400D51EF4 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		FF8689A52B6A649A00D51EF4 /* Essentials */ = {
+			isa = PBXGroup;
+			children = (
+				FF1A6C2B2B6C758B00B6D156 /* DotchiMoyaProvider.swift */,
+				FF1A6C2D2B6C760F00B6D156 /* BaseResponseType.swift */,
+				FF1A6C2F2B6FE6DE00B6D156 /* APIConstants.swift */,
+				FF1A6C312B6FE6F300B6D156 /* NetworkResult.swift */,
+			);
+			path = Essentials;
+			sourceTree = "<group>";
+		};
+		FF8689A62B6A64B200D51EF4 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +260,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1031EC702B6691370016655B /* ContentView.swift in Sources */,
+				FF1A6C302B6FE6DE00B6D156 /* APIConstants.swift in Sources */,
+				FF1A6C2E2B6C760F00B6D156 /* BaseResponseType.swift in Sources */,
+				FF1A6C352B7098BB00B6D156 /* Environment.swift in Sources */,
+				FF1A6C322B6FE6F300B6D156 /* NetworkResult.swift in Sources */,
+				FF1A6C2C2B6C758B00B6D156 /* DotchiMoyaProvider.swift in Sources */,
 				1031EC6E2B6691370016655B /* dnd_10th_9App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
