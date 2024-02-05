@@ -29,6 +29,14 @@
 		FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */; };
 		FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594322B710218003F1F3C /* NetworkLoggerPlugin.swift */; };
 		FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD594352B710311003F1F3C /* Colorsets.xcassets */; };
+		FFD5943A2B710367003F1F3C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594392B710367003F1F3C /* HomeView.swift */; };
+		FFD5943D2B710386003F1F3C /* aaa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5943C2B710386003F1F3C /* aaa.swift */; };
+		FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594442B7103D8003F1F3C /* UserInfo.swift */; };
+		FFD594472B7103EF003F1F3C /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594462B7103EF003F1F3C /* ImageCacheManager.swift */; };
+		FFD594492B710411003F1F3C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594482B710411003F1F3C /* BaseViewController.swift */; };
+		FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944A2B710457003F1F3C /* LuckyType.swift */; };
+		FFD5944D2B710460003F1F3C /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944C2B710460003F1F3C /* a.swift */; };
+		FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +70,14 @@
 		FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginRequestDTO.swift; sourceTree = "<group>"; };
 		FFD594322B710218003F1F3C /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		FFD594352B710311003F1F3C /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
+		FFD594392B710367003F1F3C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FFD5943C2B710386003F1F3C /* aaa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aaa.swift; sourceTree = "<group>"; };
+		FFD594442B7103D8003F1F3C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		FFD594462B7103EF003F1F3C /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		FFD594482B710411003F1F3C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FFD5944A2B710457003F1F3C /* LuckyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyType.swift; sourceTree = "<group>"; };
+		FFD5944C2B710460003F1F3C /* a.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
+		FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +116,11 @@
 		FFAA7D312B70F36600C7620E /* DOTCHI */ = {
 			isa = PBXGroup;
 			children = (
+				FFD5943E2B71038C003F1F3C /* Global */,
 				FFD594162B70FF20003F1F3C /* Networks */,
+				FFD594372B710331003F1F3C /* Screens */,
 				FFD594152B70FF14003F1F3C /* Supports */,
 				FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */,
-				FFAA7D342B70F36600C7620E /* ContentView.swift */,
 				FFD594342B7102FC003F1F3C /* Resources */,
 				FFAA7D382B70F36700C7620E /* Preview Content */,
 			);
@@ -208,6 +225,85 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FFD594372B710331003F1F3C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5943B2B710370003F1F3C /* Components */,
+				FFD594382B710355003F1F3C /* Home */,
+				FFAA7D342B70F36600C7620E /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FFD594382B710355003F1F3C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594392B710367003F1F3C /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FFD5943B2B710370003F1F3C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5943C2B710386003F1F3C /* aaa.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FFD5943E2B71038C003F1F3C /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594432B7103BB003F1F3C /* Singletons */,
+				FFD594422B7103B4003F1F3C /* Enums */,
+				FFD594412B7103AF003F1F3C /* Protocols */,
+				FFD594402B7103A9003F1F3C /* Extensions */,
+				FFD5943F2B7103A2003F1F3C /* Bases */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		FFD5943F2B7103A2003F1F3C /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594482B710411003F1F3C /* BaseViewController.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
+		FFD594402B7103A9003F1F3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FFD594412B7103AF003F1F3C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5944C2B710460003F1F3C /* a.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FFD594422B7103B4003F1F3C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5944A2B710457003F1F3C /* LuckyType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		FFD594432B7103BB003F1F3C /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594442B7103D8003F1F3C /* UserInfo.swift */,
+				FFD594462B7103EF003F1F3C /* ImageCacheManager.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,8 +390,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFD5942F2B7101D0003F1F3C /* SocialLoginResponseDTO.swift in Sources */,
+				FFD5943A2B710367003F1F3C /* HomeView.swift in Sources */,
+				FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */,
 				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
+				FFD5944D2B710460003F1F3C /* a.swift in Sources */,
 				FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */,
+				FFD594472B7103EF003F1F3C /* ImageCacheManager.swift in Sources */,
+				FFD594492B710411003F1F3C /* BaseViewController.swift in Sources */,
+				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
@@ -303,9 +405,11 @@
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
+				FFD5943D2B710386003F1F3C /* aaa.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,
+				FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
