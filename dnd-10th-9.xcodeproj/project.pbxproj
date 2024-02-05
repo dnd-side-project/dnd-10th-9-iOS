@@ -16,6 +16,12 @@
 		FF1A6C302B6FE6DE00B6D156 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C2F2B6FE6DE00B6D156 /* APIConstants.swift */; };
 		FF1A6C322B6FE6F300B6D156 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C312B6FE6F300B6D156 /* NetworkResult.swift */; };
 		FF1A6C352B7098BB00B6D156 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C342B7098BB00B6D156 /* Environment.swift */; };
+		FF1A6C372B709CFF00B6D156 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C362B709CFF00B6D156 /* BaseService.swift */; };
+		FF1A6C392B709D2400B6D156 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C382B709D2400B6D156 /* AuthService.swift */; };
+		FF1A6C3B2B70A1A900B6D156 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C3A2B70A1A900B6D156 /* AuthRouter.swift */; };
+		FF1A6C402B70A20000B6D156 /* SocialLoginResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C3F2B70A20000B6D156 /* SocialLoginResponseDTO.swift */; };
+		FF1A6C422B70A21200B6D156 /* SocialLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C412B70A21200B6D156 /* SocialLoginRequestDTO.swift */; };
+		FF1A6C442B70A22900B6D156 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A6C432B70A22900B6D156 /* NetworkLoggerPlugin.swift */; };
 		FF86897E2B6A59AE00D51EF4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF86897D2B6A59AE00D51EF4 /* SnapKit */; };
 		FF8689802B6A59AE00D51EF4 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FF86897F2B6A59AE00D51EF4 /* SnapKit-Dynamic */; };
 		FF8689832B6A5A2D00D51EF4 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FF8689822B6A5A2D00D51EF4 /* CombineMoya */; };
@@ -46,6 +52,12 @@
 		FF1A6C2F2B6FE6DE00B6D156 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FF1A6C312B6FE6F300B6D156 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		FF1A6C342B7098BB00B6D156 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		FF1A6C362B709CFF00B6D156 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		FF1A6C382B709D2400B6D156 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FF1A6C3A2B70A1A900B6D156 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		FF1A6C3F2B70A20000B6D156 /* SocialLoginResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginResponseDTO.swift; sourceTree = "<group>"; };
+		FF1A6C412B70A21200B6D156 /* SocialLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginRequestDTO.swift; sourceTree = "<group>"; };
+		FF1A6C432B70A22900B6D156 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,31 @@
 			path = Supprots;
 			sourceTree = "<group>";
 		};
+		FF1A6C3C2B70A1E200B6D156 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FF1A6C3E2B70A1EC00B6D156 /* Request */,
+				FF1A6C3D2B70A1E700B6D156 /* Response */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FF1A6C3D2B70A1E700B6D156 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FF1A6C3F2B70A20000B6D156 /* SocialLoginResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		FF1A6C3E2B70A1EC00B6D156 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FF1A6C412B70A21200B6D156 /* SocialLoginRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		FF8689A22B6A645C00D51EF4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +165,7 @@
 				FF8689A32B6A647700D51EF4 /* Services */,
 				FF8689A42B6A648400D51EF4 /* Routers */,
 				FF8689A62B6A64B200D51EF4 /* DTO */,
+				FF1A6C432B70A22900B6D156 /* NetworkLoggerPlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -135,6 +173,8 @@
 		FF8689A32B6A647700D51EF4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FF1A6C362B709CFF00B6D156 /* BaseService.swift */,
+				FF1A6C382B709D2400B6D156 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,6 +182,7 @@
 		FF8689A42B6A648400D51EF4 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				FF1A6C3A2B70A1A900B6D156 /* AuthRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -160,6 +201,7 @@
 		FF8689A62B6A64B200D51EF4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FF1A6C3C2B70A1E200B6D156 /* Auth */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -259,8 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1A6C402B70A20000B6D156 /* SocialLoginResponseDTO.swift in Sources */,
+				FF1A6C442B70A22900B6D156 /* NetworkLoggerPlugin.swift in Sources */,
+				FF1A6C372B709CFF00B6D156 /* BaseService.swift in Sources */,
+				FF1A6C422B70A21200B6D156 /* SocialLoginRequestDTO.swift in Sources */,
 				1031EC702B6691370016655B /* ContentView.swift in Sources */,
+				FF1A6C3B2B70A1A900B6D156 /* AuthRouter.swift in Sources */,
 				FF1A6C302B6FE6DE00B6D156 /* APIConstants.swift in Sources */,
+				FF1A6C392B709D2400B6D156 /* AuthService.swift in Sources */,
 				FF1A6C2E2B6C760F00B6D156 /* BaseResponseType.swift in Sources */,
 				FF1A6C352B7098BB00B6D156 /* Environment.swift in Sources */,
 				FF1A6C322B6FE6F300B6D156 /* NetworkResult.swift in Sources */,
@@ -399,6 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dnd-10th-9/Preview Content\"";
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -406,6 +455,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
