@@ -17,6 +17,7 @@
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
 		FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594032B70FCDD003F1F3C /* RxMoya */; };
+		FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594172B70FF2A003F1F3C /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FFAA7D362B70F36700C7620E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,8 @@
 		FFAA7D312B70F36600C7620E /* DOTCHI */ = {
 			isa = PBXGroup;
 			children = (
+				FFD594162B70FF20003F1F3C /* Networks */,
+				FFD594152B70FF14003F1F3C /* Supports */,
 				FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */,
 				FFAA7D342B70F36600C7620E /* ContentView.swift */,
 				FFAA7D362B70F36700C7620E /* Assets.xcassets */,
@@ -90,6 +94,21 @@
 				FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FFD594152B70FF14003F1F3C /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				FFD594172B70FF2A003F1F3C /* Environment.swift */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		FFD594162B70FF20003F1F3C /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */,
+				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
