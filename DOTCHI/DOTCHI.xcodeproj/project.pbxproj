@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2B2B7151C400AAC1E8 /* MyView.swift */; };
+		100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2D2B71576B00AAC1E8 /* UploadView.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
@@ -37,7 +39,6 @@
 		FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944A2B710457003F1F3C /* LuckyType.swift */; };
 		FFD5944D2B710460003F1F3C /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944C2B710460003F1F3C /* a.swift */; };
 		FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */; };
-		FFD594522B710736003F1F3C /* aa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594512B710736003F1F3C /* aa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		100A1E2B2B7151C400AAC1E8 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,7 +82,6 @@
 		FFD5944A2B710457003F1F3C /* LuckyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyType.swift; sourceTree = "<group>"; };
 		FFD5944C2B710460003F1F3C /* a.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
 		FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+.swift"; sourceTree = "<group>"; };
-		FFD594512B710736003F1F3C /* aa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD5943C2B710386003F1F3C /* aaa.swift */,
+				100A1E2D2B71576B00AAC1E8 /* UploadView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -310,7 +313,7 @@
 		FFD594502B71072B003F1F3C /* My */ = {
 			isa = PBXGroup;
 			children = (
-				FFD594512B710736003F1F3C /* aa.swift */,
+				100A1E2B2B7151C400AAC1E8 /* MyView.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				FFD5942F2B7101D0003F1F3C /* SocialLoginResponseDTO.swift in Sources */,
 				FFD5943A2B710367003F1F3C /* HomeView.swift in Sources */,
 				FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */,
+				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
 				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
 				FFD5944D2B710460003F1F3C /* a.swift in Sources */,
 				FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */,
@@ -415,8 +419,8 @@
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
-				FFD594522B710736003F1F3C /* aa.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
+				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FFD5943D2B710386003F1F3C /* aaa.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
@@ -555,7 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = N4RT4KGQK9;
+				DEVELOPMENT_TEAM = R62RZ89ZRU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -583,7 +587,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = N4RT4KGQK9;
+				DEVELOPMENT_TEAM = R62RZ89ZRU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

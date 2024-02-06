@@ -1,19 +1,19 @@
 //
-//  HomeView.swift
+//  MyView.swift
 //  DOTCHI
 //
-//  Created by Jungbin on 2/5/24.
+//  Created by yubin on 2/6/24.
 //
 
 import SwiftUI
 
-struct HomeView: View {
+struct MyView: View {
     var body: some View {
         ZStack {
            Color.black.ignoresSafeArea()
             
             ScrollView {
-                Text("메인 홈")
+                Text("마이페이지")
                     .foregroundStyle(Color.white)
                     .padding(.top, 300)
             }
@@ -22,5 +22,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    MyView()
 }
