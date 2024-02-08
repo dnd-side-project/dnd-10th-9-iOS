@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2B2B7151C400AAC1E8 /* MyView.swift */; };
 		100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2D2B71576B00AAC1E8 /* UploadView.swift */; };
+		FF018E8E2B7537E9006D5627 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8A2B7537E9006D5627 /* Pretendard-Black.ttf */; };
+		FF018E8F2B7537E9006D5627 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */; };
+		FF018E902B7537E9006D5627 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */; };
+		FF018E912B7537E9006D5627 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
@@ -57,6 +61,10 @@
 /* Begin PBXFileReference section */
 		100A1E2B2B7151C400AAC1E8 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		FF018E8A2B7537E9006D5627 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +109,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF018E812B7537A9006D5627 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FF018E8A2B7537E9006D5627 /* Pretendard-Black.ttf */,
+				FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */,
+				FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */,
+				FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FFAA7D262B70F36600C7620E = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +242,7 @@
 		FFD594342B7102FC003F1F3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FF018E812B7537A9006D5627 /* Fonts */,
 				FFAA7D362B70F36700C7620E /* Assets.xcassets */,
 				FFD594352B710311003F1F3C /* Colorsets.xcassets */,
 			);
@@ -390,9 +410,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF018E902B7537E9006D5627 /* Pretendard-SemiBold.ttf in Resources */,
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
 				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
+				FF018E8F2B7537E9006D5627 /* Pretendard-ExtraBold.ttf in Resources */,
 				FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */,
+				FF018E912B7537E9006D5627 /* Pretendard-Medium.ttf in Resources */,
+				FF018E8E2B7537E9006D5627 /* Pretendard-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
