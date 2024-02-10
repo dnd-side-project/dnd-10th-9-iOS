@@ -23,9 +23,12 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setUI()
     }
     
     // MARK: Methods
     
-    
+    private func setUI() {
+        self.view.backgroundColor = .backgroundBlack
+    }
 }
