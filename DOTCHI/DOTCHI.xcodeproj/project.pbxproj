@@ -15,6 +15,7 @@
 		FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9C2B77F9D7006D5627 /* UIView+.swift */; };
 		FF018EA02B77FA6C006D5627 /* DotchiNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9F2B77FA6C006D5627 /* DotchiNavigationView.swift */; };
 		FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA12B77FE3B006D5627 /* UIButton+.swift */; };
+		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		FF018E9C2B77F9D7006D5627 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		FF018E9F2B77FA6C006D5627 /* DotchiNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationView.swift; sourceTree = "<group>"; };
 		FF018EA12B77FE3B006D5627 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 				FF018E9F2B77FA6C006D5627 /* DotchiNavigationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FF018EA32B7803A6006D5627 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */,
+			);
+			path = Structs;
 			sourceTree = "<group>";
 		};
 		FFAA7D262B70F36600C7620E = {
@@ -315,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD594432B7103BB003F1F3C /* Singletons */,
+				FF018EA32B7803A6006D5627 /* Structs */,
 				FFD594422B7103B4003F1F3C /* Enums */,
 				FFD594412B7103AF003F1F3C /* Protocols */,
 				FFD594402B7103A9003F1F3C /* Extensions */,
@@ -471,6 +482,7 @@
 				FFD594492B710411003F1F3C /* BaseViewController.swift in Sources */,
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
+				FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
 				FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */,
