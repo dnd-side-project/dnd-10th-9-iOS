@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2B2B7151C400AAC1E8 /* MyView.swift */; };
 		100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2D2B71576B00AAC1E8 /* UploadView.swift */; };
+		FF018E802B75321B006D5627 /* DotchiCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		100A1E2B2B7151C400AAC1E8 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleButton.swift; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF018E7E2B7531F8006D5627 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		FFAA7D262B70F36600C7620E = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +261,7 @@
 		FFD5943B2B710370003F1F3C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FF018E7E2B7531F8006D5627 /* Buttons */,
 				FFD5943C2B710386003F1F3C /* aaa.swift */,
 				100A1E2D2B71576B00AAC1E8 /* UploadView.swift */,
 			);
@@ -415,6 +426,7 @@
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
+				FF018E802B75321B006D5627 /* DotchiCircleButton.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
@@ -559,7 +571,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -587,7 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
