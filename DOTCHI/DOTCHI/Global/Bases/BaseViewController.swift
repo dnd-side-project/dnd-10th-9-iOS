@@ -23,12 +23,13 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setUI()
+        self.setBackgroundColor()
     }
     
     // MARK: Methods
     
-    private func setUI() {
+    /// 모든 뷰의 기본 Background color 설정
+    private func setBackgroundColor() {
         self.view.backgroundColor = .backgroundBlack
     }
 }
