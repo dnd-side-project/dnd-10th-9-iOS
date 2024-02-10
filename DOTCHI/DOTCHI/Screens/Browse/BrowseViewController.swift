@@ -12,7 +12,7 @@ final class BrowseViewController: BaseViewController {
     
     // MARK: UIComponents
     
-    
+    private let navigationView: DotchiNavigationView = DotchiNavigationView(type: .back)
     
     // MARK: Properties
     
@@ -24,6 +24,7 @@ final class BrowseViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setLayout()
+        self.setBackButtonAction(self.navigationView.backButton)
     }
     
     // MARK: Methods
@@ -35,6 +36,10 @@ final class BrowseViewController: BaseViewController {
 
 extension BrowseViewController {
     private func setLayout() {
-        self.view.addSubviews([])
+        self.view.addSubviews([navigationView])
+        
+        self.navigationView.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(self.view.safeAreaLayoutGuide)
+        }
     }
 }

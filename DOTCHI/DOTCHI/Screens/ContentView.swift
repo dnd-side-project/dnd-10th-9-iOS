@@ -47,7 +47,8 @@ struct ContentView: View {
                         .offset(y: -30)
                     }
                     .fullScreenCover(isPresented: $isPresented) {
-                        UploadView(isPresented: $isPresented)
+                        UIViewControllerToSwiftUI( BrowseViewController())
+                            .ignoresSafeArea()
                     }
                 }
             }
