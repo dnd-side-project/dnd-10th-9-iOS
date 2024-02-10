@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class BaseViewController: UIViewController {
+class BaseViewController: UIViewController {
     
     // MARK: UIComponents
     
