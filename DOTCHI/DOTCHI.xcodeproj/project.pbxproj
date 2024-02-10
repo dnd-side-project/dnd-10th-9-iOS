@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2B2B7151C400AAC1E8 /* MyView.swift */; };
 		100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2D2B71576B00AAC1E8 /* UploadView.swift */; };
-		FF018E8E2B7537E9006D5627 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8A2B7537E9006D5627 /* Pretendard-Black.ttf */; };
-		FF018E8F2B7537E9006D5627 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */; };
-		FF018E902B7537E9006D5627 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */; };
-		FF018E912B7537E9006D5627 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */; };
+		FF018E802B75321B006D5627 /* DotchiCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
@@ -62,12 +59,13 @@
 /* Begin PBXFileReference section */
 		100A1E2B2B7151C400AAC1E8 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
-		FF018E8A2B7537E9006D5627 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
-		FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
-		FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
-		FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		FF018E952B77F855006D5627 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Black.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-Black.ttf"; sourceTree = SOURCE_ROOT; };
+		FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraBold.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
+		FF018E972B77F864006D5627 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
+		FF018E982B77F864006D5627 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,13 +110,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF018E7E2B7531F8006D5627 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		FF018E812B7537A9006D5627 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				FF018E8A2B7537E9006D5627 /* Pretendard-Black.ttf */,
-				FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */,
-				FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */,
-				FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */,
+				FF018E952B77F855006D5627 /* Pretendard-Black.ttf */,
+				FF018E982B77F864006D5627 /* Pretendard-Medium.ttf */,
+				FF018E972B77F864006D5627 /* Pretendard-SemiBold.ttf */,
+				FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 		FFD5943B2B710370003F1F3C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FF018E7E2B7531F8006D5627 /* Buttons */,
 				FFD5943C2B710386003F1F3C /* aaa.swift */,
 				100A1E2D2B71576B00AAC1E8 /* UploadView.swift */,
 			);
@@ -415,13 +422,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF018E902B7537E9006D5627 /* Pretendard-SemiBold.ttf in Resources */,
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
 				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
-				FF018E8F2B7537E9006D5627 /* Pretendard-ExtraBold.ttf in Resources */,
 				FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */,
-				FF018E912B7537E9006D5627 /* Pretendard-Medium.ttf in Resources */,
-				FF018E8E2B7537E9006D5627 /* Pretendard-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +447,7 @@
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
+				FF018E802B75321B006D5627 /* DotchiCircleButton.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
