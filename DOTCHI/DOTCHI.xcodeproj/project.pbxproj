@@ -13,6 +13,7 @@
 		FF018E8F2B7537E9006D5627 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */; };
 		FF018E902B7537E9006D5627 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */; };
 		FF018E912B7537E9006D5627 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */; };
+		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
 		FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD5944E2B710475003F1F3C /* UIViewcontroller+.swift */,
+				FF018E932B77F2E6006D5627 /* UIFont+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FFD5943D2B710386003F1F3C /* aaa.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
+				FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */,
 				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,
 				FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */,
