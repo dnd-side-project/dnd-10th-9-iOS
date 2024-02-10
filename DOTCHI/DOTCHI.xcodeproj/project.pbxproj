@@ -65,6 +65,7 @@
 		FF018E8B2B7537E9006D5627 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		FF018E8C2B7537E9006D5627 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
 		FF018E8D2B7537E9006D5627 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		FFAA7D312B70F36600C7620E /* DOTCHI */ = {
 			isa = PBXGroup;
 			children = (
+				FF018E922B77F243006D5627 /* Info.plist */,
 				FFD5943E2B71038C003F1F3C /* Global */,
 				FFD594162B70FF20003F1F3C /* Networks */,
 				FFD594372B710331003F1F3C /* Screens */,
@@ -583,9 +585,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DOTCHI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -611,9 +614,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DOTCHI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
