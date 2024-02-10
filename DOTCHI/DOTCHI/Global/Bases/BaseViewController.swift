@@ -32,4 +32,13 @@ class BaseViewController: UIViewController {
     private func setBackgroundColor() {
         self.view.backgroundColor = .backgroundBlack
     }
+    
+    /// BackButton에 pop Action을 간편하게 주는 메서드.
+    /// - 필요 시 override하여 사용
+    @objc
+    func setBackButtonAction(_ button: UIButton) {
+        button.setAction { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
 }
