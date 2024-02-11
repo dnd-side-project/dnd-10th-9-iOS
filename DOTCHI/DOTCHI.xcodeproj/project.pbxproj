@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2B2B7151C400AAC1E8 /* MyView.swift */; };
 		100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2D2B71576B00AAC1E8 /* UploadView.swift */; };
+		107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6E5E2B78DB61005B6261 /* FontManager.swift */; };
+		107D6E612B78DE9E005B6261 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E982B77F864006D5627 /* Pretendard-Medium.ttf */; };
+		107D6E622B78DEA0005B6261 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E972B77F864006D5627 /* Pretendard-SemiBold.ttf */; };
+		107D6E632B78DEA2005B6261 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */; };
+		107D6E662B78E39B005B6261 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 107D6E652B78E39B005B6261 /* Pretendard-Bold.ttf */; };
 		FF018E802B75321B006D5627 /* DotchiCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -63,10 +68,11 @@
 /* Begin PBXFileReference section */
 		100A1E2B2B7151C400AAC1E8 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		107D6E5E2B78DB61005B6261 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		107D6E652B78E39B005B6261 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
-		FF018E952B77F855006D5627 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Black.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-Black.ttf"; sourceTree = SOURCE_ROOT; };
 		FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraBold.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
 		FF018E972B77F864006D5627 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		FF018E982B77F864006D5627 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-Medium.ttf"; sourceTree = SOURCE_ROOT; };
@@ -129,9 +135,9 @@
 		FF018E812B7537A9006D5627 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				FF018E952B77F855006D5627 /* Pretendard-Black.ttf */,
 				FF018E982B77F864006D5627 /* Pretendard-Medium.ttf */,
 				FF018E972B77F864006D5627 /* Pretendard-SemiBold.ttf */,
+				107D6E652B78E39B005B6261 /* Pretendard-Bold.ttf */,
 				FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */,
 			);
 			path = Fonts;
@@ -349,6 +355,7 @@
 				FF018E932B77F2E6006D5627 /* UIFont+.swift */,
 				FF018E9C2B77F9D7006D5627 /* UIView+.swift */,
 				FF018EA12B77FE3B006D5627 /* UIButton+.swift */,
+				107D6E5E2B78DB61005B6261 /* FontManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -458,9 +465,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107D6E632B78DEA2005B6261 /* Pretendard-ExtraBold.ttf in Resources */,
+				107D6E622B78DEA0005B6261 /* Pretendard-SemiBold.ttf in Resources */,
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
+				107D6E612B78DE9E005B6261 /* Pretendard-Medium.ttf in Resources */,
 				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
 				FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */,
+				107D6E662B78E39B005B6261 /* Pretendard-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +492,7 @@
 				FFD594472B7103EF003F1F3C /* ImageCacheManager.swift in Sources */,
 				FFD594492B710411003F1F3C /* BaseViewController.swift in Sources */,
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
+				107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */,
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
 				FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
