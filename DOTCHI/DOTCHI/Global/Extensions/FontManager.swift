@@ -9,14 +9,18 @@ import SwiftUI
 
 extension Font {
     
-    static let m12: Font = .custom("Pretendard-Medium", size: 12)
-    static let m14: Font = .custom("Pretendard-Medium", size: 14)
-    static let sb14: Font = .custom("Pretendard-SemiBold", size: 14)
-    static let sb16: Font = .custom("Pretendard-SemiBold", size: 16)
-    static let b14: Font = .custom("Pretendard-Bold", size: 14)
-    static let b16: Font = .custom("Pretendard-Bold", size: 16)
-    static let b32: Font = .custom("Pretendard-Bold", size: 32)
-    static let eb14: Font = .custom("Pretendard-ExtraBold", size: 14)
-    static let eb28: Font = .custom("Pretendard-ExtraBold", size: 28)
+    static let Big_Title: Font = .custom("Pretendard-Bold", size: 32)
+    static let Title: Font = .custom("Pretendard-Bold", size: 28)
+    static let Head: Font = .custom("Pretendard-Bold", size: 24)
+    static let Body: Font = .custom("Pretendard-Bold", size: 22)
+    static let Big_Button: Font = .custom("Pretendard-ExtraBold", size: 20)
+    static let Head2: Font = .custom("Pretendard-Bold", size: 16)
+    static let Dotchi_Name: Font = .custom("Pretendard-ExtraBold", size: 28)
+    static let Dotchi_Name2: Font = .custom("Pretendard-ExtraBold", size: 16)
+    static let Sub: Font = .custom("Pretendard-Medium", size: 14)
+    static let Sub_Sbold: Font = .custom("Pretendard-SemiBold", size: 14)
+    static let Button: Font = .custom("Pretendard-ExtraBold", size: 14)
+    static let S_Sub: Font = .custom("Pretendard-SemiBold", size: 12)
+    static let Sub_Title: Font = .custom("Pretendard-Bold", size: 18)
     
 }
