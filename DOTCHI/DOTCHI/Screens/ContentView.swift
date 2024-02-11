@@ -40,14 +40,15 @@ struct ContentView: View {
                                 .foregroundColor(Color.dotchiGreen)
                                 .frame(width: 58, height: 58)
                             
-                            Image("plus")
+                            Image(.icnPlus)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 30)
                         }
                         .offset(y: -30)
                     }
                     .fullScreenCover(isPresented: $isPresented) {
-                        UploadView(isPresented: $isPresented)
+                        UIViewControllerToSwiftUI( BrowseViewController())
+                            .ignoresSafeArea()
                     }
                 }
             }
@@ -66,7 +67,7 @@ struct CustomTabView: View {
                 selectedTab = .home
             } label: {
                 VStack {
-                    Image(selectedTab == .home ? "home_fill" : "home_fill")
+                    Image(selectedTab == .home ? .icnHomeFill : .icnHomeFill)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20)
@@ -84,7 +85,7 @@ struct CustomTabView: View {
                 selectedTab = .my
             } label: {
                 VStack {
-                    Image(selectedTab == .my ? "person_fill" : "person_fill")
+                    Image(selectedTab == .my ? .icnPersonFill: .icnPersonFill)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20)
