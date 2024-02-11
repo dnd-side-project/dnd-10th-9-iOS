@@ -4,10 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Pretendard-ExtraBold.ttf</string>
-		<string>Pretendard-SemiBold.ttf</string>
 		<string>Pretendard-Medium.ttf</string>
-		<string>Pretendard-Black.ttf</string>
+		<string>Pretendard-SemiBold.ttf</string>
+		<string>Pretendard-Bold.ttf</string>
+		<string>Pretendard-ExtraBold.ttf</string>
 	</array>
 </dict>
 </plist>
