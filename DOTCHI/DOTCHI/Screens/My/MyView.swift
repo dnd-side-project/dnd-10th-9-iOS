@@ -10,7 +10,7 @@ import SwiftUI
 struct MyView: View {
     var body: some View {
         ZStack {
-           Color.black.ignoresSafeArea()
+           Color.backgroundBlack.ignoresSafeArea()
             
             ScrollView {
                 Text("마이페이지")
