@@ -13,91 +13,127 @@ enum Tab {
 }
 
 struct ContentView: View {
-    @State var isPresented = false
     @State var selectedTab: Tab = .home
     
     var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            
+        VStack(spacing: 0) {
             VStack {
                 switch selectedTab {
                 case .home:
                     HomeView()
-                    
                 case .my:
                     MyView()
                 }
-                
-                ZStack {
-                    CustomTabView(selectedTab: $selectedTab)
-                    
-                    Button(action: {
-                        self.isPresented.toggle()
-                    }) {
-                        ZStack {
-                            Circle()
-                                .foregroundColor(Color.dotchiGreen)
-                                .frame(width: 58, height: 58)
-                            
-                            Image(.icnPlus)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30)
-                        }
-                        .offset(y: -30)
-                    }
-                    .fullScreenCover(isPresented: $isPresented) {
-                        UIViewControllerToSwiftUI( BrowseViewController())
-                            .ignoresSafeArea()
-                    }
-                }
             }
+            .padding(.bottom, -25)
+            
+            ZStack {
+                GeometryReader { geometry in
+                    createTabShape(size: geometry.size)
+                        .fill(Color.black)
+                }
+                .frame(height: 100)
+                
+                CustomTabView(selectedTab: $selectedTab)
+            }
+            .padding(.bottom, -10)
         }
+        .edgesIgnoringSafeArea(.all)
+    }
+    
+    func createTabShape(size: CGSize) -> Path {
+        var path = Path()
+        
+        let height: CGFloat = 20
+        let cornerRadius: CGFloat = 16
+        let centerWidth = size.width / 2
+        
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: (centerWidth - height * 2), y: 0))
+        
+        path.addCurve(
+            to: CGPoint(x: centerWidth, y: -height),
+            control1: CGPoint(x: (centerWidth - 35), y: 0),
+            control2: CGPoint(x: centerWidth - 25, y: -height)
+        )
+        
+        path.addCurve(
+            to: CGPoint(x: (centerWidth + height * 2), y: 0),
+            control1: CGPoint(x: centerWidth + 25, y: -height),
+            control2: CGPoint(x: (centerWidth + 35), y: 0)
+        )
+        
+        path.addRoundedRect(
+            in: CGRect(x: 0, y: 0, width: size.width, height: size.height),
+            cornerSize: CGSize(width: cornerRadius, height: cornerRadius)
+        )
+        
+        return path
     }
 }
 
 struct CustomTabView: View {
     @Binding var selectedTab: Tab
+    @State var isPresented = false
     
     var body: some View {
         HStack(spacing: 0) {
-            Spacer()
+            Spacer(minLength: 0)
             
-            Button {
+            Button(action: {
                 selectedTab = .home
-            } label: {
+            }){
                 VStack {
-                    Image(selectedTab == .home ? .icnHomeFill : .icnHomeFill)
+                    Image(selectedTab == .home ? .icnHome : .icnHome)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 20)
+                        .frame(width: 25)
                     
                     Text("홈")
                         .foregroundStyle(Color.white)
-                        .padding(.top, 3)
+                        .font(.S_Sub)
                 }
+                .opacity(selectedTab == .home ? 1.0 : 0.5)
             }
             
-            Spacer()
-            Spacer()
+            Spacer(minLength: 0)
             
-            Button {
+            Button(action: {
+                self.isPresented.toggle()
+            }) {
+                Image(.icnPlus)
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 58)
+                
+            }
+            .offset(y: -20)
+            .fullScreenCover(isPresented: $isPresented) {
+                UIViewControllerToSwiftUI(BrowseViewController())
+                    .ignoresSafeArea()
+            }
+            
+            Spacer(minLength: 0)
+            
+            Button(action: {
                 selectedTab = .my
-            } label: {
+            }){
                 VStack {
-                    Image(selectedTab == .my ? .icnPersonFill: .icnPersonFill)
+                    Image(selectedTab == .home ? .icnMy : .icnMy)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 20)
+                        .frame(width: 25)
                     
                     Text("마이")
                         .foregroundStyle(Color.white)
-                        .padding(.top, 3)
+                        .font(.S_Sub)
                 }
+                .opacity(selectedTab == .my ? 1.0 : 0.5)
             }
             
-            Spacer()
+            Spacer(minLength: 0)
         }
+        .padding(.horizontal, 10)
     }
 }
 
