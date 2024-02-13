@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
     
     /// 모든 뷰의 기본 Background color 설정
     private func setBackgroundColor() {
-        self.view.backgroundColor = .backgroundBlack
+        self.view.backgroundColor = .dotchiBlack
     }
     
     /// BackButton에 pop Action을 간편하게 주는 메서드.
