@@ -14,14 +14,15 @@
 		107D6E622B78DEA0005B6261 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E972B77F864006D5627 /* Pretendard-SemiBold.ttf */; };
 		107D6E632B78DEA2005B6261 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */; };
 		107D6E662B78E39B005B6261 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 107D6E652B78E39B005B6261 /* Pretendard-Bold.ttf */; };
-		FF018E802B75321B006D5627 /* DotchiCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */; };
+		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
 		FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9C2B77F9D7006D5627 /* UIView+.swift */; };
-		FF018EA02B77FA6C006D5627 /* DotchiNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9F2B77FA6C006D5627 /* DotchiNavigationView.swift */; };
+		FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */; };
 		FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA12B77FE3B006D5627 /* UIButton+.swift */; };
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
+		FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
@@ -71,7 +72,7 @@
 		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		107D6E5E2B78DB61005B6261 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		107D6E652B78E39B005B6261 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
-		FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleButton.swift; sourceTree = "<group>"; };
+		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraBold.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
@@ -79,10 +80,11 @@
 		FF018E982B77F864006D5627 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.ttf"; path = "DOTCHI/Resources/Fonts/Pretendard-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		FF018E9C2B77F9D7006D5627 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		FF018E9F2B77FA6C006D5627 /* DotchiNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationView.swift; sourceTree = "<group>"; };
+		FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationUIView.swift; sourceTree = "<group>"; };
 		FF018EA12B77FE3B006D5627 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortUIButton.swift; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,7 +131,8 @@
 		FF018E7E2B7531F8006D5627 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				FF018E7F2B75321B006D5627 /* DotchiCircleButton.swift */,
+				FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */,
+				FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -156,7 +159,7 @@
 		FF018E9E2B77FA5D006D5627 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FF018E9F2B77FA6C006D5627 /* DotchiNavigationView.swift */,
+				FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -501,12 +504,13 @@
 				FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
+				FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */,
 				FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */,
-				FF018E802B75321B006D5627 /* DotchiCircleButton.swift in Sources */,
+				FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
-				FF018EA02B77FA6C006D5627 /* DotchiNavigationView.swift in Sources */,
+				FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
