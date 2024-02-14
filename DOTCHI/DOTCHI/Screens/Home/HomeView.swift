@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ZStack {
-           Color.backgroundBlack.ignoresSafeArea()
+           Color.dotchiBlack.ignoresSafeArea()
             
             ScrollView {
                 Text("메인 홈")
