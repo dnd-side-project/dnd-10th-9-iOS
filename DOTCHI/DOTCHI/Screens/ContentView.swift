@@ -20,7 +20,8 @@ struct ContentView: View {
             VStack {
                 switch selectedTab {
                 case .home:
-                    HomeView()
+                    //HomeView()
+                    CollectionView()
                 case .my:
                     MyView()
                 }
