@@ -43,7 +43,7 @@ extension UIImageView {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.image = .icnMy
+                        self.image = .imgDefaultDummy
                     }
                 }
             }.resume()
