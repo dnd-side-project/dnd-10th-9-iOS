@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CardSortType {
-    case latest
-    case hot
+enum CardSortType: String {
+    case latest = "LATEST"
+    case hot = "HOT"
 }
