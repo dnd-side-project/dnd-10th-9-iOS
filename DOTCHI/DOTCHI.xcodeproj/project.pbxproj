@@ -32,7 +32,7 @@
 		FF8322902B7CA1FC0069D68A /* CardHeadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83228F2B7CA1FC0069D68A /* CardHeadType.swift */; };
 		FF8322932B7CAC4E0069D68A /* CardUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322922B7CAC4E0069D68A /* CardUserEntity.swift */; };
 		FF8322952B7CACE00069D68A /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322942B7CACE00069D68A /* UIImageView+.swift */; };
-		FF8322972B7CCBC80069D68A /* DotchiCardFrontEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322962B7CCBC80069D68A /* DotchiCardFrontEntity.swift */; };
+		FF8322972B7CCBC80069D68A /* CardFrontEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322962B7CCBC80069D68A /* CardFrontEntity.swift */; };
 		FF8322992B7CD1580069D68A /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322982B7CD1580069D68A /* UIStackView+.swift */; };
 		FF83229B2B7CD2250069D68A /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83229A2B7CD2250069D68A /* ClassNameProtocol.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
@@ -105,7 +105,7 @@
 		FF83228F2B7CA1FC0069D68A /* CardHeadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeadType.swift; sourceTree = "<group>"; };
 		FF8322922B7CAC4E0069D68A /* CardUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserEntity.swift; sourceTree = "<group>"; };
 		FF8322942B7CACE00069D68A /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
-		FF8322962B7CCBC80069D68A /* DotchiCardFrontEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCardFrontEntity.swift; sourceTree = "<group>"; };
+		FF8322962B7CCBC80069D68A /* CardFrontEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontEntity.swift; sourceTree = "<group>"; };
 		FF8322982B7CD1580069D68A /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		FF83229A2B7CD2250069D68A /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				FF8322922B7CAC4E0069D68A /* CardUserEntity.swift */,
-				FF8322962B7CCBC80069D68A /* DotchiCardFrontEntity.swift */,
+				FF8322962B7CCBC80069D68A /* CardFrontEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -572,7 +572,7 @@
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FF8322872B7C58BD0069D68A /* Adjusted+.swift in Sources */,
 				FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */,
-				FF8322972B7CCBC80069D68A /* DotchiCardFrontEntity.swift in Sources */,
+				FF8322972B7CCBC80069D68A /* CardFrontEntity.swift in Sources */,
 				FF8322902B7CA1FC0069D68A /* CardHeadType.swift in Sources */,
 				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,

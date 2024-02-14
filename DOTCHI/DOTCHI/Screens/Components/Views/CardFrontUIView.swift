@@ -52,7 +52,7 @@ final class CardFrontUIView: UIView {
     
     // MARK: Methods
     
-    func setData(data: DotchiCardFrontEntity) {
+    func setData(data: CardFrontEntity) {
         switch data.luckyType {
         case .health:
             self.dotchiNameLabel.textColor = .dotchiDeepOrange
