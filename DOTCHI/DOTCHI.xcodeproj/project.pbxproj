@@ -23,6 +23,7 @@
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
 		FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */; };
+		FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322822B7C540B0069D68A /* CardSortType.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortUIButton.swift; sourceTree = "<group>"; };
+		FF8322822B7C540B0069D68A /* CardSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortType.swift; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD5944A2B710457003F1F3C /* LuckyType.swift */,
+				FF8322822B7C540B0069D68A /* CardSortType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,
 				FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */,
+				FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */,
 				FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
