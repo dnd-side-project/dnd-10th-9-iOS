@@ -10,6 +10,10 @@ import SnapKit
 
 final class BrowseViewController: BaseViewController {
     
+    private enum Number {
+        static let cellHorizonInset = 49.0.adjustedH
+    }
+    
     private enum Text {
         static let title = "따봉도치 둘러보기"
     }
@@ -29,9 +33,26 @@ final class BrowseViewController: BaseViewController {
     
     private let popularButton: DotchiSortUIButton = DotchiSortUIButton(sortType: .hot)
     
+    private var collectionView: UICollectionView = {
+        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+        collectionView.isPagingEnabled = false
+        collectionView.contentInset = .init(top: 0, left: 49, bottom: 0, right: 49)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = .clear
+        collectionView.layoutMargins = .zero
+        collectionView.decelerationRate = .fast
+        return collectionView
+    }()
+    
     // MARK: Properties
     
-    
+    private var frontCards: [CardFrontEntity] = [
+        .init(cardId: 1, imageUrl: "/", luckyType: .lucky, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름1"), dotchiName: "따봉도치"),
+        .init(cardId: 1, imageUrl: "/", luckyType: .health, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름2"), dotchiName: "따봉도치2"),
+        .init(cardId: 1, imageUrl: "/", luckyType: .love, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름3"), dotchiName: "따봉도치3"),
+        .init(cardId: 1, imageUrl: "/", luckyType: .money, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름4"), dotchiName: "따봉도치4")
+    ]
     
     // MARK: View Life Cycle
     
@@ -42,6 +63,8 @@ final class BrowseViewController: BaseViewController {
         self.setBackButtonAction(self.navigationView.backButton)
         self.setButtonToggle()
         self.fetchData(isLatest: self.latestButton.isSelected)
+        self.setCollectionViewLayout()
+        self.setCollectionView()
     }
     
     // MARK: Methods
@@ -58,6 +81,59 @@ final class BrowseViewController: BaseViewController {
             }
         })
     }
+    
+    private func setCollectionViewLayout() {
+        let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.itemSize = .init(
+//            width: self.view.frame.width - Number.cellHorizonInset * 2,
+            width: 295.adjustedH,
+            height: 493.adjustedH
+        )
+        collectionViewLayout.minimumLineSpacing = 12
+        collectionViewLayout.scrollDirection = .horizontal
+        
+        self.collectionView.collectionViewLayout = collectionViewLayout
+    }
+    
+    private func setCollectionView() {
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        self.collectionView.register(cell: BrowseUICollectionViewCell.self)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension BrowseViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.frontCards.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrowseUICollectionViewCell.className, for: indexPath) as? BrowseUICollectionViewCell
+        else { return UICollectionViewCell() }
+        
+        cell.setData(data: self.frontCards[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension BrowseViewController: UICollectionViewDelegateFlowLayout {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity:CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard let layout = self.collectionView.collectionViewLayout as?UICollectionViewFlowLayout else { return }
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        let roundedIndex = round(index)
+        offset = CGPoint(
+            x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left,
+            y: scrollView.contentInset.top
+        )
+        targetContentOffset.pointee = offset
+    }
 }
 
 // MARK: - Network
@@ -73,7 +149,7 @@ extension BrowseViewController {
 
 extension BrowseViewController {
     private func setLayout() {
-        self.view.addSubviews([navigationView, titleLabel, latestButton, popularButton])
+        self.view.addSubviews([navigationView, titleLabel, latestButton, popularButton, collectionView])
         
         self.navigationView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(self.view.safeAreaLayoutGuide)
@@ -95,6 +171,12 @@ extension BrowseViewController {
         self.popularButton.snp.makeConstraints { make in
             make.top.width.height.equalTo(self.latestButton)
             make.leading.equalTo(self.latestButton.snp.trailing).offset(9)
+        }
+        
+        self.collectionView.snp.makeConstraints { make in
+            make.top.equalTo(self.latestButton.snp.bottom).offset(32.adjustedH)
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalToSuperview().inset(48.adjustedH)
         }
     }
 }
