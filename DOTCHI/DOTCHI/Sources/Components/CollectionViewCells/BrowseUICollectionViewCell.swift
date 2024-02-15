@@ -12,7 +12,9 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
     
     // MARK: UIComponents
     
-    private let cardFrontView: CardFrontUIView = CardFrontUIView()
+    let cardBackgroundView: UIView = UIView()
+    let cardFrontView: CardFrontUIView = CardFrontUIView()
+    let cardBackView: CardBackUIView = CardBackUIView()
     
     private let buttonStackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
@@ -56,13 +58,22 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
 
 extension BrowseUICollectionViewCell {
     private func setLayout() {
-        self.contentView.addSubviews([cardFrontView, buttonStackView])
+        self.contentView.addSubviews([cardBackgroundView, buttonStackView])
+        self.cardBackgroundView.addSubviews([cardBackView, cardFrontView])
         
-        self.cardFrontView.snp.makeConstraints { make in
+        self.cardBackgroundView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(10)
             make.centerX.equalToSuperview()
             make.width.equalTo(270.adjustedH)
             make.height.equalTo(400.adjustedH)
+        }
+        
+        self.cardFrontView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        self.cardBackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         self.buttonStackView.snp.makeConstraints { make in
