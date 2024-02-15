@@ -62,11 +62,11 @@ struct CollectionView: View {
                                             ZStack(alignment: .top) {
                                                 Image(.imgTest)
                                                     .resizable()
-                                                    .frame(width: 162, height: 241)
+                                                    .frame(height: 241)
                                                 
                                                 Image(.imgLuckyF)
                                                     .resizable()
-                                                    .frame(width: 162, height: 241)
+                                                    .frame(height: 241)
                                                 
                                                 ZStack {
                                                     RoundedRectangle(cornerRadius: 60)
@@ -83,11 +83,11 @@ struct CollectionView: View {
                                                         Text("오뜨")
                                                             .font(.S_Sub)
                                                             .foregroundStyle(Color.white)
-                                                            .padding(.leading, 3)
+                                                            .padding(.leading, 4)
                                                     }
-                                                    .padding(10)
+                                                    .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 12))
                                                 }
-                                                .padding(.top, 12)
+                                                .padding(.top, 16)
                                             }
                                             
                                             Text("따봉멍멈무")
@@ -103,6 +103,7 @@ struct CollectionView: View {
                     }
                 }
                 .padding(.vertical, 26)
+                .padding(.horizontal, 28)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
