@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Environment: String {
+enum ServiceEnvironment: String {
     case debug = "debug"
     case qa = "qa"
     case release = "release"
@@ -25,21 +25,21 @@ enum Environment: String {
     }()
     
     static let BASE_URL: String = {
-        guard let string = Environment.infoDictionary[Keys.Plist.baseUrl] as? String else {
+        guard let string = ServiceEnvironment.infoDictionary[Keys.Plist.baseUrl] as? String else {
             fatalError("Base URL not set in plist for this environment")
         }
         return string
     }()
     
     static let IMAGE_BASE_URL: String = {
-        guard let string = Environment.infoDictionary[Keys.Plist.imageBaseUrl] as? String else {
+        guard let string = ServiceEnvironment.infoDictionary[Keys.Plist.imageBaseUrl] as? String else {
             fatalError("Image Base URL not set in plist for this environment")
         }
         return string
     }()
 }
 
-func env() -> Environment {
+func env() -> ServiceEnvironment {
     #if DEBUG
     return .debug
     #elseif QA

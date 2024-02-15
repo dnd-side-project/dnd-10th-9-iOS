@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100182F32B7AAA440024813A /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100182F22B7AAA440024813A /* CollectionView.swift */; };
 		100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2B2B7151C400AAC1E8 /* MyView.swift */; };
 		100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A1E2D2B71576B00AAC1E8 /* UploadView.swift */; };
 		107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6E5E2B78DB61005B6261 /* FontManager.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		100182F22B7AAA440024813A /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		100A1E2B2B7151C400AAC1E8 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		107D6E5E2B78DB61005B6261 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD594392B710367003F1F3C /* HomeView.swift */,
+				100182F22B7AAA440024813A /* CollectionView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				FFD5942F2B7101D0003F1F3C /* SocialLoginResponseDTO.swift in Sources */,
 				FFD5943A2B710367003F1F3C /* HomeView.swift in Sources */,
 				FF83228E2B7C96100069D68A /* CardProfileUIView.swift in Sources */,
+				100182F32B7AAA440024813A /* CollectionView.swift in Sources */,
 				FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */,
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
@@ -713,7 +717,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = N4RT4KGQK9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOTCHI/Info.plist;
@@ -721,6 +725,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,7 +747,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = N4RT4KGQK9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOTCHI/Info.plist;
@@ -750,6 +755,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
