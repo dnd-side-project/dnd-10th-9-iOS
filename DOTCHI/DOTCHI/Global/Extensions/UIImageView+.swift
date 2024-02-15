@@ -18,7 +18,7 @@ extension UIImageView {
     
     /// URL을 통해 이미지를 불러오는 메서드 + 캐싱
     func setImageUrl(_ imageURL: String) {
-        let imageURL = Environment.IMAGE_BASE_URL + imageURL
+        let imageURL = ServiceEnvironment.IMAGE_BASE_URL + imageURL
         let cacheKey = NSString(string: imageURL)
         
         /// 해당 Key에 캐시 이미지가 저장되어 있으면 이미지 사용

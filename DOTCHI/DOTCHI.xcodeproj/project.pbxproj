@@ -215,6 +215,16 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		FF83229E2B7DE7850069D68A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FF8322912B7CAC3E0069D68A /* Entities */,
+				FFD5943B2B710370003F1F3C /* Components */,
+				FFD594372B710331003F1F3C /* Screens */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		FFAA7D262B70F36600C7620E = {
 			isa = PBXGroup;
 			children = (
@@ -237,12 +247,11 @@
 				FF018E922B77F243006D5627 /* Info.plist */,
 				FFD5943E2B71038C003F1F3C /* Global */,
 				FFD594162B70FF20003F1F3C /* Networks */,
-				FF8322912B7CAC3E0069D68A /* Entities */,
-				FFD594372B710331003F1F3C /* Screens */,
-				FFD594152B70FF14003F1F3C /* Supports */,
-				FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */,
+				FF83229E2B7DE7850069D68A /* Sources */,
 				FFD594342B7102FC003F1F3C /* Resources */,
+				FFD594152B70FF14003F1F3C /* Supports */,
 				FFAA7D382B70F36700C7620E /* Preview Content */,
+				FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */,
 			);
 			path = DOTCHI;
 			sourceTree = "<group>";
@@ -349,7 +358,6 @@
 		FFD594372B710331003F1F3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FFD5943B2B710370003F1F3C /* Components */,
 				FFD594382B710355003F1F3C /* Home */,
 				FFD594502B71072B003F1F3C /* My */,
 				FFAA7D342B70F36600C7620E /* ContentView.swift */,
@@ -717,7 +725,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOTCHI/Info.plist;
@@ -747,7 +755,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOTCHI/Info.plist;
