@@ -12,6 +12,7 @@ final class BrowseViewController: BaseViewController {
     
     private enum Number {
         static let cellHorizonInset = 49.0.adjustedH
+        static let scale = 0.925
     }
     
     private enum Text {
@@ -53,6 +54,9 @@ final class BrowseViewController: BaseViewController {
         .init(cardId: 1, imageUrl: "/", luckyType: .love, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름3"), dotchiName: "따봉도치3"),
         .init(cardId: 1, imageUrl: "/", luckyType: .money, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름4"), dotchiName: "따봉도치4")
     ]
+    
+    private var previousCellIndex: Int = 0
+    private var isFirstScroll: Bool = true
     
     // MARK: View Life Cycle
     
@@ -101,6 +105,12 @@ final class BrowseViewController: BaseViewController {
         
         self.collectionView.register(cell: BrowseUICollectionViewCell.self)
     }
+    
+    private func zoomFocusCell(cell: UICollectionViewCell, isFocus: Bool ) {
+         UIView.animate( withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+             cell.transform = isFocus ? .identity : CGAffineTransform(scaleX: Number.scale, y: Number.scale)
+         }, completion: nil)
+     }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -115,6 +125,9 @@ extension BrowseViewController: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         cell.setData(data: self.frontCards[indexPath.row])
+        
+        self.zoomFocusCell(cell: cell, isFocus: self.isFirstScroll ? indexPath.row == 0 : false)
+        self.isFirstScroll = false
         return cell
     }
 }
@@ -133,6 +146,20 @@ extension BrowseViewController: UICollectionViewDelegateFlowLayout {
             y: scrollView.contentInset.top
         )
         targetContentOffset.pointee = offset
+        
+        let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
+        
+        if let cell = self.collectionView.cellForItem(at: indexPath) {
+            self.zoomFocusCell(cell: cell, isFocus: true)
+        }
+        
+        if Int(roundedIndex) != self.previousCellIndex {
+            let preIndexPath = IndexPath(item: self.previousCellIndex, section: 0)
+            if let preCell = self.collectionView.cellForItem(at: preIndexPath) {
+                self.zoomFocusCell(cell: preCell, isFocus: false)
+            }
+            self.previousCellIndex = indexPath.item
+        }
     }
 }
 
