@@ -38,7 +38,7 @@ final class DotchiNavigationUIView: UIView {
     }
 }
 
-// MARK: - UI
+// MARK: - Layout
 
 extension DotchiNavigationUIView {
     private func setDefaultLayout() {

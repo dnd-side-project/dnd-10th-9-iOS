@@ -52,7 +52,7 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
     }
 }
 
-// MARK: - UI
+// MARK: - Layout
 
 extension BrowseUICollectionViewCell {
     private func setLayout() {

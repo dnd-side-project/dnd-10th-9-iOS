@@ -172,7 +172,7 @@ extension BrowseViewController {
     }
 }
 
-// MARK: - UI
+// MARK: - Layout
 
 extension BrowseViewController {
     private func setLayout() {

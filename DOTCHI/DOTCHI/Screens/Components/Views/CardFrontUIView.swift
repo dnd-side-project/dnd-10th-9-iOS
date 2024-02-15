@@ -74,7 +74,7 @@ final class CardFrontUIView: UIView {
     }
 }
 
-// MARK: - UI
+// MARK: - Layout
 
 extension CardFrontUIView {
     private func setLayout() {
