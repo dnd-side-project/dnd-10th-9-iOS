@@ -95,7 +95,7 @@ extension CardFrontUIView {
         }
         
         self.dotchiNameLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(36)
+            make.bottom.equalToSuperview().inset(34.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
         }

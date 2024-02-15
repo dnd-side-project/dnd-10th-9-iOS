@@ -67,7 +67,7 @@ extension BrowseUICollectionViewCell {
         
         self.buttonStackView.snp.makeConstraints { make in
             make.top.equalTo(self.cardFrontView.snp.bottom).offset(27)
-            make.horizontalEdges.equalToSuperview().inset(83)
+            make.centerX.equalToSuperview()
             make.height.equalTo(56)
         }
     }

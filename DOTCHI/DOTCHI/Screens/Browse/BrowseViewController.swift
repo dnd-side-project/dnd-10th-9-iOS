@@ -11,7 +11,8 @@ import SnapKit
 final class BrowseViewController: BaseViewController {
     
     private enum Number {
-        static let cellHorizonInset = 49.0.adjustedH
+        static let cellHorizonInset = 49.0
+        static let cellHeight = 493.0
         static let scale = 0.925
     }
     
@@ -37,7 +38,7 @@ final class BrowseViewController: BaseViewController {
     private var collectionView: UICollectionView = {
         let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
         collectionView.isPagingEnabled = false
-        collectionView.contentInset = .init(top: 0, left: 49, bottom: 0, right: 49)
+        collectionView.contentInset = .init(top: 0, left: 49.adjustedH, bottom: 0, right: 49.adjustedH)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
@@ -89,11 +90,10 @@ final class BrowseViewController: BaseViewController {
     private func setCollectionViewLayout() {
         let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewLayout.itemSize = .init(
-//            width: self.view.frame.width - Number.cellHorizonInset * 2,
-            width: 295.adjustedH,
-            height: 493.adjustedH
+            width: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)),
+            height: Number.cellHeight.adjustedH
         )
-        collectionViewLayout.minimumLineSpacing = 12
+        collectionViewLayout.minimumLineSpacing = 12.adjustedH
         collectionViewLayout.scrollDirection = .horizontal
         
         self.collectionView.collectionViewLayout = collectionViewLayout
@@ -136,7 +136,7 @@ extension BrowseViewController: UICollectionViewDataSource {
 
 extension BrowseViewController: UICollectionViewDelegateFlowLayout {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity:CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        guard let layout = self.collectionView.collectionViewLayout as?UICollectionViewFlowLayout else { return }
+        guard let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
         var offset = targetContentOffset.pointee
         let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing

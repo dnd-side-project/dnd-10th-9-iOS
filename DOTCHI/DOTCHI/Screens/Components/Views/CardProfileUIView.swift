@@ -71,7 +71,7 @@ extension CardProfileUIView {
         self.profileImageView.snp.makeConstraints { make in
             make.verticalEdges.equalToSuperview().inset(5)
             make.leading.equalToSuperview().inset(8)
-            make.width.height.equalTo(24)
+            make.width.equalTo(self.profileImageView.snp.height)
         }
         
         self.usernameLabel.snp.makeConstraints { make in
