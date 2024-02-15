@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class BrowseUICollectionViewCell: UICollectionViewCell {
     
@@ -25,8 +27,12 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
     }()
     
     private let shareButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .share)
-    
     private let commentButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .comment)
+    
+    
+    // MARK: Properties
+    
+    private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: Initializer
     
@@ -35,6 +41,7 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
         
         self.setUI()
         self.setLayout()
+        self.setTapGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -47,10 +54,37 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
         self.buttonStackView.addArrangedSubviews([shareButton, commentButton])
+        self.cardBackView.isHidden = true
     }
     
     func setData(data: CardFrontEntity) {
         self.cardFrontView.setData(data: data)
+        
+        // TODO: CardBackEntity로 수정..
+        self.cardBackView.setData(data: data)
+    }
+    
+    private func setTapGesture() {
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.rx.event
+            .bind { [weak self] _ in
+                self?.flipCard()
+            }
+            .disposed(by: self.disposeBag)
+        
+        self.cardBackgroundView.addGestureRecognizer(tapGesture)
+    }
+    
+    private func flipCard() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if !self.cardFrontView.isHidden {
+                UIView.transition(from: self.cardFrontView, to: self.cardBackView, duration: 0.5, options: transitionOptions)
+            } else {
+                UIView.transition(from: self.cardBackView, to: self.cardFrontView, duration: 0.5, options: transitionOptions)
+            }
+        }
     }
 }
 
