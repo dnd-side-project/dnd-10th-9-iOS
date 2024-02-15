@@ -7,12 +7,16 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class BrowseUICollectionViewCell: UICollectionViewCell {
     
     // MARK: UIComponents
     
-    private let cardFrontView: CardFrontUIView = CardFrontUIView()
+    let cardBackgroundView: UIView = UIView()
+    let cardFrontView: CardFrontUIView = CardFrontUIView()
+    let cardBackView: CardBackUIView = CardBackUIView()
     
     private let buttonStackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
@@ -23,8 +27,12 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
     }()
     
     private let shareButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .share)
-    
     private let commentButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .comment)
+    
+    
+    // MARK: Properties
+    
+    private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: Initializer
     
@@ -33,6 +41,7 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
         
         self.setUI()
         self.setLayout()
+        self.setTapGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -45,10 +54,37 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
         self.buttonStackView.addArrangedSubviews([shareButton, commentButton])
+        self.cardBackView.isHidden = true
     }
     
     func setData(data: CardFrontEntity) {
         self.cardFrontView.setData(data: data)
+        
+        // TODO: CardBackEntity로 수정..
+        self.cardBackView.setData(data: data)
+    }
+    
+    private func setTapGesture() {
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.rx.event
+            .bind { [weak self] _ in
+                self?.flipCard()
+            }
+            .disposed(by: self.disposeBag)
+        
+        self.cardBackgroundView.addGestureRecognizer(tapGesture)
+    }
+    
+    private func flipCard() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if !self.cardFrontView.isHidden {
+                UIView.transition(from: self.cardFrontView, to: self.cardBackView, duration: 0.5, options: transitionOptions)
+            } else {
+                UIView.transition(from: self.cardBackView, to: self.cardFrontView, duration: 0.5, options: transitionOptions)
+            }
+        }
     }
 }
 
@@ -56,13 +92,22 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
 
 extension BrowseUICollectionViewCell {
     private func setLayout() {
-        self.contentView.addSubviews([cardFrontView, buttonStackView])
+        self.contentView.addSubviews([cardBackgroundView, buttonStackView])
+        self.cardBackgroundView.addSubviews([cardBackView, cardFrontView])
         
-        self.cardFrontView.snp.makeConstraints { make in
+        self.cardBackgroundView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(10)
             make.centerX.equalToSuperview()
             make.width.equalTo(270.adjustedH)
             make.height.equalTo(400.adjustedH)
+        }
+        
+        self.cardFrontView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        self.cardBackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         self.buttonStackView.snp.makeConstraints { make in
