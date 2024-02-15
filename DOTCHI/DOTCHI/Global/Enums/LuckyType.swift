@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum LuckyType: Int {
+    case health = 1
+    case lucky
+    case money
+    case love
+}

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class DotchiCircleButton: UIButton {
+final class DotchiCircleUIButton: UIButton {
     
     enum ButtonType {
         case share

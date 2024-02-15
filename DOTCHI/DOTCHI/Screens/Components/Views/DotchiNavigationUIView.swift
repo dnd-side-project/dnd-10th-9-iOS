@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DotchiNavigationView: UIView {
+final class DotchiNavigationUIView: UIView {
     
     enum NavigationType {
         case back
@@ -38,9 +38,9 @@ final class DotchiNavigationView: UIView {
     }
 }
 
-// MARK: - UI
+// MARK: - Layout
 
-extension DotchiNavigationView {
+extension DotchiNavigationUIView {
     private func setDefaultLayout() {
         self.snp.makeConstraints { make in
             make.height.equalTo(48)
