@@ -11,6 +11,7 @@ final class DotchiNavigationUIView: UIView {
     
     enum NavigationType {
         case back
+        case close
     }
     
     // MARK: UIComponents
@@ -18,6 +19,12 @@ final class DotchiNavigationUIView: UIView {
     lazy var backButton: UIButton = {
         let button: UIButton = UIButton(type: .system)
         button.setImage(.icnBack, for: .normal)
+        return button
+    }()
+    
+    lazy var closeButton: UIButton = {
+        let button: UIButton = UIButton(type: .system)
+        button.setImage(.icnClose, for: .normal)
         return button
     }()
     
@@ -30,6 +37,7 @@ final class DotchiNavigationUIView: UIView {
         
         switch type {
         case .back: self.setBackLayout()
+        case .close: self.setCloseLayout()
         }
     }
     
@@ -51,6 +59,12 @@ extension DotchiNavigationUIView {
         self.addSubviews([backButton])
         
         self.setLeftButtonLayout(button: self.backButton)
+    }
+    
+    private func setCloseLayout() {
+        self.addSubviews([closeButton])
+        
+        self.setLeftButtonLayout(button: self.closeButton)
     }
     
     private func setLeftButtonLayout(button: UIButton) {
