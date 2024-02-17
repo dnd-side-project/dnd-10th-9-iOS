@@ -42,6 +42,8 @@
 		FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */; };
 		FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D412B70F42200C7620E /* SnapKit */; };
 		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
+		FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */; };
+		FFD306A42B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */; };
 		FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FD2B70FCDD003F1F3C /* CombineMoya */; };
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
@@ -115,8 +117,10 @@
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FFAA7D362B70F36700C7620E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFAA7D362B70F36700C7620E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/jungbin/Documents/GitHub/dnd-10th-9-iOS/DOTCHI/DOTCHI/Resources/Assets.xcassets"; sourceTree = "<absolute>"; };
 		FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
+		FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -269,6 +273,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FFD306A02B809946004B5AEA /* Make */ = {
+			isa = PBXGroup;
+			children = (
+				FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */,
+			);
+			path = Make;
+			sourceTree = "<group>";
+		};
+		FFD306A72B80AFC3004B5AEA /* UIViewControllerRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */,
+			);
+			path = UIViewControllerRepresentable;
+			sourceTree = "<group>";
+		};
 		FFD594152B70FF14003F1F3C /* Supports */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +383,7 @@
 		FFD594372B710331003F1F3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FFD306A02B809946004B5AEA /* Make */,
 				FFD594382B710355003F1F3C /* Home */,
 				FFD594502B71072B003F1F3C /* My */,
 				FFAA7D342B70F36600C7620E /* ContentView.swift */,
@@ -394,9 +415,10 @@
 		FFD5943E2B71038C003F1F3C /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				FFD306A72B80AFC3004B5AEA /* UIViewControllerRepresentable */,
+				FFD594422B7103B4003F1F3C /* Enums */,
 				FFD594432B7103BB003F1F3C /* Singletons */,
 				FF018EA32B7803A6006D5627 /* Structs */,
-				FFD594422B7103B4003F1F3C /* Enums */,
 				FFD594412B7103AF003F1F3C /* Protocols */,
 				FFD594402B7103A9003F1F3C /* Extensions */,
 				FFD5943F2B7103A2003F1F3C /* Bases */,
@@ -561,6 +583,7 @@
 				100182F32B7AAA440024813A /* CollectionView.swift in Sources */,
 				FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */,
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
+				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
 				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
 				FF83228C2B7C5AE00069D68A /* CardFrontUIView.swift in Sources */,
@@ -568,6 +591,7 @@
 				FF8322992B7CD1580069D68A /* UIStackView+.swift in Sources */,
 				FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */,
 				FFD594472B7103EF003F1F3C /* ImageCacheManager.swift in Sources */,
+				FFD306A42B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift in Sources */,
 				FFD594492B710411003F1F3C /* BaseViewController.swift in Sources */,
 				FF8322932B7CAC4E0069D68A /* CardUserEntity.swift in Sources */,
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
@@ -733,7 +757,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DOTCHI/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOTCHI/Info.plist;
