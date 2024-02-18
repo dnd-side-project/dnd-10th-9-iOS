@@ -44,6 +44,7 @@
 		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
 		FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */; };
 		FFD306A42B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */; };
+		FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */; };
 		FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FD2B70FCDD003F1F3C /* CombineMoya */; };
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
@@ -121,6 +122,7 @@
 		FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiUICollectionViewCell.swift; sourceTree = "<group>"; };
 		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				FF8322892B7C59540069D68A /* BrowseUICollectionViewCell.swift */,
+				FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
+				FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */,
 				FF8322952B7CACE00069D68A /* UIImageView+.swift in Sources */,
 				FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
