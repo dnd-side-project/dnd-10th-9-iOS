@@ -110,7 +110,7 @@ struct CustomTabView: View {
             }
             .offset(y: -20)
             .fullScreenCover(isPresented: $isPresented) {
-                UIViewControllerToSwiftUI(BrowseViewController())
+                MakeDotchiPhotoViewControllerRepresentable(isPresented: $isPresented)
                     .ignoresSafeArea()
             }
             

@@ -11,6 +11,7 @@ final class DotchiNavigationUIView: UIView {
     
     enum NavigationType {
         case back
+        case closeCenterTitle
     }
     
     // MARK: UIComponents
@@ -19,6 +20,19 @@ final class DotchiNavigationUIView: UIView {
         let button: UIButton = UIButton(type: .system)
         button.setImage(.icnBack, for: .normal)
         return button
+    }()
+    
+    lazy var closeButton: UIButton = {
+        let button: UIButton = UIButton(type: .system)
+        button.setImage(.icnClose, for: .normal)
+        return button
+    }()
+    
+    lazy var centerTitleLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.setStyle(.subTitle, .dotchiWhite)
+        label.textAlignment = .center
+        return label
     }()
     
     // MARK: Initializer
@@ -30,6 +44,7 @@ final class DotchiNavigationUIView: UIView {
         
         switch type {
         case .back: self.setBackLayout()
+        case .closeCenterTitle: self.setCloseCenterTitleLayout()
         }
     }
     
@@ -53,11 +68,24 @@ extension DotchiNavigationUIView {
         self.setLeftButtonLayout(button: self.backButton)
     }
     
+    private func setCloseCenterTitleLayout() {
+        self.addSubviews([closeButton, centerTitleLabel])
+        
+        self.setLeftButtonLayout(button: self.closeButton)
+        self.setCenterTitleLabelLayout()
+    }
+    
     private func setLeftButtonLayout(button: UIButton) {
         button.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(24)
             make.width.height.equalTo(32)
+        }
+    }
+    
+    private func setCenterTitleLabelLayout() {
+        self.centerTitleLabel.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
         }
     }
 }
