@@ -84,6 +84,7 @@ final class MakeDotchiPhotoViewController: BaseViewController {
         self.setCollectionViewLayout()
         self.setCollectionView()
         self.setImagePickerController()
+        self.setNextButtonAction()
     }
     
     // MARK: Methods
@@ -121,6 +122,15 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     
     private func setImagePickerController() {
         self.imagePickerController.delegate = self
+    }
+    
+    private func setNextButtonAction() {
+        self.nextButton.setAction { [weak self] in
+            self?.navigationController?.pushViewController(
+                MakeDotchiContentViewController(makeDotchiData: self?.makeDotchiData ?? .init()),
+                animated: true
+            )
+        }
     }
 }
 
