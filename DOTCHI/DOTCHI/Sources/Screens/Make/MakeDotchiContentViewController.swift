@@ -112,6 +112,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     // MARK: Properties
     
     private var makeDotchiData: MakeDotchiEntity = MakeDotchiEntity()
+    private var keyboardHeight: CGFloat = 0
     
     // MARK: Initializer
     
@@ -135,11 +136,44 @@ final class MakeDotchiContentViewController: BaseViewController {
         self.setLuckyDescriptionLabel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.addKeyboardObserver(willShow: #selector(self.keyboardWillShow(_:)), willHide: #selector(self.keyboardWillHide(_:)))
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.removeKeyboardObserver()
+    }
+    
     // MARK: Methods
     
     private func setLuckyDescriptionLabel() {
         self.luckyDescriptionLabel.text = Text.luckyDescriptionHead + self.makeDotchiData.luckyType.name() + Text.luckyDescriptionTrail
         self.luckyDescriptionLabel.setColor(to: self.makeDotchiData.luckyType.name(), with: self.makeDotchiData.luckyType.uiColorNormal())
+    }
+    
+    @objc
+    func keyboardWillShow(_ notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            self.keyboardHeight = keyboardRectangle.height
+            if self.dotchiNameTextField.isEditing {
+                self.scrollView.setContentOffset(CGPoint(x: 0, y: self.dotchiNameInfoLabel.frame.minY - 10), animated: true)
+            } else if self.dotchiMoodTextField.isEditing {
+                self.scrollView.setContentOffset(CGPoint(x: 0, y: self.dotchiMoodInfoLabel.frame.minY - 10), animated: true)
+            } else {
+                self.scrollView.setContentOffset(CGPoint(x: 0, y: self.dotchiContentInfoLabel.frame.minY - 10), animated: true)
+            }
+        }
+    }
+    
+    @objc
+    func keyboardWillHide(_ notification: Notification) {
+        self.keyboardHeight = 0
+        self.scrollView.setContentOffset(.zero, animated: true)
     }
 }
 
