@@ -174,6 +174,7 @@ extension MakeDotchiPhotoViewController: UICollectionViewDelegateFlowLayout {
         
         let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
         self.currentCellIndex = Int(roundedIndex)
+        self.makeDotchiData.luckyType = LuckyType(rawValue: self.currentCellIndex + 1) ?? .health
         
         if let cell = self.collectionView.cellForItem(at: indexPath) {
             self.zoomFocusCell(cell: cell, isFocus: true)
