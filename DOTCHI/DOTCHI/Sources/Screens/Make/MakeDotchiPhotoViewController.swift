@@ -42,7 +42,7 @@ final class MakeDotchiPhotoViewController: BaseViewController {
         return collectionView
     }()
     
-    private var luckyTitleView: MakeDotchiLuckyTitleUIView = MakeDotchiLuckyTitleUIView(luckyType: .lucky)
+    private var luckyTitleView: MakeDotchiLuckyTitleUIView = MakeDotchiLuckyTitleUIView(luckyType: .health)
     
     private let infoLabel: UILabel = {
         let label: UILabel = UILabel()
@@ -156,6 +156,8 @@ extension MakeDotchiPhotoViewController: UICollectionViewDelegateFlowLayout {
             }
             self.previousCellIndex = indexPath.item
         }
+        
+        self.luckyTitleView.setTitle(luckyType: LuckyType(rawValue: Int(roundedIndex) + 1) ?? .lucky)
     }
 }
 
