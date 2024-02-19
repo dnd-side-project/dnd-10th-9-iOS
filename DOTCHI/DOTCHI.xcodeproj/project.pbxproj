@@ -47,6 +47,8 @@
 		FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */; };
 		FFD306AB2B826975004B5AEA /* MakeDotchiLuckyTitleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306AA2B826975004B5AEA /* MakeDotchiLuckyTitleUIView.swift */; };
 		FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306AC2B8336E9004B5AEA /* DotchiDoneUIButton.swift */; };
+		FFD306AF2B83AC5E004B5AEA /* MakeDotchiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */; };
+		FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */; };
 		FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FD2B70FCDD003F1F3C /* CombineMoya */; };
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
@@ -127,6 +129,8 @@
 		FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiUICollectionViewCell.swift; sourceTree = "<group>"; };
 		FFD306AA2B826975004B5AEA /* MakeDotchiLuckyTitleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiLuckyTitleUIView.swift; sourceTree = "<group>"; };
 		FFD306AC2B8336E9004B5AEA /* DotchiDoneUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDoneUIButton.swift; sourceTree = "<group>"; };
+		FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiEntity.swift; sourceTree = "<group>"; };
+		FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoUIView.swift; sourceTree = "<group>"; };
 		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				FF83228D2B7C96100069D68A /* CardProfileUIView.swift */,
 				FFE8C1AE2B7DF78D008124E5 /* CardBackUIView.swift */,
 				FFD306AA2B826975004B5AEA /* MakeDotchiLuckyTitleUIView.swift */,
+				FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			children = (
 				FF8322922B7CAC4E0069D68A /* CardUserEntity.swift */,
 				FF8322962B7CCBC80069D68A /* CardFrontEntity.swift */,
+				FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -625,8 +631,10 @@
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FF8322852B7C58A60069D68A /* UICollectionView+.swift in Sources */,
+				FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FF8322872B7C58BD0069D68A /* Adjusted+.swift in Sources */,
+				FFD306AF2B83AC5E004B5AEA /* MakeDotchiEntity.swift in Sources */,
 				FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */,
 				FF8322972B7CCBC80069D68A /* CardFrontEntity.swift in Sources */,
 				FF8322902B7CA1FC0069D68A /* CardHeadType.swift in Sources */,
