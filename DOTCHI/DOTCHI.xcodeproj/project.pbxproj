@@ -22,6 +22,7 @@
 		FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */; };
 		FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA12B77FE3B006D5627 /* UIButton+.swift */; };
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
+		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
 		FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */; };
 		FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322822B7C540B0069D68A /* CardSortType.swift */; };
@@ -109,6 +110,7 @@
 		FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationUIView.swift; sourceTree = "<group>"; };
 		FF018EA12B77FE3B006D5627 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
+		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortUIButton.swift; sourceTree = "<group>"; };
 		FF8322822B7C540B0069D68A /* CardSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortType.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				FF8322942B7CACE00069D68A /* UIImageView+.swift */,
 				FF8322982B7CD1580069D68A /* UIStackView+.swift */,
 				FFD306B92B83C25D004B5AEA /* UITextField+.swift */,
+				FF4F9C072B83DD2600E3DE31 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FF8322852B7C58A60069D68A /* UICollectionView+.swift in Sources */,
+				FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */,
 				FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FF8322872B7C58BD0069D68A /* Adjusted+.swift in Sources */,
