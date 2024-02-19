@@ -32,6 +32,7 @@ final class MakeDotchiUICollectionViewCell: UICollectionViewCell {
         let button: UIButton = UIButton(type: .system)
         button.setImage(.icnLoadPhoto, for: .normal)
         button.setTitle(Text.loadPhoto, for: .normal)
+        button.tintColor = .dotchiHgray
         button.titleLabel?.font = .sub
         button.setTitleColor(.dotchiWhite.withAlphaComponent(0.5), for: .normal)
         var config: UIButton.Configuration = UIButton.Configuration.plain()
