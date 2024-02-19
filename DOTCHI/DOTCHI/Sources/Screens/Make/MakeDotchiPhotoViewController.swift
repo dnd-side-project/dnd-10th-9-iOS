@@ -18,6 +18,8 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     
     private enum Text {
         static let title = "따봉도치 만들기"
+        static let info = "프레임에 따라 바뀌는 행운 테마를 확인해 보세요!"
+        static let next = "다음"
     }
     
     // MARK: UIComponents
@@ -38,6 +40,22 @@ final class MakeDotchiPhotoViewController: BaseViewController {
         collectionView.layoutMargins = .zero
         collectionView.decelerationRate = .fast
         return collectionView
+    }()
+    
+    private var luckyTitleView: MakeDotchiLuckyTitleUIView = MakeDotchiLuckyTitleUIView(luckyType: .lucky)
+    
+    private let infoLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.setStyle(.sub, .dotchiWhite)
+        label.text = Text.info
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let nextButton: DotchiDoneUIButton = {
+        let button: DotchiDoneUIButton = DotchiDoneUIButton()
+        button.setTitle(Text.next, for: .normal)
+        return button
     }()
     
     // MARK: Properties
@@ -61,7 +79,6 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     
     private func setCloseButtonAction() {
         self.navigationView.closeButton.setAction { [weak self] in
-//            self?.delegate?.makeDotchiPhotoViewControllerDidDismiss()
             self?.dismiss(animated: true)
         }
     }
@@ -146,7 +163,7 @@ extension MakeDotchiPhotoViewController: UICollectionViewDelegateFlowLayout {
 
 extension MakeDotchiPhotoViewController {
     private func setLayout() {
-        self.view.addSubviews([navigationView, collectionView])
+        self.view.addSubviews([navigationView, collectionView, luckyTitleView, nextButton, infoLabel])
         
         self.navigationView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(self.view.safeAreaLayoutGuide)
@@ -156,6 +173,23 @@ extension MakeDotchiPhotoViewController {
             make.top.equalTo(self.navigationView.snp.bottom).offset(70)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(440)
+        }
+        
+        self.luckyTitleView.snp.makeConstraints { make in
+            make.top.equalTo(self.collectionView.snp.bottom).offset(22)
+            make.centerX.equalToSuperview()
+        }
+        
+        self.nextButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(32)
+            make.horizontalEdges.equalToSuperview().inset(28)
+            make.height.equalTo(52)
+        }
+        
+        self.infoLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(self.nextButton.snp.top).offset(-20)
+            make.height.equalTo(14)
         }
     }
 }
