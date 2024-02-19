@@ -156,7 +156,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     }
     
     @objc
-    func keyboardWillShow(_ notification: NSNotification) {
+    private func keyboardWillShow(_ notification: NSNotification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             self.keyboardHeight = keyboardRectangle.height
@@ -171,7 +171,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     }
     
     @objc
-    func keyboardWillHide(_ notification: Notification) {
+    private func keyboardWillHide(_ notification: Notification) {
         self.keyboardHeight = 0
         self.scrollView.setContentOffset(.zero, animated: true)
     }
