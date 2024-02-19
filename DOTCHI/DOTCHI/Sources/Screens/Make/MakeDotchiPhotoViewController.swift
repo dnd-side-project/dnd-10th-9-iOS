@@ -55,14 +55,24 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     private let nextButton: DotchiDoneUIButton = {
         let button: DotchiDoneUIButton = DotchiDoneUIButton()
         button.setTitle(Text.next, for: .normal)
+        button.isEnabled = false
         return button
+    }()
+    
+    private let imagePickerController: UIImagePickerController = {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.allowsEditing = true
+        return imagePickerController
     }()
     
     // MARK: Properties
     
     weak var delegate: MakeDotchiPhotoViewControllerDelegate?
+    private var currentCellIndex: Int = 0
     private var previousCellIndex: Int = 0
-    private var isFirstScroll: Bool = true
+    private var makeDotchiData: MakeDotchiEntity = MakeDotchiEntity()
+    
     
     // MARK: View Life Cycle
     
@@ -73,6 +83,7 @@ final class MakeDotchiPhotoViewController: BaseViewController {
         self.setCloseButtonAction()
         self.setCollectionViewLayout()
         self.setCollectionView()
+        self.setImagePickerController()
     }
     
     // MARK: Methods
@@ -107,6 +118,10 @@ final class MakeDotchiPhotoViewController: BaseViewController {
              cell.transform = isFocus ? .identity : CGAffineTransform(scaleX: Number.scale, y: Number.scale)
          }, completion: nil)
      }
+    
+    private func setImagePickerController() {
+        self.imagePickerController.delegate = self
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -121,9 +136,9 @@ extension MakeDotchiPhotoViewController: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         cell.setData(luckyType: LuckyType(rawValue: indexPath.row + 1) ?? .lucky)
+        cell.setPhoto(image: self.makeDotchiData.image)
         
-        self.zoomFocusCell(cell: cell, isFocus: self.isFirstScroll ? indexPath.row == 0 : false)
-        self.isFirstScroll = false
+        self.zoomFocusCell(cell: cell, isFocus: indexPath.row == self.currentCellIndex)
         return cell
     }
 }
@@ -131,6 +146,10 @@ extension MakeDotchiPhotoViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension MakeDotchiPhotoViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.present(self.imagePickerController, animated: true)
+    }
+    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity:CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         guard let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
@@ -144,6 +163,7 @@ extension MakeDotchiPhotoViewController: UICollectionViewDelegateFlowLayout {
         targetContentOffset.pointee = offset
         
         let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
+        self.currentCellIndex = Int(roundedIndex)
         
         if let cell = self.collectionView.cellForItem(at: indexPath) {
             self.zoomFocusCell(cell: cell, isFocus: true)
@@ -158,6 +178,20 @@ extension MakeDotchiPhotoViewController: UICollectionViewDelegateFlowLayout {
         }
         
         self.luckyTitleView.setTitle(luckyType: LuckyType(rawValue: Int(roundedIndex) + 1) ?? .lucky)
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension MakeDotchiPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true) {
+            if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+                self.makeDotchiData.image = image
+                self.nextButton.isEnabled = true
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 
