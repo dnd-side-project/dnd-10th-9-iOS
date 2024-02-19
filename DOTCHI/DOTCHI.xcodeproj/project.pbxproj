@@ -49,6 +49,8 @@
 		FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306AC2B8336E9004B5AEA /* DotchiDoneUIButton.swift */; };
 		FFD306AF2B83AC5E004B5AEA /* MakeDotchiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */; };
 		FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */; };
+		FFD306B32B83BC3D004B5AEA /* MakeDotchiContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B22B83BC3D004B5AEA /* MakeDotchiContentViewController.swift */; };
+		FFD306B52B83BE21004B5AEA /* BaseUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */; };
 		FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FD2B70FCDD003F1F3C /* CombineMoya */; };
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
@@ -131,6 +133,8 @@
 		FFD306AC2B8336E9004B5AEA /* DotchiDoneUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDoneUIButton.swift; sourceTree = "<group>"; };
 		FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiEntity.swift; sourceTree = "<group>"; };
 		FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoUIView.swift; sourceTree = "<group>"; };
+		FFD306B22B83BC3D004B5AEA /* MakeDotchiContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiContentViewController.swift; sourceTree = "<group>"; };
+		FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
 		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */,
+				FFD306B22B83BC3D004B5AEA /* MakeDotchiContentViewController.swift */,
 			);
 			path = Make;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD594482B710411003F1F3C /* BaseViewController.swift */,
+				FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -600,9 +606,11 @@
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
 				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
+				FFD306B32B83BC3D004B5AEA /* MakeDotchiContentViewController.swift in Sources */,
 				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
 				FF83228C2B7C5AE00069D68A /* CardFrontUIView.swift in Sources */,
 				FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */,
+				FFD306B52B83BE21004B5AEA /* BaseUINavigationController.swift in Sources */,
 				FF8322992B7CD1580069D68A /* UIStackView+.swift in Sources */,
 				FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */,
 				FFD594472B7103EF003F1F3C /* ImageCacheManager.swift in Sources */,
