@@ -33,18 +33,11 @@ final class DotchiDoneUIButton: UIButton {
         super.setTitle(title, for: state)
         
         self.titleLabel?.font = .bigButton
-        
-        switch state {
-        case .normal:
-            self.titleLabel?.textColor = .dotchiWhite
-        case .disabled:
-            self.titleLabel?.textColor = .dotchiWhite.withAlphaComponent(0.5)
-        default:
-            break
-        }
     }
     
     private func setUI() {
+        self.setTitleColor(.dotchiWhite, for: .normal)
+        self.setTitleColor(.dotchiWhite.withAlphaComponent(0.5), for: .disabled)
         self.setBackgroundColor(.dotchiGreen, for: .normal)
         self.setBackgroundColor(.dotchiGreen.withAlphaComponent(0.5), for: .disabled)
     }

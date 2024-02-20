@@ -10,10 +10,6 @@ import SnapKit
 
 final class MakeDotchiUICollectionViewCell: UICollectionViewCell {
     
-    private enum Text {
-        static let loadPhoto = "사진을 불러와 주세요!"
-    }
-    
     // MARK: UIComponents
     
     private let photoImageView: UIImageView = {
@@ -28,19 +24,7 @@ final class MakeDotchiUICollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let loadPhotoButton: UIButton = {
-        let button: UIButton = UIButton(type: .system)
-        button.setImage(.icnLoadPhoto, for: .normal)
-        button.setTitle(Text.loadPhoto, for: .normal)
-        button.tintColor = .dotchiHgray
-        button.titleLabel?.font = .sub
-        button.setTitleColor(.dotchiWhite.withAlphaComponent(0.5), for: .normal)
-        var config: UIButton.Configuration = UIButton.Configuration.plain()
-        config.imagePadding = 13
-        config.imagePlacement = .top
-        button.configuration = config
-        return button
-    }()
+    private let loadPhotoView: LoadPhotoUIView = LoadPhotoUIView()
     
     // MARK: Initializer
     
@@ -76,8 +60,7 @@ final class MakeDotchiUICollectionViewCell: UICollectionViewCell {
     }
     
     func setPhoto(image: UIImage) {
-        self.cardFrontView.image = image
-        self.loadPhotoButton.isSelected = true
+        self.photoImageView.image = image
     }
 }
 
@@ -85,7 +68,7 @@ final class MakeDotchiUICollectionViewCell: UICollectionViewCell {
 
 extension MakeDotchiUICollectionViewCell {
     private func setLayout() {
-        self.contentView.addSubviews([photoImageView, cardFrontView, loadPhotoButton])
+        self.contentView.addSubviews([loadPhotoView, photoImageView, cardFrontView])
         
         self.photoImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -95,10 +78,9 @@ extension MakeDotchiUICollectionViewCell {
             make.edges.equalToSuperview()
         }
         
-        self.loadPhotoButton.snp.makeConstraints { make in
+        self.loadPhotoView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().multipliedBy(0.885542)
-            make.height.equalTo(80)
         }
     }
 }

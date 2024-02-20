@@ -49,6 +49,11 @@ final class MakeDotchiLuckyTitleUIView: UIView {
         self.titleLabel.text = luckyType.name() + Text.description
         self.titleLabel.setColor(to: luckyType.name(), with: luckyType.uiColorNormal())
     }
+    
+    func setTitle(luckyType: LuckyType) {
+        self.titleLabel.text = luckyType.name() + Text.description
+        self.titleLabel.setColor(to: luckyType.name(), with: luckyType.uiColorNormal())
+    }
 }
 
 // MARK: - Layout
