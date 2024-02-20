@@ -84,6 +84,7 @@ final class MakeDotchiPhotoViewController: BaseViewController {
         self.setCollectionViewLayout()
         self.setCollectionView()
         self.setImagePickerController()
+        self.setNextButtonAction()
     }
     
     // MARK: Methods
@@ -121,6 +122,15 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     
     private func setImagePickerController() {
         self.imagePickerController.delegate = self
+    }
+    
+    private func setNextButtonAction() {
+        self.nextButton.setAction { [weak self] in
+            self?.navigationController?.pushViewController(
+                MakeDotchiContentViewController(makeDotchiData: self?.makeDotchiData ?? .init()),
+                animated: true
+            )
+        }
     }
 }
 
@@ -164,6 +174,7 @@ extension MakeDotchiPhotoViewController: UICollectionViewDelegateFlowLayout {
         
         let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
         self.currentCellIndex = Int(roundedIndex)
+        self.makeDotchiData.luckyType = LuckyType(rawValue: self.currentCellIndex + 1) ?? .health
         
         if let cell = self.collectionView.cellForItem(at: indexPath) {
             self.zoomFocusCell(cell: cell, isFocus: true)

@@ -49,6 +49,10 @@
 		FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306AC2B8336E9004B5AEA /* DotchiDoneUIButton.swift */; };
 		FFD306AF2B83AC5E004B5AEA /* MakeDotchiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */; };
 		FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */; };
+		FFD306B32B83BC3D004B5AEA /* MakeDotchiContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B22B83BC3D004B5AEA /* MakeDotchiContentViewController.swift */; };
+		FFD306B52B83BE21004B5AEA /* BaseUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */; };
+		FFD306B82B83C15E004B5AEA /* DotchiUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B72B83C15E004B5AEA /* DotchiUITextField.swift */; };
+		FFD306BA2B83C25D004B5AEA /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306B92B83C25D004B5AEA /* UITextField+.swift */; };
 		FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FD2B70FCDD003F1F3C /* CombineMoya */; };
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
@@ -131,6 +135,10 @@
 		FFD306AC2B8336E9004B5AEA /* DotchiDoneUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDoneUIButton.swift; sourceTree = "<group>"; };
 		FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiEntity.swift; sourceTree = "<group>"; };
 		FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoUIView.swift; sourceTree = "<group>"; };
+		FFD306B22B83BC3D004B5AEA /* MakeDotchiContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiContentViewController.swift; sourceTree = "<group>"; };
+		FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
+		FFD306B72B83C15E004B5AEA /* DotchiUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiUITextField.swift; sourceTree = "<group>"; };
+		FFD306B92B83C25D004B5AEA /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -292,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */,
+				FFD306B22B83BC3D004B5AEA /* MakeDotchiContentViewController.swift */,
 			);
 			path = Make;
 			sourceTree = "<group>";
@@ -302,6 +311,14 @@
 				FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */,
 			);
 			path = UIViewControllerRepresentable;
+			sourceTree = "<group>";
+		};
+		FFD306B62B83C13C004B5AEA /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				FFD306B72B83C15E004B5AEA /* DotchiUITextField.swift */,
+			);
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		FFD594152B70FF14003F1F3C /* Supports */ = {
@@ -419,6 +436,7 @@
 		FFD5943B2B710370003F1F3C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FFD306B62B83C13C004B5AEA /* TextFields */,
 				FF8322882B7C59350069D68A /* CollectionViewCells */,
 				FF018E9E2B77FA5D006D5627 /* Views */,
 				FF018E7E2B7531F8006D5627 /* Buttons */,
@@ -445,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD594482B710411003F1F3C /* BaseViewController.swift */,
+				FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -462,6 +481,7 @@
 				FF8322862B7C58BD0069D68A /* Adjusted+.swift */,
 				FF8322942B7CACE00069D68A /* UIImageView+.swift */,
 				FF8322982B7CD1580069D68A /* UIStackView+.swift */,
+				FFD306B92B83C25D004B5AEA /* UITextField+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -600,9 +620,11 @@
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
 				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
+				FFD306B32B83BC3D004B5AEA /* MakeDotchiContentViewController.swift in Sources */,
 				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
 				FF83228C2B7C5AE00069D68A /* CardFrontUIView.swift in Sources */,
 				FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */,
+				FFD306B52B83BE21004B5AEA /* BaseUINavigationController.swift in Sources */,
 				FF8322992B7CD1580069D68A /* UIStackView+.swift in Sources */,
 				FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */,
 				FFD594472B7103EF003F1F3C /* ImageCacheManager.swift in Sources */,
@@ -613,12 +635,14 @@
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
 				107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */,
 				FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */,
+				FFD306BA2B83C25D004B5AEA /* UITextField+.swift in Sources */,
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
 				FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
 				FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */,
 				FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */,
+				FFD306B82B83C15E004B5AEA /* DotchiUITextField.swift in Sources */,
 				FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,

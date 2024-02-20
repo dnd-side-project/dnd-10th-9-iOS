@@ -13,9 +13,9 @@ struct MakeDotchiPhotoViewControllerRepresentable: UIViewControllerRepresentable
     @Binding var isPresented: Bool
     
     func makeUIViewController(context: Context) -> UIViewController {
-        let makeDotchiPhotoViewController = MakeDotchiPhotoViewController()
+        let makeDotchiPhotoViewController = BaseUINavigationController(rootViewController: MakeDotchiPhotoViewController())
         
-        makeDotchiPhotoViewController.delegate = context.coordinator
+        makeDotchiPhotoViewController.delegate = context.coordinator as? any UINavigationControllerDelegate
         return makeDotchiPhotoViewController
     }
     
