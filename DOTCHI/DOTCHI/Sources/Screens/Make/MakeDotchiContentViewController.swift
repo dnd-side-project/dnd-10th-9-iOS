@@ -224,6 +224,10 @@ final class MakeDotchiContentViewController: BaseViewController {
                 if changedText.count > 20 {
                     self.dotchiContentTextView.deleteBackward()
                 }
+                
+                if changedText.isSubstringRepeatedTwice("\n") {
+                    self.dotchiContentTextView.deleteBackward()
+                }
             })
             .disposed(by: self.disposeBag)
     }
