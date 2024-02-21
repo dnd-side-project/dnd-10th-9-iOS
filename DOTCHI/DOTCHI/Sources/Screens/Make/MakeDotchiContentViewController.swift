@@ -250,7 +250,7 @@ final class MakeDotchiContentViewController: BaseViewController {
             self?.makeDotchiData.dotchiMood = self?.dotchiMoodTextField.text ?? ""
             self?.makeDotchiData.dotchiContent = self?.dotchiContentTextView.text ?? ""
             
-            self?.navigationController?.pushViewController(UIViewController(), animated: true)
+            self?.navigationController?.pushViewController(MakeDotchiPreviewViewController(makeDotchiData: self?.makeDotchiData ?? .init()), animated: true)
         }
     }
 }
