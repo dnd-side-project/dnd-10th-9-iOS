@@ -55,6 +55,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     private let dotchiNameTextField: DotchiUITextField = {
         let textField: DotchiUITextField = DotchiUITextField()
         textField.setDotchiPlaceholder(Text.dotchiNamePlaceholder)
+        textField.returnKeyType = .done
         return textField
     }()
     
@@ -75,6 +76,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     private let dotchiMoodTextField: DotchiUITextField = {
         let textField: DotchiUITextField = DotchiUITextField()
         textField.setDotchiPlaceholder(Text.dotchiMoodPlaceholder)
+        textField.returnKeyType = .done
         return textField
     }()
     
