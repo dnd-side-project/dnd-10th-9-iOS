@@ -14,13 +14,14 @@ final class MakeDotchiUICollectionViewCell: UICollectionViewCell {
     
     private let photoImageView: UIImageView = {
         let imageView: UIImageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.makeRounded(cornerRadius: 16)
         return imageView
     }()
     
     private let cardFrontView: UIImageView = {
         let imageView: UIImageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -70,12 +71,12 @@ extension MakeDotchiUICollectionViewCell {
     private func setLayout() {
         self.contentView.addSubviews([loadPhotoView, photoImageView, cardFrontView])
         
-        self.photoImageView.snp.makeConstraints { make in
+        self.cardFrontView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        self.cardFrontView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        self.photoImageView.snp.makeConstraints { make in
+            make.edges.equalTo(self.cardFrontView)
         }
         
         self.loadPhotoView.snp.makeConstraints { make in
