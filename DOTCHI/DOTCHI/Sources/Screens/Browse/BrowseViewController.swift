@@ -12,7 +12,6 @@ final class BrowseViewController: BaseViewController {
     
     private enum Number {
         static let cellHorizonInset = 49.0
-        static let cellHeight = 493.0
         static let scale = 0.925
     }
     
@@ -91,7 +90,7 @@ final class BrowseViewController: BaseViewController {
         let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewLayout.itemSize = .init(
             width: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)),
-            height: Number.cellHeight.adjustedH
+            height: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)) * 1.476014
         )
         collectionViewLayout.minimumLineSpacing = 12.adjustedH
         collectionViewLayout.scrollDirection = .horizontal
