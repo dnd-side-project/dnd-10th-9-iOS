@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import SnapKit
 import KeychainSwift
 
@@ -67,10 +68,10 @@ final class SignInViewController: BaseViewController {
             if KeychainSwift().get(KeychainKeys.accessToken.rawValue) == nil {
                 self?.requestSignIn(data: .init(memberId: 2), completion: { response in
                     self?.setUserInfo(data: response)
-                    debugPrint(self?.keychainManager.get(KeychainKeys.accessToken.rawValue))
+                    self?.presentContentView()
                 })
             } else {
-                debugPrint(self?.keychainManager.get(KeychainKeys.accessToken.rawValue))
+                self?.presentContentView()
             }
         }
     }
@@ -81,6 +82,13 @@ final class SignInViewController: BaseViewController {
         UserInfo.shared.profileImageUrl = data.memberImageURL
         UserInfo.shared.accessToken = data.accessToken
         self.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
+    }
+    
+    private func presentContentView() {
+        let contentView: ContentView = ContentView()
+        let hostingController = UIHostingController(rootView: contentView)
+        hostingController.modalPresentationStyle = .fullScreen
+        self.present(hostingController, animated: true, completion: nil)
     }
 }
 
