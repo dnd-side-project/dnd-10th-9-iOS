@@ -110,16 +110,16 @@ final class DotchiDetailViewController: BaseViewController {
         }
     }
     
-    private func setData(data: CardFrontEntity) {
-        self.cardFrontView.setData(data: data)
-        self.cardBackView.setCommentViewData(data: data)
-        self.commentButton.setTitle(data.dotchiName + Text.commentCenter + data.luckyType.nameWithHeart() + Text.commentTrail, for: .normal)
+    private func setData(data: CardEntity) {
+        self.cardFrontView.setData(frontData: data.front, userData: data.user)
+        self.cardBackView.setCommentViewData(backData: data.back, userData: data.user)
+        self.commentButton.setTitle(data.front.dotchiName + Text.commentCenter + data.front.luckyType.nameWithHeart() + Text.commentTrail, for: .normal)
         self.totalLuckyLabel.text = Text.total + "\(33)"
         
         
-        self.totalLuckyLabel.setColor(to: "\(33)", with: data.luckyType.uiColorNormal())
-        self.commentButton.setBackgroundColor(data.luckyType.uiColorNormal(), for: .normal)
-        self.commentButton.setBackgroundColor(data.luckyType.uiColorNormal().withAlphaComponent(0.5), for: .disabled)
+        self.totalLuckyLabel.setColor(to: "\(33)", with: data.front.luckyType.uiColorNormal())
+        self.commentButton.setBackgroundColor(data.front.luckyType.uiColorNormal(), for: .normal)
+        self.commentButton.setBackgroundColor(data.front.luckyType.uiColorNormal().withAlphaComponent(0.5), for: .disabled)
         self.commentButton.titleLabel?.font = .button
     }
     
@@ -222,7 +222,28 @@ extension DotchiDetailViewController: UITableViewDelegate {
 extension DotchiDetailViewController {
     private func fetchData() {
         // TODO: 더미데이터 빼고 API 연결
-        self.setData(data: .init(cardId: 0, imageUrl: ".", luckyType: .love, user: .init(userId: 0, profileImageUrl: ".", username: "오뜨"), dotchiName: "따봉도치"))
+        self.setData(
+            data: .init(
+                user: .init(
+                    userId: 1,
+                    profileImageUrl: ".",
+                    username: "오뜨"
+                ),
+                front: .init(
+                    cardId: 1,
+                    imageUrl: ".",
+                    luckyType: .love,
+                    dotchiName: "따봉냥"
+                ),
+                back: .init(
+                    cardId: 1,
+                    dotchiName: "따봉냥",
+                    dotchiMood: "엄지가 절로 올라가",
+                    dotchiContent: "넌 지금 따봉도치와 눈이 마주쳤어!",
+                    luckyType: .love
+                )
+            )
+        )
     }
 }
 

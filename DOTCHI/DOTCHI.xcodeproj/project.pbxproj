@@ -22,6 +22,8 @@
 		FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */; };
 		FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA12B77FE3B006D5627 /* UIButton+.swift */; };
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
+		FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0922B8658C300B9DFC1 /* CardBackEntity.swift */; };
+		FF0CF0952B8659B600B9DFC1 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0942B8659B600B9DFC1 /* CardEntity.swift */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */; };
@@ -116,6 +118,8 @@
 		FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationUIView.swift; sourceTree = "<group>"; };
 		FF018EA12B77FE3B006D5627 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
+		FF0CF0922B8658C300B9DFC1 /* CardBackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackEntity.swift; sourceTree = "<group>"; };
+		FF0CF0942B8659B600B9DFC1 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 				FF8322962B7CCBC80069D68A /* CardFrontEntity.swift */,
 				FFD306AE2B83AC5E004B5AEA /* MakeDotchiEntity.swift */,
 				FF4F9C122B860B2900E3DE31 /* CommentsEntity.swift */,
+				FF0CF0922B8658C300B9DFC1 /* CardBackEntity.swift */,
+				FF0CF0942B8659B600B9DFC1 /* CardEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -672,6 +678,7 @@
 				FF8322932B7CAC4E0069D68A /* CardUserEntity.swift in Sources */,
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
 				107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */,
+				FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */,
 				FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */,
 				FFD306BA2B83C25D004B5AEA /* UITextField+.swift in Sources */,
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
@@ -682,6 +689,7 @@
 				FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */,
 				FF4F9C132B860B2900E3DE31 /* CommentsEntity.swift in Sources */,
 				FFD306B82B83C15E004B5AEA /* DotchiUITextField.swift in Sources */,
+				FF0CF0952B8659B600B9DFC1 /* CardEntity.swift in Sources */,
 				FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */,
 				FF4F9C112B860A8C00E3DE31 /* UITableView+.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
