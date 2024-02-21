@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum LuckyType: Int {
     case health = 1
@@ -39,6 +40,21 @@ extension LuckyType {
             return "재물운을 나눠 줄게!"
         case .love:
             return "애정운을 나눠 줄게!"
+        }
+    }
+    
+    func colorNormal() -> Color {
+        switch self {
+        case .health:
+            return Color.dotchiOrange
+        case .lucky:
+            return Color.dotchiGreen
+        case .money:
+            return Color.dotchiBlue
+        case .love:
+            return Color.dotchiPink
+        default:
+            return Color.dotchiWhite
         }
     }
     
@@ -78,6 +94,19 @@ extension LuckyType {
             return .dotchiDeepBlue
         case .love:
             return .dotchiDeepPink
+        }
+    }
+    
+    func imageName() -> String {
+        switch self {
+        case .health:
+            return "imgHealth"
+        case .lucky:
+            return "imgLucky"
+        case .money:
+            return "imgMoney"
+        case .love:
+            return "imgLove"
         }
     }
 }
