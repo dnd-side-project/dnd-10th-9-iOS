@@ -24,6 +24,8 @@
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
+		FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */; };
+		FF4F9C0F2B86048D00E3DE31 /* DotchiDetailViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0E2B86048D00E3DE31 /* DotchiDetailViewControllerRepresentable.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
 		FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */; };
 		FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322822B7C540B0069D68A /* CardSortType.swift */; };
@@ -113,6 +115,8 @@
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
+		FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewController.swift; sourceTree = "<group>"; };
+		FF4F9C0E2B86048D00E3DE31 /* DotchiDetailViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortUIButton.swift; sourceTree = "<group>"; };
 		FF8322822B7C540B0069D68A /* CardSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortType.swift; sourceTree = "<group>"; };
@@ -232,6 +236,14 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		FF4F9C0B2B86015F00E3DE31 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		FF8322882B7C59350069D68A /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */,
+				FF4F9C0E2B86048D00E3DE31 /* DotchiDetailViewControllerRepresentable.swift */,
 			);
 			path = UIViewControllerRepresentable;
 			sourceTree = "<group>";
@@ -420,6 +433,7 @@
 		FFD594372B710331003F1F3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FF4F9C0B2B86015F00E3DE31 /* Detail */,
 				FFD306A02B809946004B5AEA /* Make */,
 				FFD594382B710355003F1F3C /* Home */,
 				FFD594502B71072B003F1F3C /* My */,
@@ -655,6 +669,7 @@
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
 				FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */,
 				FF8322952B7CACE00069D68A /* UIImageView+.swift in Sources */,
+				FF4F9C0F2B86048D00E3DE31 /* DotchiDetailViewControllerRepresentable.swift in Sources */,
 				FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
 				FFE8C1AF2B7DF78D008124E5 /* CardBackUIView.swift in Sources */,
@@ -676,6 +691,7 @@
 				FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */,
 				FF83229B2B7CD2250069D68A /* ClassNameProtocol.swift in Sources */,
 				FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */,
+				FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
