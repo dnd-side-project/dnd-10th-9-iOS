@@ -16,4 +16,6 @@ final class UserInfo {
     var accessToken: String = ""
     var refreshToken: String = ""
     var deviceToken: String = ""
+    var username: String = ""
+    var profileImageUrl: String = ""
 }

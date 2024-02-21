@@ -67,4 +67,17 @@ extension LuckyType {
             return .dotchiLPink
         }
     }
+    
+    func uiColorDeep() -> UIColor {
+        switch self {
+        case .health:
+            return .dotchiDeepOrange
+        case .lucky:
+            return .dotchiDeepGreen
+        case .money:
+            return .dotchiDeepBlue
+        case .love:
+            return .dotchiDeepPink
+        }
+    }
 }

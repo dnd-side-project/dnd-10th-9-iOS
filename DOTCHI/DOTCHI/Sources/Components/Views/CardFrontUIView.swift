@@ -52,25 +52,41 @@ final class CardFrontUIView: UIView {
     
     // MARK: Methods
     
-    func setData(data: CardFrontEntity) {
-        switch data.luckyType {
+    private func setFrameImageView(luckyType: LuckyType) {
+        switch luckyType {
         case .health:
-            self.dotchiNameLabel.textColor = .dotchiDeepOrange
             self.frameImageView.image = .imgHealthFront
         case .lucky:
-            self.dotchiNameLabel.textColor = .dotchiDeepGreen
             self.frameImageView.image = .imgLuckyFront
         case .money:
-            self.dotchiNameLabel.textColor = .dotchiDeepBlue
             self.frameImageView.image = .imgMoneyFront
         case .love:
-            self.dotchiNameLabel.textColor = .dotchiDeepPink
             self.frameImageView.image = .imgLoveFront
         }
-        
+    }
+    
+    func setData(data: CardFrontEntity) {
+        self.setFrameImageView(luckyType: data.luckyType)
+        self.dotchiNameLabel.textColor = data.luckyType.uiColorDeep()
         self.dotchiImageView.setImageUrl(data.imageUrl)
         self.dotchiNameLabel.text = data.dotchiName
         self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .front)
+    }
+    
+    func setData(makeDotchiData: MakeDotchiEntity) {
+        self.setFrameImageView(luckyType: makeDotchiData.luckyType)
+        self.dotchiNameLabel.textColor = makeDotchiData.luckyType.uiColorDeep()
+        self.dotchiImageView.image = makeDotchiData.image
+        self.dotchiNameLabel.text = makeDotchiData.dotchiName
+        self.cardProfileView.setData(
+            data: .init(
+                userId: 0,
+                profileImageUrl: UserInfo.shared.profileImageUrl,
+                username: UserInfo.shared.username
+            ),
+            luckyType: makeDotchiData.luckyType,
+            headType: .front
+        )
     }
 }
 

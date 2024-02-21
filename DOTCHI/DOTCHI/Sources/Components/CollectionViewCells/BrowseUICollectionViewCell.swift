@@ -14,9 +14,9 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
     
     // MARK: UIComponents
     
-    let cardBackgroundView: UIView = UIView()
-    let cardFrontView: CardFrontUIView = CardFrontUIView()
-    let cardBackView: CardBackUIView = CardBackUIView()
+    private let cardBackgroundView: UIView = UIView()
+    private let cardFrontView: CardFrontUIView = CardFrontUIView()
+    private let cardBackView: CardBackUIView = CardBackUIView()
     
     private let buttonStackView: UIStackView = {
         let stackView: UIStackView = UIStackView()

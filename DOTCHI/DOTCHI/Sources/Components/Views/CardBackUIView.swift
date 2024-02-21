@@ -87,25 +87,50 @@ final class CardBackUIView: UIView {
     
     // MARK: Methods
     
-    func setData(data: CardFrontEntity) {
-        switch data.luckyType {
+    private func setFrameImageView(luckyType: LuckyType) {
+        switch luckyType {
         case .health:
             self.frameImageView.image = .imgHealthBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiOrange
         case .lucky:
             self.frameImageView.image = .imgLuckyBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiGreen
         case .money:
             self.frameImageView.image = .imgMoneyBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiBlue
         case .love:
             self.frameImageView.image = .imgLoveBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiPink
         }
-        
+    }
+    
+    func setData(data: CardFrontEntity) {
+        self.setFrameImageView(luckyType: data.luckyType)
+        self.dotchiLuckyTypeLabel.textColor = data.luckyType.uiColorNormal()
         self.dotchiLuckyTypeLabel.text = data.luckyType.toYouMessage()
         self.dotchiImageView.setImageUrl(data.imageUrl)
         self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .back)
+    }
+    
+    func setData(makeDotchiData: MakeDotchiEntity) {
+        self.setFrameImageView(luckyType: makeDotchiData.luckyType)
+        
+        self.dotchiNameLabel.text = Text.nameGuide + makeDotchiData.dotchiName
+        self.dotchiNameLabel.setColor(to: makeDotchiData.dotchiName, with: makeDotchiData.luckyType.uiColorNormal())
+        
+        self.dotchiMoodLabel.text = Text.moodGuide + makeDotchiData.dotchiMood
+        self.dotchiMoodLabel.setColor(to: makeDotchiData.dotchiMood, with: makeDotchiData.luckyType.uiColorNormal())
+        
+        self.dotchiContentLabel.text = makeDotchiData.dotchiContent
+        
+        self.dotchiLuckyTypeLabel.textColor = makeDotchiData.luckyType.uiColorNormal()
+        self.dotchiLuckyTypeLabel.text = makeDotchiData.luckyType.toYouMessage()
+        self.dotchiImageView.image = makeDotchiData.image
+        self.cardProfileView.setData(
+            data: .init(
+                userId: 0,
+                profileImageUrl: UserInfo.shared.profileImageUrl,
+                username: UserInfo.shared.username
+            ),
+            luckyType: makeDotchiData.luckyType,
+            headType: .front
+        )
     }
 }
 
