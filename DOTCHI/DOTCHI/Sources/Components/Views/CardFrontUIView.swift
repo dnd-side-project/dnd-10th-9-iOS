@@ -67,9 +67,26 @@ final class CardFrontUIView: UIView {
     
     func setData(data: CardFrontEntity) {
         self.setFrameImageView(luckyType: data.luckyType)
+        self.dotchiNameLabel.textColor = data.luckyType.uiColorDeep()
         self.dotchiImageView.setImageUrl(data.imageUrl)
         self.dotchiNameLabel.text = data.dotchiName
         self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .front)
+    }
+    
+    func setData(makeDotchiData: MakeDotchiEntity) {
+        self.setFrameImageView(luckyType: makeDotchiData.luckyType)
+        self.dotchiNameLabel.textColor = makeDotchiData.luckyType.uiColorDeep()
+        self.dotchiImageView.image = makeDotchiData.image
+        self.dotchiNameLabel.text = makeDotchiData.dotchiName
+        self.cardProfileView.setData(
+            data: .init(
+                userId: 0,
+                profileImageUrl: UserInfo.shared.profileImageUrl,
+                username: UserInfo.shared.username
+            ),
+            luckyType: makeDotchiData.luckyType,
+            headType: .front
+        )
     }
 }
 
