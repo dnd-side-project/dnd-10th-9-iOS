@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
 final class MakeDotchiContentViewController: BaseViewController {
     
@@ -87,13 +89,20 @@ final class MakeDotchiContentViewController: BaseViewController {
         let textView: UITextView = UITextView()
         textView.backgroundColor = .dotchiMgray
         textView.font = .head2
-        textView.textColor = .dotchiWhite.withAlphaComponent(0.3)
-        textView.text = Text.dotchiContentPlaceholder
+        textView.textColor = .dotchiLgray
+//        textView.text = Text.dotchiContentPlaceholder
         textView.textContainerInset = .init(top: 12, left: 12, bottom: 12, right: 12)
         textView.contentInset = .zero
         textView.textContainer.lineFragmentPadding = .zero
         textView.makeRounded(cornerRadius: 8)
         return textView
+    }()
+    
+    private let dotchiContentPlaceholderLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.setStyle(.head2, .dotchiWhite.withAlphaComponent(0.3))
+        label.text = Text.dotchiContentPlaceholder
+        return label
     }()
     
     private let luckyDescriptionLabel: UILabel = {
@@ -113,6 +122,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     
     private var makeDotchiData: MakeDotchiEntity = MakeDotchiEntity()
     private var keyboardHeight: CGFloat = 0
+    private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: Initializer
     
@@ -134,6 +144,9 @@ final class MakeDotchiContentViewController: BaseViewController {
         self.setLayout()
         self.setBackButtonAction(self.navigationView.backButton)
         self.setLuckyDescriptionLabel()
+        self.setDotchiNameTextField()
+        self.setDotchiMoodTextField()
+        self.setDotchiContentTextView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -175,6 +188,45 @@ final class MakeDotchiContentViewController: BaseViewController {
         self.keyboardHeight = 0
         self.scrollView.setContentOffset(.zero, animated: true)
     }
+    
+    private func setDotchiNameTextField() {
+        self.dotchiNameTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(with: self, onNext: { owner, changedText in
+                if changedText.count > 7 {
+                    owner.dotchiNameTextField.deleteBackward()
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func setDotchiMoodTextField() {
+        self.dotchiMoodTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(with: self, onNext: { owner, changedText in
+                if changedText.count > 15 {
+                    owner.dotchiMoodTextField.deleteBackward()
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func setDotchiContentTextView() {
+        self.dotchiContentTextView.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .withUnretained(self)
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { (owner, changedText) in
+                self.dotchiContentPlaceholderLabel.isHidden = changedText.count > 0
+                if changedText.count > 20 {
+                    self.dotchiContentTextView.deleteBackward()
+                }
+            })
+            .disposed(by: self.disposeBag)
+    }
 }
 
 // MARK: - Layout
@@ -186,7 +238,7 @@ extension MakeDotchiContentViewController {
         self.contentView.addSubviews([
             dotchiNameInfoLabel, dotchiNameGuideLabel, dotchiNameTextField,
             dotchiMoodInfoLabel, dotchiMoodGuideLabel, dotchiMoodTextField,
-            dotchiContentInfoLabel, dotchiContentTextView,
+            dotchiContentInfoLabel, dotchiContentTextView, dotchiContentPlaceholderLabel,
             luckyDescriptionLabel
         ])
         
@@ -249,6 +301,11 @@ extension MakeDotchiContentViewController {
             make.top.equalTo(self.dotchiContentInfoLabel.snp.bottom).offset(16)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(104)
+        }
+        
+        self.dotchiContentPlaceholderLabel.snp.makeConstraints { make in
+            make.top.leading.equalTo(self.dotchiContentTextView).inset(12)
+            make.trailing.equalTo(self.dotchiContentTextView).inset(12)
         }
         
         self.luckyDescriptionLabel.snp.makeConstraints { make in
