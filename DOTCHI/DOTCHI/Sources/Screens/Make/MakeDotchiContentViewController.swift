@@ -90,7 +90,6 @@ final class MakeDotchiContentViewController: BaseViewController {
         textView.backgroundColor = .dotchiMgray
         textView.font = .head2
         textView.textColor = .dotchiLgray
-//        textView.text = Text.dotchiContentPlaceholder
         textView.textContainerInset = .init(top: 12, left: 12, bottom: 12, right: 12)
         textView.contentInset = .zero
         textView.textContainer.lineFragmentPadding = .zero
@@ -123,6 +122,12 @@ final class MakeDotchiContentViewController: BaseViewController {
     private var makeDotchiData: MakeDotchiEntity = MakeDotchiEntity()
     private var keyboardHeight: CGFloat = 0
     private let disposeBag: DisposeBag = DisposeBag()
+    private var isNextButtonEnable: [Bool] = [false, false] {
+        didSet {
+            self.nextButton.isEnabled = self.isNextButtonEnable[0]
+                && self.isNextButtonEnable[1]
+        }
+    }
     
     // MARK: Initializer
     
@@ -197,6 +202,8 @@ final class MakeDotchiContentViewController: BaseViewController {
                 if changedText.count > 7 {
                     owner.dotchiNameTextField.deleteBackward()
                 }
+                
+                owner.isNextButtonEnable[0] = !changedText.isEmpty
             })
             .disposed(by: disposeBag)
     }
@@ -209,6 +216,8 @@ final class MakeDotchiContentViewController: BaseViewController {
                 if changedText.count > 15 {
                     owner.dotchiMoodTextField.deleteBackward()
                 }
+                
+                owner.isNextButtonEnable[1] = !changedText.isEmpty
             })
             .disposed(by: disposeBag)
     }
