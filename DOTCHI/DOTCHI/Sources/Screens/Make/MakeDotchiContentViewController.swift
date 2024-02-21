@@ -154,6 +154,7 @@ final class MakeDotchiContentViewController: BaseViewController {
         self.setDotchiNameTextField()
         self.setDotchiMoodTextField()
         self.setDotchiContentTextView()
+        self.setNextButtonAction()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -241,6 +242,16 @@ final class MakeDotchiContentViewController: BaseViewController {
                 }
             })
             .disposed(by: self.disposeBag)
+    }
+    
+    private func setNextButtonAction() {
+        self.nextButton.setAction { [weak self] in
+            self?.makeDotchiData.dotchiName = self?.dotchiNameTextField.text ?? ""
+            self?.makeDotchiData.dotchiMood = self?.dotchiMoodTextField.text ?? ""
+            self?.makeDotchiData.dotchiContent = self?.dotchiContentTextView.text ?? ""
+            
+            self?.navigationController?.pushViewController(UIViewController(), animated: true)
+        }
     }
 }
 
