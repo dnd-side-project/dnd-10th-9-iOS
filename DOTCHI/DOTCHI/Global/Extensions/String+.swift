@@ -60,4 +60,22 @@ extension String {
     func indexing(_ index: Int) -> String {
         return String(self[self.index(self.startIndex, offsetBy: index)])
     }
+    
+    /// 특정 문자열이 두 번 들어가 있는지 검사하는 메서드
+    func isSubstringRepeatedTwice(_ substring: String) -> Bool {
+        guard self.range(of: substring) != nil else {
+            return false // 문자열에 해당 부분 문자열이 없으면 false 반환
+        }
+        
+        // 문자열을 두 번 이상 포함하는지 확인
+        var remainingString = self
+        if let range = remainingString.range(of: substring) {
+            remainingString.removeSubrange(range)
+            if remainingString.range(of: substring) != nil {
+                return true // 두 번 이상 포함하는 부분 문자열이 있으면 true 반환
+            }
+        }
+        
+        return false
+    }
 }
