@@ -52,22 +52,21 @@ final class CardFrontUIView: UIView {
     
     // MARK: Methods
     
-    func setData(data: CardFrontEntity) {
-        switch data.luckyType {
+    private func setFrameImageView(luckyType: LuckyType) {
+        switch luckyType {
         case .health:
-            self.dotchiNameLabel.textColor = .dotchiDeepOrange
             self.frameImageView.image = .imgHealthFront
         case .lucky:
-            self.dotchiNameLabel.textColor = .dotchiDeepGreen
             self.frameImageView.image = .imgLuckyFront
         case .money:
-            self.dotchiNameLabel.textColor = .dotchiDeepBlue
             self.frameImageView.image = .imgMoneyFront
         case .love:
-            self.dotchiNameLabel.textColor = .dotchiDeepPink
             self.frameImageView.image = .imgLoveFront
         }
-        
+    }
+    
+    func setData(data: CardFrontEntity) {
+        self.setFrameImageView(luckyType: data.luckyType)
         self.dotchiImageView.setImageUrl(data.imageUrl)
         self.dotchiNameLabel.text = data.dotchiName
         self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .front)

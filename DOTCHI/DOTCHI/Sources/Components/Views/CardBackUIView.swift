@@ -87,22 +87,21 @@ final class CardBackUIView: UIView {
     
     // MARK: Methods
     
-    func setData(data: CardFrontEntity) {
-        switch data.luckyType {
+    private func setFrameImageView(luckyType: LuckyType) {
+        switch luckyType {
         case .health:
             self.frameImageView.image = .imgHealthBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiOrange
         case .lucky:
             self.frameImageView.image = .imgLuckyBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiGreen
         case .money:
             self.frameImageView.image = .imgMoneyBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiBlue
         case .love:
             self.frameImageView.image = .imgLoveBack
-            self.dotchiLuckyTypeLabel.textColor = .dotchiPink
         }
-        
+    }
+    
+    func setData(data: CardFrontEntity) {
+        self.setFrameImageView(luckyType: data.luckyType)
         self.dotchiLuckyTypeLabel.text = data.luckyType.toYouMessage()
         self.dotchiImageView.setImageUrl(data.imageUrl)
         self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .back)
