@@ -24,6 +24,8 @@
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
 		FF0CF0972B86616700B9DFC1 /* SignInViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0962B86616700B9DFC1 /* SignInViewControllerRepresentable.swift */; };
 		FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */; };
+		FF0CF09C2B86695300B9DFC1 /* SignInRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF09B2B86695300B9DFC1 /* SignInRequestDTO.swift */; };
+		FF0CF09E2B86697D00B9DFC1 /* SignInResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF09D2B86697D00B9DFC1 /* SignInResponseDTO.swift */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
@@ -115,6 +117,9 @@
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
 		FF0CF0962B86616700B9DFC1 /* SignInViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		FF0CF09B2B86695300B9DFC1 /* SignInRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequestDTO.swift; sourceTree = "<group>"; };
+		FF0CF09D2B86697D00B9DFC1 /* SignInResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponseDTO.swift; sourceTree = "<group>"; };
+		FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
@@ -343,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD594172B70FF2A003F1F3C /* Environment.swift */,
+				FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD594302B7101E1003F1F3C /* SocialLoginRequestDTO.swift */,
+				FF0CF09B2B86695300B9DFC1 /* SignInRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -416,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD5942E2B7101D0003F1F3C /* SocialLoginResponseDTO.swift */,
+				FF0CF09D2B86697D00B9DFC1 /* SignInResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -672,7 +680,9 @@
 				FF8322952B7CACE00069D68A /* UIImageView+.swift in Sources */,
 				FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
+				FF0CF09E2B86697D00B9DFC1 /* SignInResponseDTO.swift in Sources */,
 				FFE8C1AF2B7DF78D008124E5 /* CardBackUIView.swift in Sources */,
+				FF0CF09C2B86695300B9DFC1 /* SignInRequestDTO.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FF8322852B7C58A60069D68A /* UICollectionView+.swift in Sources */,
