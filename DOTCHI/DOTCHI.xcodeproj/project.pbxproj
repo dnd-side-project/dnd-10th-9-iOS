@@ -26,6 +26,7 @@
 		FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */; };
 		FF0CF09C2B86695300B9DFC1 /* SignInRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF09B2B86695300B9DFC1 /* SignInRequestDTO.swift */; };
 		FF0CF09E2B86697D00B9DFC1 /* SignInResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF09D2B86697D00B9DFC1 /* SignInResponseDTO.swift */; };
+		FF0CF0A12B866F3600B9DFC1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0A02B866F3600B9DFC1 /* Message.swift */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
@@ -120,6 +121,7 @@
 		FF0CF09B2B86695300B9DFC1 /* SignInRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequestDTO.swift; sourceTree = "<group>"; };
 		FF0CF09D2B86697D00B9DFC1 /* SignInResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponseDTO.swift; sourceTree = "<group>"; };
 		FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		FF0CF0A02B866F3600B9DFC1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				FFD5944A2B710457003F1F3C /* LuckyType.swift */,
 				FF8322822B7C540B0069D68A /* CardSortType.swift */,
 				FF83228F2B7CA1FC0069D68A /* CardHeadType.swift */,
+				FF0CF0A02B866F3600B9DFC1 /* Message.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				FF8322852B7C58A60069D68A /* UICollectionView+.swift in Sources */,
 				FF0CF0972B86616700B9DFC1 /* SignInViewControllerRepresentable.swift in Sources */,
 				FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */,
+				FF0CF0A12B866F3600B9DFC1 /* Message.swift in Sources */,
 				FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */,
