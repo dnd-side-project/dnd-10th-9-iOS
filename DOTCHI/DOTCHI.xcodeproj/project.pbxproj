@@ -22,6 +22,8 @@
 		FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */; };
 		FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA12B77FE3B006D5627 /* UIButton+.swift */; };
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
+		FF0CF0972B86616700B9DFC1 /* SignInViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0962B86616700B9DFC1 /* SignInViewControllerRepresentable.swift */; };
+		FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
@@ -111,6 +113,8 @@
 		FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationUIView.swift; sourceTree = "<group>"; };
 		FF018EA12B77FE3B006D5627 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
+		FF0CF0962B86616700B9DFC1 /* SignInViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
@@ -232,6 +236,14 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		FF0CF0982B86617A00B9DFC1 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		FF8322882B7C59350069D68A /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */,
+				FF0CF0962B86616700B9DFC1 /* SignInViewControllerRepresentable.swift */,
 			);
 			path = UIViewControllerRepresentable;
 			sourceTree = "<group>";
@@ -420,6 +433,7 @@
 		FFD594372B710331003F1F3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FF0CF0982B86617A00B9DFC1 /* SignIn */,
 				FFD306A02B809946004B5AEA /* Make */,
 				FFD594382B710355003F1F3C /* Home */,
 				FFD594502B71072B003F1F3C /* My */,
@@ -626,6 +640,7 @@
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
 				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
+				FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */,
 				FFD306B32B83BC3D004B5AEA /* MakeDotchiContentViewController.swift in Sources */,
 				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
 				FF83228C2B7C5AE00069D68A /* CardFrontUIView.swift in Sources */,
@@ -661,6 +676,7 @@
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FF8322852B7C58A60069D68A /* UICollectionView+.swift in Sources */,
+				FF0CF0972B86616700B9DFC1 /* SignInViewControllerRepresentable.swift in Sources */,
 				FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */,
 				FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
