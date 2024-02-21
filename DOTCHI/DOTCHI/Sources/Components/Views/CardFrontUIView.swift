@@ -105,13 +105,13 @@ extension CardFrontUIView {
         }
         
         self.cardProfileView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(32.adjustedH)
+            make.centerY.equalToSuperview().multipliedBy(0.245)
             make.centerX.equalToSuperview()
             make.height.equalTo(34)
         }
         
         self.dotchiNameLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(34.adjustedH)
+            make.centerY.equalToSuperview().multipliedBy(1.75)
             make.horizontalEdges.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
         }

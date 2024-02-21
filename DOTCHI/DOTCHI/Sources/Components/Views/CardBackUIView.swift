@@ -108,6 +108,13 @@ final class CardBackUIView: UIView {
         self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .back)
     }
     
+    func setCommentViewData(data: CardFrontEntity) {
+        self.setData(data: data)
+        [self.dotchiNameLabel, self.dotchiMoodLabel, self.dotchiContentLabel, self.dotchiToYouLabel, self.dotchiLuckyTypeLabel].forEach { label in
+            label.font = .body
+        }
+    }
+    
     func setData(makeDotchiData: MakeDotchiEntity) {
         self.setFrameImageView(luckyType: makeDotchiData.luckyType)
         
@@ -149,36 +156,36 @@ extension CardBackUIView {
         }
         
         self.cardProfileView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(32.adjustedH)
+            make.centerY.equalToSuperview().multipliedBy(0.245)
             make.centerX.equalToSuperview()
             make.height.equalTo(34)
         }
         
         self.dotchiNameLabel.snp.makeConstraints { make in
             make.top.equalTo(self.cardProfileView.snp.bottom).offset(24)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(24)
         }
         
         self.dotchiMoodLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiNameLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
         }
         
         self.dotchiContentLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiMoodLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
         }
         
         self.dotchiToYouLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiContentLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(24)
         }
         
         self.dotchiLuckyTypeLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiToYouLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(24)
         }
     }

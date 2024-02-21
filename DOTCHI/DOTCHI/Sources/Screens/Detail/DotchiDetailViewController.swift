@@ -112,7 +112,7 @@ final class DotchiDetailViewController: BaseViewController {
     
     private func setData(data: CardFrontEntity) {
         self.cardFrontView.setData(data: data)
-        self.cardBackView.setData(data: data)
+        self.cardBackView.setCommentViewData(data: data)
         self.commentButton.setTitle(data.dotchiName + Text.commentCenter + data.luckyType.nameWithHeart() + Text.commentTrail, for: .normal)
         self.totalLuckyLabel.text = Text.total + "\(33)"
         
