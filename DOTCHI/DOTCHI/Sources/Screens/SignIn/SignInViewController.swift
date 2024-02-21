@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import KeychainSwift
 
 final class SignInViewController: BaseViewController {
     
@@ -47,7 +48,7 @@ final class SignInViewController: BaseViewController {
     
     // MARK: Properties
     
-    
+    private let keychainManager: KeychainSwift = KeychainSwift()
     
     // MARK: View Life Cycle
     
@@ -55,11 +56,49 @@ final class SignInViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setLayout()
+        self.setSignInAppleButtonAction()
     }
     
     // MARK: Methods
     
+    private func setSignInAppleButtonAction() {
+        self.signInAppleButton.setAction { [weak self] in
+            
+            if KeychainSwift().get(KeychainKeys.accessToken.rawValue) == nil {
+                self?.requestSignIn(data: .init(memberId: 2), completion: { response in
+                    self?.setUserInfo(data: response)
+                    debugPrint(self?.keychainManager.get(KeychainKeys.accessToken.rawValue))
+                })
+            } else {
+                debugPrint(self?.keychainManager.get(KeychainKeys.accessToken.rawValue))
+            }
+        }
+    }
     
+    private func setUserInfo(data: SignInResponseDTO) {
+        UserInfo.shared.userID = data.memberID
+        UserInfo.shared.username = data.memberName
+        UserInfo.shared.profileImageUrl = data.memberImageURL
+        UserInfo.shared.accessToken = data.accessToken
+        self?.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
+    }
+}
+
+// MARK: - Network
+
+extension SignInViewController {
+    private func requestSignIn(data: SignInRequestDTO, completion: @escaping (SignInResponseDTO) -> (Void)) {
+        AuthService.shared.requestSignIn(data: data) { networkResult in
+            switch networkResult {
+            case .success(let responseData):
+                if let result = responseData as? SignInResponseDTO {
+                    completion(result)
+                } else { debugPrint(responseData) }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
 }
 
 // MARK: - Layout
