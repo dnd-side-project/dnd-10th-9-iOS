@@ -8,18 +8,476 @@
 import SwiftUI
 
 struct HomeView: View {
+    let currentDate = Date()
+    var formattedDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        return dateFormatter.string(from: currentDate)
+    }
+    
     var body: some View {
-        ZStack {
-           Color.dotchiBlack.ignoresSafeArea()
-            
-            ScrollView {
-                Text("메인 홈")
-                    .foregroundStyle(Color.white)
-                    .padding(.top, 300)
+        NavigationStack {
+            ZStack {
+                Color.dotchiBlack.ignoresSafeArea()
+                
+                ScrollView {
+                    ZStack {
+                        Image(.imgBackground)
+                            .frame(width: .infinity, height: 400)
+                           
+                        VStack {
+                            ZStack {
+                                LottieView(filename: "pung", numberOfPlays: 3)
+                                    .frame(height: 170)
+                                
+                                VStack {
+                                    Text("가장 많은 행운을\n나눠준 오늘의 따봉도치")
+                                        .font(.Head)
+                                        .foregroundStyle(.dotchiWhite)
+                                        .multilineTextAlignment(.center)
+                                    
+                                    HStack {
+                                        Image(.icnGraph)
+                                            .frame(width: 11, height: 13)
+                                        
+                                        Text("\(formattedDate) 기준")
+                                            .font(.Sub)
+                                            .foregroundStyle(.dotchiLgray)
+                                    }
+                                    .padding(.top, 5)
+                                    .padding(.bottom, 17)
+                                }
+                                .padding(.top, 50)
+                            }
+                            
+                            HStack(alignment: .bottom) {
+                                VStack {
+                                    Image(.imgDefaultDummy)
+                                        .frame(width: 82, height: 82)
+                                        .cornerRadius(25)
+                                        .padding(.bottom, 8)
+
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 67)
+                                            .fill(Color.dotchiLBlack)
+                                            .frame(width: 60, height: 32)
+                                        
+                                        Text("이름")
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                    }
+                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                    
+                                    Text("2위")
+                                        .font(.Sub_Sbold)
+                                        .foregroundStyle(Color.dotchiGray)
+                                        .padding(.top, 8)
+                                }
+                                
+                                VStack {
+                                    ZStack(alignment: .top) {
+                                        Image(.imgDefaultDummy)
+                                            .resizable()
+                                            .cornerRadius(30)
+                                            .frame(width: 112, height: 112)
+                                            .padding(.bottom, 8)
+                                        
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(Color.dotchiGreen, lineWidth: 2)
+                                            .frame(width: 112, height: 112)
+                                        
+                                        Image(.icnPlus)
+                                            .resizable()
+                                            .frame(width: 64, height: 64)
+                                            .offset(y: -30)
+                                    }
+                                    
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 67)
+                                            .fill(Color.dotchiLBlack)
+                                            .frame(width: 60, height: 32)
+                                        
+                                        Text("이름")
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                    }
+                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                    
+                                    Text("1위")
+                                        .font(.Sub_Sbold)
+                                        .foregroundStyle(Color.dotchiWhite)
+                                        .padding(.top, 8)
+                                }
+                                
+                                VStack {
+                                    Image(.imgDefaultDummy)
+                                        .frame(width: 82, height: 82)
+                                        .cornerRadius(25)
+                                        .padding(.bottom, 8)
+                                    
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 67)
+                                            .fill(Color.dotchiLBlack)
+                                            .frame(width: 60, height: 32)
+                                        
+                                        Text("이름")
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                    }
+                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                    
+                                    Text("3위")
+                                        .font(.Sub_Sbold)
+                                        .foregroundStyle(Color.dotchiGray)
+                                        .padding(.top, 8)
+                                }
+                            }
+                            .padding(.top, 40)
+                        }
+                    }
+                    
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading) {
+                            Text("따봉도치 둘러보기")
+                                .font(.Head)
+                                .foregroundStyle(.dotchiWhite)
+                            
+                            Text("다양한 따봉도치들을 만나보세요")
+                                .font(.Sub)
+                                .foregroundStyle(.dotchiLgray)
+                                .padding(.top, 0.5)
+                        }
+                        
+                        Spacer()
+                        
+                        // TODO: 따봉도치 둘러보기 뷰로 이동
+                        NavigationLink(destination: EmptyView()) {
+                            HStack {
+                                Text("전체보기")
+                                    .font(.Sub)
+                                    .foregroundStyle(.dotchiLgray)
+                                
+                                Image(.icnNext)
+                                    .frame(width: 14, height: 14)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 65)
+                    
+                    ScrollView(.horizontal) {
+                        HStack(alignment: .center, spacing: 12) {
+                            ForEach(1...3, id: \.self) { Index in
+                                ZStack(alignment: .bottom) {
+                                    ZStack(alignment: .top) {
+                                        Image(.imgDefaultDummy)
+                                            .resizable()
+                                            .frame(width: 143, height: 211)
+                                            .cornerRadius(8.46)
+                                        
+                                        Image(.imgLuckyFront)
+                                            .resizable()
+                                            .frame(width: 143, height: 211)
+                                        
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 60.25)
+                                                .fill(Color.dotchiDeepGreen)
+                                                .frame(width: 51, height: 20)
+                                            
+                                            HStack(spacing: 0) {
+                                                Image(.imgDefaultDummy)
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: 14, height: 14)
+                                                    .clipShape(Circle())
+                                                
+                                                Text("오뜨")
+                                                    .font(.S_Sub)
+                                                    .foregroundStyle(Color.dotchiWhite)
+                                                    .padding(.leading, 4)
+                                            }
+                                            .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 12))
+                                        }
+                                        .padding(.top, 13)
+                                    }
+                                    
+                                    Text("따봉멍멈무")
+                                        .font(.Dotchi_Name2)
+                                        .foregroundStyle(Color.dotchiDeepGreen)
+                                        .padding(.bottom, 16)
+                                }
+                            }
+                        }
+                        .padding(.top, 20)
+                    }
+                    .padding(.leading, 20)
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("테마별 따봉도치.zip")
+                                .font(.Head)
+                                .foregroundStyle(.dotchiWhite)
+                            
+                            Text("나에게 필요한 행운 테마를 선택하세요!")
+                                .font(.Sub)
+                                .foregroundStyle(.dotchiLgray)
+                                .padding(.top, 0.5)
+                        }
+                        
+                        Spacer()
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 47)
+                    
+                    HStack {
+                        HStack {
+                            NavigationLink(destination: CollectionView()) {
+                                ZStack(alignment: .bottomTrailing) {
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Text(LuckyType.lucky.name())
+                                                .font(.Head2)
+                                                .foregroundColor(LuckyType.lucky.colorNormal())
+                                            
+                                            Text("을")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                                .padding(.leading, -6)
+                                        }
+                                        
+                                        HStack {
+                                            Text("나누는 도치들")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                            
+                                            Image(.icnNextWhite)
+                                        }
+                                        
+                                        Text("3분전")
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .opacity(0.5)
+                                            .padding(.top, 1)
+                                    }
+                                    .padding(.bottom, 15)
+                                    .padding(.leading, -10)
+                                    .padding(.top, -20)
+                                    
+                                    Image(LuckyType.lucky.imageName())
+                                        .resizable()
+                                        .frame(width: 75, height: 69)
+                                        .padding(.bottom, -35)
+                                        .padding(.trailing, -15)
+                                }
+                                .frame(width: 162, height: 162)
+                                .background(Color.dotchiBlack2)
+                                .cornerRadius(12)
+                            }
+                        }
+                        
+                        HStack {
+                            NavigationLink(destination: CollectionView()) {
+                                ZStack(alignment: .bottomTrailing) {
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Text(LuckyType.love.name())
+                                                .font(.Head2)
+                                                .foregroundColor(LuckyType.love.colorNormal())
+                                            
+                                            Text("을")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                                .padding(.leading, -6)
+                                        }
+                                        
+                                        HStack {
+                                            Text("나누는 도치들")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                            
+                                            Image(.icnNextWhite)
+                                        }
+                                        
+                                        Text("3분전")
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .opacity(0.5)
+                                            .padding(.top, 1)
+                                    }
+                                    .padding(.bottom, 15)
+                                    .padding(.leading, -10)
+                                    .padding(.top, -20)
+                                    
+                                    Image(LuckyType.love.imageName())
+                                        .resizable()
+                                        .frame(width: 87, height: 63)
+                                        .padding(.bottom, -35)
+                                        .padding(.trailing, -15)
+                                }
+                                .frame(width: 162, height: 162)
+                                .background(Color.dotchiBlack2)
+                                .cornerRadius(12)
+                            }
+                        }
+                        .padding(.leading, 5)
+                    }
+                    .padding(.top, 26)
+                    .padding(.bottom, 6)
+                    
+                    HStack {
+                        HStack {
+                            NavigationLink(destination: CollectionView()) {
+                                ZStack(alignment: .bottomTrailing) {
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Text(LuckyType.health.name())
+                                                .font(.Head2)
+                                                .foregroundColor(LuckyType.health.colorNormal())
+                                            
+                                            Text("을")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                                .padding(.leading, -6)
+                                        }
+                                        
+                                        HStack {
+                                            Text("나누는 도치들")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                            
+                                            Image(.icnNextWhite)
+                                        }
+                                        
+                                        Text("3분전")
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .opacity(0.5)
+                                            .padding(.top, 1)
+                                    }
+                                    .padding(.bottom, 15)
+                                    .padding(.leading, -10)
+                                    .padding(.top, -20)
+                                    
+                                    Image(LuckyType.health.imageName())
+                                        .resizable()
+                                        .frame(width: 85, height: 56)
+                                        .padding(.bottom, -30)
+                                        .padding(.trailing, -15)
+                                }
+                                .frame(width: 162, height: 162)
+                                .background(Color.dotchiBlack2)
+                                .cornerRadius(12)
+                            }
+                        }
+                        
+                        HStack {
+                            NavigationLink(destination: CollectionView()) {
+                                ZStack(alignment: .bottomTrailing) {
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Text(LuckyType.money.name())
+                                                .font(.Head2)
+                                                .foregroundColor(LuckyType.money.colorNormal())
+                                            
+                                            Text("을")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                                .padding(.leading, -6)
+                                        }
+                                        
+                                        HStack {
+                                            Text("나누는 도치들")
+                                                .font(.Head2)
+                                                .foregroundColor(.dotchiWhite)
+                                            
+                                            Image(.icnNextWhite)
+                                        }
+                                        
+                                        Text("3분전")
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .opacity(0.5)
+                                            .padding(.top, 1)
+                                    }
+                                    .padding(.bottom, 15)
+                                    .padding(.leading, -10)
+                                    .padding(.top, -20)
+                                    
+                                    Image(LuckyType.money.imageName())
+                                        .resizable()
+                                        .frame(width: 73, height: 77)
+                                        .padding(.bottom, -35)
+                                        .padding(.trailing, -15)
+                                }
+                                .frame(width: 162, height: 162)
+                                .background(Color.dotchiBlack2)
+                                .cornerRadius(12)
+                            }
+                        }
+                        .padding(.leading, 5)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 30)
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitle("", displayMode: .inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Spacer()
+                            Image(.imgLogo)
+                                .resizable()
+                                .frame(width: 65, height: 22)
+                                .padding(.horizontal, 10)
+                            Spacer()
+                        }
+                    }
+                }
+                .navigationBarColor(backgroundColor: .dotchiBlack3)
             }
         }
     }
 }
+
+// 네비게이션바 배경색 변경
+struct NavigationBarModifier: ViewModifier {
+
+    var backgroundColor: UIColor?
+
+    init(backgroundColor: UIColor?) {
+        self.backgroundColor = backgroundColor
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithTransparentBackground()
+        coloredAppearance.backgroundColor = backgroundColor
+
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+    }
+
+    func body(content: Content) -> some View {
+        ZStack{
+            content
+            VStack {
+                GeometryReader { geometry in
+                    Color(self.backgroundColor ?? .clear)
+                        .frame(height: geometry.safeAreaInsets.top)
+                        .edgesIgnoringSafeArea(.top)
+                    Spacer()
+                }
+            }
+        }
+    }
+}
+
+extension View {
+    func navigationBarColor(backgroundColor: UIColor?) -> some View {
+        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
+    }
+}
+
 
 #Preview {
     HomeView()
