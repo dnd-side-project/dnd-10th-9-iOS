@@ -95,6 +95,15 @@ final class CardBackUIView: UIView {
     
     func setData(backData: CardBackEntity, userData: CardUserEntity) {
         self.setFrameImageView(luckyType: backData.luckyType)
+        
+        self.dotchiNameLabel.text = Text.nameGuide + backData.dotchiName
+        self.dotchiNameLabel.setColor(to: backData.dotchiName, with: backData.luckyType.uiColorNormal())
+        
+        self.dotchiMoodLabel.text = Text.moodGuide + backData.dotchiMood
+        self.dotchiMoodLabel.setColor(to: backData.dotchiMood, with: backData.luckyType.uiColorNormal())
+        
+        self.dotchiContentLabel.text = backData.dotchiContent
+        
         self.dotchiLuckyTypeLabel.textColor = backData.luckyType.uiColorNormal()
         self.dotchiLuckyTypeLabel.text = backData.luckyType.toYouMessage()
         self.cardProfileView.setData(data: userData, luckyType: backData.luckyType, headType: .back)
