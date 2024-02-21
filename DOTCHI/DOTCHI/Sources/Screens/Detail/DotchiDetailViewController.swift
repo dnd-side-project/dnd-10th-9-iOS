@@ -75,6 +75,7 @@ final class DotchiDetailViewController: BaseViewController {
         self.setBackButtonAction(self.navigationView.backButton)
         self.setCommentTableView()
         self.setTapGesture()
+        self.setMoreButtonAction()
         self.fetchData()
     }
     
@@ -120,6 +121,75 @@ final class DotchiDetailViewController: BaseViewController {
         self.commentButton.setBackgroundColor(data.luckyType.uiColorNormal(), for: .normal)
         self.commentButton.setBackgroundColor(data.luckyType.uiColorNormal().withAlphaComponent(0.5), for: .disabled)
         self.commentButton.titleLabel?.font = .button
+    }
+    
+    private func setMoreButtonAction() {
+        self.navigationView.moreButton.setAction { [weak self] in
+            self?.openMoreButtonActionSheet()
+        }
+    }
+    
+    private func openMoreButtonActionSheet() {
+        let actionSheet: UIAlertController = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        actionSheet.addAction(
+            UIAlertAction(
+                title: "차단하기",
+                style: .default,
+                handler: { _ in
+                    self.makeAlertWithCancel(
+                        title: "\("오뜨") 님을 차단합니다.",
+                        message: nil,
+                        okTitle: "차단") { _ in
+                            // TODO: block user
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                }
+            )
+        )
+        
+        actionSheet.addAction(
+            UIAlertAction(
+                title: "신고하기",
+                style: .default,
+                handler: { _ in
+                    self.makeAlertWithCancel(
+                        title: "\("오뜨") 님을 신고합니다.",
+                        okTitle: "신고") { _ in
+                            // TODO: report user
+                        }
+                }
+            )
+        )
+        
+        // TODO: 내 카드인 경우
+        actionSheet.addAction(
+            UIAlertAction(
+                title: "삭제하기",
+                style: .destructive,
+                handler: { _ in
+                    self.makeAlertWithCancel(
+                        title: "정말 삭제할까요?",
+                        okTitle: "삭제") { _ in
+                            // TODO: delete
+                        }
+                }
+            )
+        )
+        
+        actionSheet.addAction(
+            UIAlertAction(
+                title: "취소",
+                style: .cancel,
+                handler: nil
+            )
+        )
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
 }
 
