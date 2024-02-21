@@ -80,7 +80,7 @@ final class SignInViewController: BaseViewController {
         UserInfo.shared.username = data.memberName
         UserInfo.shared.profileImageUrl = data.memberImageURL
         UserInfo.shared.accessToken = data.accessToken
-        self?.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
+        self.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
     }
 }
 
