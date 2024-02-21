@@ -29,7 +29,7 @@ final class DotchiUITextField: UITextField {
     private func setUI() {
         self.backgroundColor = .dotchiMgray
         self.font = .head2
-        self.textColor = .dotchiWhite
+        self.textColor = .dotchiLgray
         self.addLeftPadding(12)
         self.addRightPadding(12)
         self.makeRounded(cornerRadius: 8)

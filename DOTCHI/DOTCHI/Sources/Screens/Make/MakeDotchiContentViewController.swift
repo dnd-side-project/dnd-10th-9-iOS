@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
 final class MakeDotchiContentViewController: BaseViewController {
     
@@ -53,6 +55,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     private let dotchiNameTextField: DotchiUITextField = {
         let textField: DotchiUITextField = DotchiUITextField()
         textField.setDotchiPlaceholder(Text.dotchiNamePlaceholder)
+        textField.returnKeyType = .done
         return textField
     }()
     
@@ -73,6 +76,7 @@ final class MakeDotchiContentViewController: BaseViewController {
     private let dotchiMoodTextField: DotchiUITextField = {
         let textField: DotchiUITextField = DotchiUITextField()
         textField.setDotchiPlaceholder(Text.dotchiMoodPlaceholder)
+        textField.returnKeyType = .done
         return textField
     }()
     
@@ -87,13 +91,19 @@ final class MakeDotchiContentViewController: BaseViewController {
         let textView: UITextView = UITextView()
         textView.backgroundColor = .dotchiMgray
         textView.font = .head2
-        textView.textColor = .dotchiWhite.withAlphaComponent(0.3)
-        textView.text = Text.dotchiContentPlaceholder
+        textView.textColor = .dotchiLgray
         textView.textContainerInset = .init(top: 12, left: 12, bottom: 12, right: 12)
         textView.contentInset = .zero
         textView.textContainer.lineFragmentPadding = .zero
         textView.makeRounded(cornerRadius: 8)
         return textView
+    }()
+    
+    private let dotchiContentPlaceholderLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.setStyle(.head2, .dotchiWhite.withAlphaComponent(0.3))
+        label.text = Text.dotchiContentPlaceholder
+        return label
     }()
     
     private let luckyDescriptionLabel: UILabel = {
@@ -112,6 +122,14 @@ final class MakeDotchiContentViewController: BaseViewController {
     // MARK: Properties
     
     private var makeDotchiData: MakeDotchiEntity = MakeDotchiEntity()
+    private var keyboardHeight: CGFloat = 0
+    private let disposeBag: DisposeBag = DisposeBag()
+    private var isNextButtonEnable: [Bool] = [false, false] {
+        didSet {
+            self.nextButton.isEnabled = self.isNextButtonEnable[0]
+                && self.isNextButtonEnable[1]
+        }
+    }
     
     // MARK: Initializer
     
@@ -133,6 +151,22 @@ final class MakeDotchiContentViewController: BaseViewController {
         self.setLayout()
         self.setBackButtonAction(self.navigationView.backButton)
         self.setLuckyDescriptionLabel()
+        self.setDotchiNameTextField()
+        self.setDotchiMoodTextField()
+        self.setDotchiContentTextView()
+        self.setNextButtonAction()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.addKeyboardObserver(willShow: #selector(self.keyboardWillShow(_:)), willHide: #selector(self.keyboardWillHide(_:)))
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.removeKeyboardObserver()
     }
     
     // MARK: Methods
@@ -140,6 +174,84 @@ final class MakeDotchiContentViewController: BaseViewController {
     private func setLuckyDescriptionLabel() {
         self.luckyDescriptionLabel.text = Text.luckyDescriptionHead + self.makeDotchiData.luckyType.name() + Text.luckyDescriptionTrail
         self.luckyDescriptionLabel.setColor(to: self.makeDotchiData.luckyType.name(), with: self.makeDotchiData.luckyType.uiColorNormal())
+    }
+    
+    @objc
+    private func keyboardWillShow(_ notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            self.keyboardHeight = keyboardRectangle.height
+            if self.dotchiNameTextField.isEditing {
+                self.scrollView.setContentOffset(CGPoint(x: 0, y: self.dotchiNameInfoLabel.frame.minY - 10), animated: true)
+            } else if self.dotchiMoodTextField.isEditing {
+                self.scrollView.setContentOffset(CGPoint(x: 0, y: self.dotchiMoodInfoLabel.frame.minY - 10), animated: true)
+            } else {
+                self.scrollView.setContentOffset(CGPoint(x: 0, y: self.dotchiContentInfoLabel.frame.minY - 10), animated: true)
+            }
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide(_ notification: Notification) {
+        self.keyboardHeight = 0
+        self.scrollView.setContentOffset(.zero, animated: true)
+    }
+    
+    private func setDotchiNameTextField() {
+        self.dotchiNameTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(with: self, onNext: { owner, changedText in
+                if changedText.count > 7 {
+                    owner.dotchiNameTextField.deleteBackward()
+                }
+                
+                owner.isNextButtonEnable[0] = !changedText.isEmpty
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func setDotchiMoodTextField() {
+        self.dotchiMoodTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(with: self, onNext: { owner, changedText in
+                if changedText.count > 15 {
+                    owner.dotchiMoodTextField.deleteBackward()
+                }
+                
+                owner.isNextButtonEnable[1] = !changedText.isEmpty
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func setDotchiContentTextView() {
+        self.dotchiContentTextView.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .withUnretained(self)
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { (owner, changedText) in
+                self.dotchiContentPlaceholderLabel.isHidden = changedText.count > 0
+                if changedText.count > 20 {
+                    self.dotchiContentTextView.deleteBackward()
+                }
+                
+                if changedText.isSubstringRepeatedTwice("\n") {
+                    self.dotchiContentTextView.deleteBackward()
+                }
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func setNextButtonAction() {
+        self.nextButton.setAction { [weak self] in
+            self?.makeDotchiData.dotchiName = self?.dotchiNameTextField.text ?? ""
+            self?.makeDotchiData.dotchiMood = self?.dotchiMoodTextField.text ?? ""
+            self?.makeDotchiData.dotchiContent = self?.dotchiContentTextView.text ?? ""
+            
+            self?.navigationController?.pushViewController(UIViewController(), animated: true)
+        }
     }
 }
 
@@ -152,7 +264,7 @@ extension MakeDotchiContentViewController {
         self.contentView.addSubviews([
             dotchiNameInfoLabel, dotchiNameGuideLabel, dotchiNameTextField,
             dotchiMoodInfoLabel, dotchiMoodGuideLabel, dotchiMoodTextField,
-            dotchiContentInfoLabel, dotchiContentTextView,
+            dotchiContentInfoLabel, dotchiContentTextView, dotchiContentPlaceholderLabel,
             luckyDescriptionLabel
         ])
         
@@ -215,6 +327,11 @@ extension MakeDotchiContentViewController {
             make.top.equalTo(self.dotchiContentInfoLabel.snp.bottom).offset(16)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(104)
+        }
+        
+        self.dotchiContentPlaceholderLabel.snp.makeConstraints { make in
+            make.top.leading.equalTo(self.dotchiContentTextView).inset(12)
+            make.trailing.equalTo(self.dotchiContentTextView).inset(12)
         }
         
         self.luckyDescriptionLabel.snp.makeConstraints { make in
