@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct DOTCHIApp: App {
+    
+    @State private var isSignInViewPresented = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            SignInViewControllerRepresentable(isPresented: $isSignInViewPresented)
+                .ignoresSafeArea()
         }
     }
 }

@@ -51,4 +51,8 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
+    
+    func showNetworkErrorAlert() {
+        self.makeAlert(title: Message.networkError.text)
+    }
 }
