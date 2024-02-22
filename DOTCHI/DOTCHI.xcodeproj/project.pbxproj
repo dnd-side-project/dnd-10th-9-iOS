@@ -15,6 +15,11 @@
 		107D6E622B78DEA0005B6261 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E972B77F864006D5627 /* Pretendard-SemiBold.ttf */; };
 		107D6E632B78DEA2005B6261 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF018E962B77F861006D5627 /* Pretendard-ExtraBold.ttf */; };
 		107D6E662B78E39B005B6261 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 107D6E652B78E39B005B6261 /* Pretendard-Bold.ttf */; };
+		10BC6B4F2B85BACA007D1D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10BC6B4E2B85BACA007D1D9A /* Assets.xcassets */; };
+		10BC6B522B869193007D1D9A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10BC6B512B869193007D1D9A /* Lottie */; };
+		10BC6B542B869432007D1D9A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BC6B532B869432007D1D9A /* LottieView.swift */; };
+		10BC6B562B86946F007D1D9A /* pung.json in Resources */ = {isa = PBXBuildFile; fileRef = 10BC6B552B86946F007D1D9A /* pung.json */; };
+		10BC6B582B869514007D1D9A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10BC6B572B869514007D1D9A /* Lottie */; };
 		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -53,7 +58,6 @@
 		FF83229B2B7CD2250069D68A /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83229A2B7CD2250069D68A /* ClassNameProtocol.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
-		FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D362B70F36700C7620E /* Assets.xcassets */; };
 		FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */; };
 		FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D412B70F42200C7620E /* SnapKit */; };
 		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
@@ -113,6 +117,9 @@
 		100A1E2D2B71576B00AAC1E8 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		107D6E5E2B78DB61005B6261 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		107D6E652B78E39B005B6261 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		10BC6B4E2B85BACA007D1D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10BC6B532B869432007D1D9A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		10BC6B552B86946F007D1D9A /* pung.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pung.json; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -157,7 +164,6 @@
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FFAA7D362B70F36700C7620E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/jungbin/Documents/GitHub/dnd-10th-9-iOS/DOTCHI/DOTCHI/Resources/Assets.xcassets"; sourceTree = "<absolute>"; };
 		FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewControllerRepresentable.swift; sourceTree = "<group>"; };
@@ -198,11 +204,13 @@
 			files = (
 				FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */,
 				FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */,
+				10BC6B582B869514007D1D9A /* Lottie in Frameworks */,
 				FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */,
 				FFD594002B70FCDD003F1F3C /* Moya in Frameworks */,
 				FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */,
 				FFD593FE2B70FCDD003F1F3C /* CombineMoya in Frameworks */,
 				FFE8C1B22B7DF7ED008124E5 /* RxGesture in Frameworks */,
+				10BC6B522B869193007D1D9A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				FF018E812B7537A9006D5627 /* Fonts */,
-				FFAA7D362B70F36700C7620E /* Assets.xcassets */,
+				10BC6B4E2B85BACA007D1D9A /* Assets.xcassets */,
 				FFD594352B710311003F1F3C /* Colorsets.xcassets */,
 			);
 			path = Resources;
@@ -493,8 +501,10 @@
 		FFD594382B710355003F1F3C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				10BC6B552B86946F007D1D9A /* pung.json */,
 				FFD594392B710367003F1F3C /* HomeView.swift */,
 				100182F22B7AAA440024813A /* CollectionView.swift */,
+				10BC6B532B869432007D1D9A /* LottieView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -617,6 +627,8 @@
 				FFD594012B70FCDD003F1F3C /* ReactiveMoya */,
 				FFD594032B70FCDD003F1F3C /* RxMoya */,
 				FFE8C1B12B7DF7ED008124E5 /* RxGesture */,
+				10BC6B512B869193007D1D9A /* Lottie */,
+				10BC6B572B869514007D1D9A /* Lottie */,
 			);
 			productName = DOTCHI;
 			productReference = FFAA7D2F2B70F36600C7620E /* DOTCHI.app */;
@@ -651,6 +663,7 @@
 				FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */,
 				FFE8C1B02B7DF7ED008124E5 /* XCRemoteSwiftPackageReference "RxGesture" */,
+				10BC6B502B869193007D1D9A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = FFAA7D302B70F36600C7620E /* Products */;
 			projectDirPath = "";
@@ -669,9 +682,10 @@
 				107D6E632B78DEA2005B6261 /* Pretendard-ExtraBold.ttf in Resources */,
 				107D6E622B78DEA0005B6261 /* Pretendard-SemiBold.ttf in Resources */,
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
+				10BC6B562B86946F007D1D9A /* pung.json in Resources */,
 				107D6E612B78DE9E005B6261 /* Pretendard-Medium.ttf in Resources */,
 				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
-				FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */,
+				10BC6B4F2B85BACA007D1D9A /* Assets.xcassets in Resources */,
 				107D6E662B78E39B005B6261 /* Pretendard-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,6 +719,7 @@
 				FFD306AB2B826975004B5AEA /* MakeDotchiLuckyTitleUIView.swift in Sources */,
 				FFD594492B710411003F1F3C /* BaseViewController.swift in Sources */,
 				FF8322932B7CAC4E0069D68A /* CardUserEntity.swift in Sources */,
+				10BC6B542B869432007D1D9A /* LottieView.swift in Sources */,
 				FFD594452B7103D8003F1F3C /* UserInfo.swift in Sources */,
 				107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */,
 				FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */,
@@ -965,6 +980,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		10BC6B502B869193007D1D9A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
 		FFAA7D402B70F42200C7620E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1000,6 +1023,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		10BC6B512B869193007D1D9A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10BC6B502B869193007D1D9A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		10BC6B572B869514007D1D9A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10BC6B502B869193007D1D9A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		FFAA7D412B70F42200C7620E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FFAA7D402B70F42200C7620E /* XCRemoteSwiftPackageReference "SnapKit" */;
