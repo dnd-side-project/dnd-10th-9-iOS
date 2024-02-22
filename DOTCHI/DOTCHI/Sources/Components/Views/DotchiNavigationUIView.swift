@@ -13,6 +13,7 @@ final class DotchiNavigationUIView: UIView {
         case back
         case closeCenterTitle
         case backCenterTitle
+        case backMore
     }
     
     // MARK: UIComponents
@@ -36,6 +37,12 @@ final class DotchiNavigationUIView: UIView {
         return label
     }()
     
+    lazy var moreButton: UIButton = {
+        let button: UIButton = UIButton(type: .system)
+        button.setImage(.icnMore, for: .normal)
+        return button
+    }()
+    
     // MARK: Initializer
     
     init(type: NavigationType) {
@@ -47,6 +54,7 @@ final class DotchiNavigationUIView: UIView {
         case .back: self.setBackLayout()
         case .closeCenterTitle: self.setCloseCenterTitleLayout()
         case .backCenterTitle: self.setBackCenterTitleLayout()
+        case .backMore: self.setBackMoreLayout()
         }
     }
     
@@ -84,10 +92,25 @@ extension DotchiNavigationUIView {
         self.setCenterTitleLabelLayout()
     }
     
+    private func setBackMoreLayout() {
+        self.addSubviews([backButton, moreButton])
+        
+        self.setLeftButtonLayout(button: self.backButton)
+        self.setRightButtonLayout(button: self.moreButton)
+    }
+    
     private func setLeftButtonLayout(button: UIButton) {
         button.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(24)
+            make.width.height.equalTo(32)
+        }
+    }
+    
+    private func setRightButtonLayout(button: UIButton) {
+        button.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(24)
             make.width.height.equalTo(32)
         }
     }

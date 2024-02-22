@@ -57,11 +57,9 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
         self.cardBackView.isHidden = true
     }
     
-    func setData(data: CardFrontEntity) {
-        self.cardFrontView.setData(data: data)
-        
-        // TODO: CardBackEntity로 수정..
-        self.cardBackView.setData(data: data)
+    func setData(data: CardEntity) {
+        self.cardFrontView.setData(frontData: data.front, userData: data.user)
+        self.cardBackView.setData(backData: data.back, userData: data.user)
     }
     
     private func setTapGesture() {

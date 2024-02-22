@@ -29,6 +29,19 @@ extension LuckyType {
         }
     }
     
+    func nameWithHeart() -> String {
+        switch self {
+        case .health:
+            return "건강운🧡"
+        case .lucky:
+            return "행운💚"
+        case .money:
+            return "재물운🩵"
+        case .love:
+            return "애정운🩷"
+        }
+    }
+    
     func toYouMessage() -> String {
         switch self {
         case .health:
