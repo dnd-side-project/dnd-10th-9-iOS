@@ -21,120 +21,120 @@ struct HomeView: View {
                 Color.dotchiBlack.ignoresSafeArea()
                 
                 ScrollView {
-                    ZStack {
-                        Image(.imgBackground)
-                            .frame(width: .infinity, height: 400)
-                           
-                        VStack {
-                            ZStack {
-                                LottieView(filename: "pung", numberOfPlays: 3)
-                                    .frame(height: 170)
+                    VStack(spacing: 0) {
+                        ZStack {
+                            LottieView(filename: "pung", numberOfPlays: 3)
+                                .frame(height: 170)
+                            
+                            VStack {
+                                Text("가장 많은 행운을\n나눠준 오늘의 따봉도치")
+                                    .font(.Head)
+                                    .foregroundStyle(.dotchiWhite)
+                                    .multilineTextAlignment(.center)
                                 
-                                VStack {
-                                    Text("가장 많은 행운을\n나눠준 오늘의 따봉도치")
-                                        .font(.Head)
-                                        .foregroundStyle(.dotchiWhite)
-                                        .multilineTextAlignment(.center)
+                                HStack {
+                                    Image(.icnGraph)
+                                        .frame(width: 11, height: 13)
                                     
-                                    HStack {
-                                        Image(.icnGraph)
-                                            .frame(width: 11, height: 13)
-                                        
-                                        Text("\(formattedDate) 기준")
-                                            .font(.Sub)
-                                            .foregroundStyle(.dotchiLgray)
-                                    }
-                                    .padding(.top, 5)
-                                    .padding(.bottom, 17)
+                                    Text("\(formattedDate) 기준")
+                                        .font(.Sub)
+                                        .foregroundStyle(.dotchiLgray)
                                 }
-                                .padding(.top, 50)
+                                .padding(.top, 5)
+                                .padding(.bottom, 17)
+                            }
+                            .padding(.top, 50)
+                        }
+                        
+                        HStack(alignment: .bottom) {
+                            VStack {
+                                Image(.imgDefaultDummy)
+                                    .frame(width: 82, height: 82)
+                                    .cornerRadius(25)
+                                    .padding(.bottom, 8)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 67)
+                                        .fill(Color.dotchiLBlack)
+                                        .frame(width: 60, height: 32)
+                                    
+                                    Text("이름")
+                                        .font(.Sub)
+                                        .foregroundStyle(Color.dotchiWhite)
+                                }
+                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                
+                                Text("2위")
+                                    .font(.Sub_Sbold)
+                                    .foregroundStyle(Color.dotchiGray)
+                                    .padding(.top, 3)
                             }
                             
-                            HStack(alignment: .bottom) {
-                                VStack {
+                            VStack {
+                                ZStack(alignment: .top) {
                                     Image(.imgDefaultDummy)
-                                        .frame(width: 82, height: 82)
-                                        .cornerRadius(25)
+                                        .resizable()
+                                        .cornerRadius(30)
+                                        .frame(width: 112, height: 112)
                                         .padding(.bottom, 8)
-
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 67)
-                                            .fill(Color.dotchiLBlack)
-                                            .frame(width: 60, height: 32)
-                                        
-                                        Text("이름")
-                                            .font(.Sub)
-                                            .foregroundStyle(Color.dotchiWhite)
-                                    }
-                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                                     
-                                    Text("2위")
-                                        .font(.Sub_Sbold)
-                                        .foregroundStyle(Color.dotchiGray)
-                                        .padding(.top, 8)
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.dotchiGreen, lineWidth: 2)
+                                        .frame(width: 112, height: 112)
+                                    
+                                    Image(.icnPlus)
+                                        .resizable()
+                                        .frame(width: 64, height: 64)
+                                        .offset(y: -30)
                                 }
                                 
-                                VStack {
-                                    ZStack(alignment: .top) {
-                                        Image(.imgDefaultDummy)
-                                            .resizable()
-                                            .cornerRadius(30)
-                                            .frame(width: 112, height: 112)
-                                            .padding(.bottom, 8)
-                                        
-                                        RoundedRectangle(cornerRadius: 30)
-                                            .stroke(Color.dotchiGreen, lineWidth: 2)
-                                            .frame(width: 112, height: 112)
-                                        
-                                        Image(.icnPlus)
-                                            .resizable()
-                                            .frame(width: 64, height: 64)
-                                            .offset(y: -30)
-                                    }
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 67)
+                                        .fill(Color.dotchiLBlack)
+                                        .frame(width: 60, height: 32)
                                     
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 67)
-                                            .fill(Color.dotchiLBlack)
-                                            .frame(width: 60, height: 32)
-                                        
-                                        Text("이름")
-                                            .font(.Sub)
-                                            .foregroundStyle(Color.dotchiWhite)
-                                    }
-                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                                    
-                                    Text("1위")
-                                        .font(.Sub_Sbold)
+                                    Text("이름")
+                                        .font(.Sub)
                                         .foregroundStyle(Color.dotchiWhite)
-                                        .padding(.top, 8)
                                 }
+                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                                 
-                                VStack {
-                                    Image(.imgDefaultDummy)
-                                        .frame(width: 82, height: 82)
-                                        .cornerRadius(25)
-                                        .padding(.bottom, 8)
-                                    
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 67)
-                                            .fill(Color.dotchiLBlack)
-                                            .frame(width: 60, height: 32)
-                                        
-                                        Text("이름")
-                                            .font(.Sub)
-                                            .foregroundStyle(Color.dotchiWhite)
-                                    }
-                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                                    
-                                    Text("3위")
-                                        .font(.Sub_Sbold)
-                                        .foregroundStyle(Color.dotchiGray)
-                                        .padding(.top, 8)
-                                }
+                                Text("1위")
+                                    .font(.Sub_Sbold)
+                                    .foregroundStyle(Color.dotchiWhite)
+                                    .padding(.top, 3)
                             }
-                            .padding(.top, 40)
+                            
+                            VStack {
+                                Image(.imgDefaultDummy)
+                                    .frame(width: 82, height: 82)
+                                    .cornerRadius(25)
+                                    .padding(.bottom, 8)
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 67)
+                                        .fill(Color.dotchiLBlack)
+                                        .frame(width: 60, height: 32)
+                                    
+                                    Text("이름")
+                                        .font(.Sub)
+                                        .foregroundStyle(Color.dotchiWhite)
+                                }
+                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                
+                                Text("3위")
+                                    .font(.Sub_Sbold)
+                                    .foregroundStyle(Color.dotchiGray)
+                                    .padding(.top, 3)
+                            }
                         }
+                        .padding(.top, 30)
                     }
+                    .background(
+                        Rectangle()
+                            .fill(Color.dotchiBlack3)
+                            .padding(.bottom, -25)
+                    )
                     
                     HStack(alignment: .top) {
                         VStack(alignment: .leading) {
@@ -163,7 +163,7 @@ struct HomeView: View {
                         }
                     }
                     .padding(.horizontal, 20)
-                    .padding(.top, 65)
+                    .padding(.top, 50)
                     
                     ScrollView(.horizontal) {
                         HStack(alignment: .center, spacing: 12) {
@@ -419,7 +419,6 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 30)
                 }
-                .padding(.horizontal, 20)
                 .padding(.bottom, 20)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarTitle("", displayMode: .inline)
