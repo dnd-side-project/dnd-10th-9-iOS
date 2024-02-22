@@ -16,7 +16,7 @@ struct PostCardRequestDTO {
     let backContent: String
 
     enum CodingKeys: String, CodingKey {
-        case cardImage = "cardImage"
+        case cardImage = "image"
         case themeID = "themeId"
         case backName = "backName"
         case backMood = "backMood"
