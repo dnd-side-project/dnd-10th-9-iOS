@@ -21,4 +21,14 @@ struct MakeDotchiEntity {
         self.dotchiMood = ""
         self.dotchiContent = ""
     }
+    
+    func toPostCardRequestData() -> PostCardRequestDTO {
+        return .init(
+            cardImage: self.image,
+            themeID: self.luckyType.rawValue,
+            backName: self.dotchiName,
+            backMood: self.dotchiMood,
+            backContent: self.dotchiContent
+        )
+    }
 }
