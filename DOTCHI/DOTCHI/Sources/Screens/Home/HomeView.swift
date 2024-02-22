@@ -430,7 +430,6 @@ struct HomeView: View {
                             Image(.imgLogo)
                                 .resizable()
                                 .frame(width: 65, height: 22)
-                                .padding(.horizontal, 10)
                             Spacer()
                         }
                     }
