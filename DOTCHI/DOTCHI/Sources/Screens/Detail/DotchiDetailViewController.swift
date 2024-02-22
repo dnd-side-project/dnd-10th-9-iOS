@@ -60,12 +60,10 @@ final class DotchiDetailViewController: BaseViewController {
     // MARK: Properties
     
     private var cardId: Int = 0
+    private var luckyType: LuckyType = .lucky
     private let disposeBag: DisposeBag = DisposeBag()
-    private var comments: CommentsEntity = [
-        .init(userId: 1, username: "초코", profileImageUrl: "."),
-        .init(userId: 2, username: "뽀송이", profileImageUrl: "."),
-        .init(userId: 3, username: "냥냥", profileImageUrl: ".")
-    ]
+    private var comments: CommentsEntity = []
+    
     // MARK: Initializer
     
     init(cardId: Int) {
@@ -126,10 +124,10 @@ final class DotchiDetailViewController: BaseViewController {
         self.cardFrontView.setData(frontData: data.front, userData: data.user)
         self.cardBackView.setCommentViewData(backData: data.back, userData: data.user)
         self.commentButton.setTitle(data.front.dotchiName + Text.commentCenter + data.front.luckyType.nameWithHeart() + Text.commentTrail, for: .normal)
-        self.totalLuckyLabel.text = Text.total + "\(33)"
+        self.totalLuckyLabel.text = Text.total + "\(self.comments.count)"
         
         
-        self.totalLuckyLabel.setColor(to: "\(33)", with: data.front.luckyType.uiColorNormal())
+        self.totalLuckyLabel.setColor(to: "\(self.comments.count)", with: data.front.luckyType.uiColorNormal())
         self.commentButton.setBackgroundColor(data.front.luckyType.uiColorNormal(), for: .normal)
         self.commentButton.setBackgroundColor(data.front.luckyType.uiColorNormal().withAlphaComponent(0.5), for: .disabled)
         self.commentButton.titleLabel?.font = .button
@@ -216,7 +214,7 @@ extension DotchiDetailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.className, for: indexPath) as? CommentTableViewCell 
         else { return UITableViewCell() }
         
-        cell.setData(data: self.comments[indexPath.row], dotchiName: "따봉도치", luckyType: .love)
+        cell.setData(data: self.comments[indexPath.row], dotchiName: "따봉도치", luckyType: self.luckyType)
         return cell
     }
 }
@@ -233,29 +231,28 @@ extension DotchiDetailViewController: UITableViewDelegate {
 
 extension DotchiDetailViewController {
     private func fetchData() {
-        // TODO: 더미데이터 빼고 API 연결
-        self.setData(
-            data: .init(
-                user: .init(
-                    userId: 1,
-                    profileImageUrl: ".",
-                    username: "오뜨"
-                ),
-                front: .init(
-                    cardId: 1,
-                    imageUrl: ".",
-                    luckyType: .love,
-                    dotchiName: "따봉냥"
-                ),
-                back: .init(
-                    cardId: 1,
-                    dotchiName: "따봉냥",
-                    dotchiMood: "엄지가 절로 올라가",
-                    dotchiContent: "넌 지금 따봉도치와 눈이 마주쳤어!",
-                    luckyType: .love
-                )
-            )
-        )
+        CardService.shared.getComments(cardId: self.cardId) { networkResult in
+            switch networkResult {
+            case .success(let responseData):
+                if let result = responseData as? GetCommentsResponseDTO {
+                    self.comments = result.comments.map({ comment in
+                        comment.toCommentEntity()
+                    })
+                    
+                    self.commentTableView.reloadData()
+                    
+                    self.setData(
+                        data: CardEntity(
+                            user: result.card.toCardUserEntity(),
+                            front: result.card.toCardFrontEntity(),
+                            back: result.card.toCardBackEntity()
+                        )
+                    )
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
 }
 
