@@ -159,29 +159,29 @@ extension CardBackUIView {
         
         self.dotchiNameLabel.snp.makeConstraints { make in
             make.top.equalTo(self.cardProfileView.snp.bottom).offset(24)
-            make.horizontalEdges.equalToSuperview().inset(28)
+            make.horizontalEdges.equalToSuperview().inset(26)
             make.height.equalTo(24)
         }
         
         self.dotchiMoodLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiNameLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(28)
+            make.horizontalEdges.equalToSuperview().inset(26)
         }
         
         self.dotchiContentLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiMoodLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(28)
+            make.horizontalEdges.equalToSuperview().inset(26)
         }
         
         self.dotchiToYouLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiContentLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(28)
+            make.horizontalEdges.equalToSuperview().inset(26)
             make.height.equalTo(24)
         }
         
         self.dotchiLuckyTypeLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiToYouLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(28)
+            make.horizontalEdges.equalToSuperview().inset(26)
             make.height.equalTo(24)
         }
     }

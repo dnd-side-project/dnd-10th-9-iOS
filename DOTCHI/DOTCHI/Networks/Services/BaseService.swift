@@ -18,11 +18,7 @@ class BaseService {
         switch statusCode {
         case 200...210:
             return .success(decodedData.result ?? "data type error, failed")
-        case 401:
-            return .requestErr(false)
-        case 404:
-            return .requestErr(404)
-        case 400, 402, 403, 405..<500:
+        case 400..<500:
             return .requestErr(decodedData.message)
         case 500:
             return .serverErr

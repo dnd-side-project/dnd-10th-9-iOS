@@ -64,27 +64,47 @@ final class SignInViewController: BaseViewController {
     
     private func setSignInAppleButtonAction() {
         self.signInAppleButton.setAction { [weak self] in
-            
-            if KeychainSwift().get(KeychainKeys.accessToken.rawValue) == nil {
+            if !(UserDefaultsManager.isSigned ?? false) {
                 self?.requestSignIn(data: .init(memberId: 2), completion: { response in
-                    self?.setUserInfo(data: response)
+                    self?.setUserDataToKeychain(data: response)
+                    self?.setUserDataToUserInfo(data: response)
+                    UserDefaultsManager.isSigned = true
                     self?.presentContentView()
                 })
             } else {
+                if let userData = self?.getUserDataFromKeychain() {
+                    self?.setUserDataToUserInfo(data: userData)
+                }
                 self?.presentContentView()
             }
         }
     }
     
-    private func setUserInfo(data: SignInResponseDTO) {
+    private func setUserDataToKeychain(data: SignInResponseDTO) {
+        self.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
+        self.keychainManager.set("\(data.memberID)", forKey: KeychainKeys.userID.rawValue)
+        self.keychainManager.set(data.memberName, forKey: KeychainKeys.username.rawValue)
+        self.keychainManager.set(data.memberImageURL, forKey: KeychainKeys.profileImageUrl.rawValue)
+    }
+    
+    private func getUserDataFromKeychain() -> SignInResponseDTO {
+        return .init(
+            memberID: Int(self.keychainManager.get(KeychainKeys.userID.rawValue) ?? "") ?? 0,
+            memberName: self.keychainManager.get(KeychainKeys.username.rawValue) ?? "",
+            memberImageURL: self.keychainManager.get(KeychainKeys.profileImageUrl.rawValue) ?? "",
+            accessToken: self.keychainManager.get(KeychainKeys.accessToken.rawValue) ?? ""
+        )
+    }
+    
+    private func setUserDataToUserInfo(data: SignInResponseDTO) {
         UserInfo.shared.userID = data.memberID
         UserInfo.shared.username = data.memberName
         UserInfo.shared.profileImageUrl = data.memberImageURL
         UserInfo.shared.accessToken = data.accessToken
-        self.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
     }
     
     private func presentContentView() {
+        debugPrint("accessToken", self.keychainManager.get(KeychainKeys.accessToken.rawValue) ?? "None")
         let contentView: ContentView = ContentView()
         let hostingController = UIHostingController(rootView: contentView)
         hostingController.modalPresentationStyle = .fullScreen

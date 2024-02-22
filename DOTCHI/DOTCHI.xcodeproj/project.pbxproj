@@ -28,14 +28,21 @@
 		FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */; };
 		FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA12B77FE3B006D5627 /* UIButton+.swift */; };
 		FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */; };
+		FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0922B8658C300B9DFC1 /* CardBackEntity.swift */; };
+		FF0CF0952B8659B600B9DFC1 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0942B8659B600B9DFC1 /* CardEntity.swift */; };
 		FF0CF0972B86616700B9DFC1 /* SignInViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0962B86616700B9DFC1 /* SignInViewControllerRepresentable.swift */; };
 		FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */; };
 		FF0CF09C2B86695300B9DFC1 /* SignInRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF09B2B86695300B9DFC1 /* SignInRequestDTO.swift */; };
 		FF0CF09E2B86697D00B9DFC1 /* SignInResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF09D2B86697D00B9DFC1 /* SignInResponseDTO.swift */; };
 		FF0CF0A12B866F3600B9DFC1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0A02B866F3600B9DFC1 /* Message.swift */; };
 		FF0CF0A32B8671AA00B9DFC1 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0A22B8671AA00B9DFC1 /* KeychainKeys.swift */; };
-		FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0922B8658C300B9DFC1 /* CardBackEntity.swift */; };
-		FF0CF0952B8659B600B9DFC1 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0942B8659B600B9DFC1 /* CardEntity.swift */; };
+		FF0CF0A52B87076F00B9DFC1 /* CardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0A42B87076F00B9DFC1 /* CardRouter.swift */; };
+		FF0CF0A92B8707F400B9DFC1 /* PostCardRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0A82B8707F400B9DFC1 /* PostCardRequestDTO.swift */; };
+		FF0CF0AB2B870AAA00B9DFC1 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */; };
+		FF0CF0AD2B870D4000B9DFC1 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */; };
+		FF0CF0AF2B871C2000B9DFC1 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AE2B871C2000B9DFC1 /* UserDefaultsManager.swift */; };
+		FF0CF0B12B871C5A00B9DFC1 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */; };
+		FF0CF0B42B8732B100B9DFC1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */; };
@@ -133,6 +140,8 @@
 		FF018E9F2B77FA6C006D5627 /* DotchiNavigationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationUIView.swift; sourceTree = "<group>"; };
 		FF018EA12B77FE3B006D5627 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		FF018EA42B7803CE006D5627 /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
+		FF0CF0922B8658C300B9DFC1 /* CardBackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackEntity.swift; sourceTree = "<group>"; };
+		FF0CF0942B8659B600B9DFC1 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		FF0CF0962B86616700B9DFC1 /* SignInViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FF0CF09B2B86695300B9DFC1 /* SignInRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequestDTO.swift; sourceTree = "<group>"; };
@@ -140,8 +149,12 @@
 		FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF0CF0A02B866F3600B9DFC1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FF0CF0A22B8671AA00B9DFC1 /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
-		FF0CF0922B8658C300B9DFC1 /* CardBackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackEntity.swift; sourceTree = "<group>"; };
-		FF0CF0942B8659B600B9DFC1 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
+		FF0CF0A42B87076F00B9DFC1 /* CardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRouter.swift; sourceTree = "<group>"; };
+		FF0CF0A82B8707F400B9DFC1 /* PostCardRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardRequestDTO.swift; sourceTree = "<group>"; };
+		FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		FF0CF0AE2B871C2000B9DFC1 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewController.swift; sourceTree = "<group>"; };
@@ -275,8 +288,24 @@
 				FF0CF0992B86618500B9DFC1 /* SignInViewController.swift */,
 			);
 			path = SignIn;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
+		FF0CF0A62B8707E200B9DFC1 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CF0A72B8707E600B9DFC1 /* Request */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		FF0CF0A72B8707E600B9DFC1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CF0A82B8707F400B9DFC1 /* PostCardRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		FF4F9C0B2B86015F00E3DE31 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +445,7 @@
 		FFD594192B70FF47003F1F3C /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FF0CF0A62B8707E200B9DFC1 /* Card */,
 				FFD5942B2B7101B0003F1F3C /* Auth */,
 			);
 			path = DTO;
@@ -437,6 +467,7 @@
 			children = (
 				FFD5941F2B710135003F1F3C /* BaseService.swift */,
 				FFD594212B710147003F1F3C /* AuthService.swift */,
+				FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -445,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */,
+				FF0CF0A42B87076F00B9DFC1 /* CardRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -563,6 +595,8 @@
 				FFD306B92B83C25D004B5AEA /* UITextField+.swift */,
 				FF4F9C072B83DD2600E3DE31 /* String+.swift */,
 				FF4F9C102B860A8C00E3DE31 /* UITableView+.swift */,
+				FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */,
+				FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +626,7 @@
 			children = (
 				FFD594442B7103D8003F1F3C /* UserInfo.swift */,
 				FFD594462B7103EF003F1F3C /* ImageCacheManager.swift */,
+				FF0CF0AE2B871C2000B9DFC1 /* UserDefaultsManager.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -687,6 +722,7 @@
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
 				10BC6B562B86946F007D1D9A /* pung.json in Resources */,
 				107D6E612B78DE9E005B6261 /* Pretendard-Medium.ttf in Resources */,
+				FF0CF0B42B8732B100B9DFC1 /* Debug.xcconfig in Resources */,
 				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
 				10BC6B4F2B85BACA007D1D9A /* Assets.xcassets in Resources */,
 				107D6E662B78E39B005B6261 /* Pretendard-Bold.ttf in Resources */,
@@ -714,6 +750,7 @@
 				FFD306B32B83BC3D004B5AEA /* MakeDotchiContentViewController.swift in Sources */,
 				FFD594332B710218003F1F3C /* NetworkLoggerPlugin.swift in Sources */,
 				FF83228C2B7C5AE00069D68A /* CardFrontUIView.swift in Sources */,
+				FF0CF0AB2B870AAA00B9DFC1 /* UIImage+.swift in Sources */,
 				FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */,
 				FFD306B52B83BE21004B5AEA /* BaseUINavigationController.swift in Sources */,
 				FF8322992B7CD1580069D68A /* UIStackView+.swift in Sources */,
@@ -732,6 +769,7 @@
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
 				FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
+				FF0CF0AD2B870D4000B9DFC1 /* CardService.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
 				FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */,
 				FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */,
@@ -751,6 +789,8 @@
 				FF0CF09E2B86697D00B9DFC1 /* SignInResponseDTO.swift in Sources */,
 				FFE8C1AF2B7DF78D008124E5 /* CardBackUIView.swift in Sources */,
 				FF0CF09C2B86695300B9DFC1 /* SignInRequestDTO.swift in Sources */,
+				FF0CF0B12B871C5A00B9DFC1 /* UserDefaults+.swift in Sources */,
+				FF0CF0A92B8707F400B9DFC1 /* PostCardRequestDTO.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FF8322852B7C58A60069D68A /* UICollectionView+.swift in Sources */,
@@ -761,6 +801,7 @@
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */,
 				FF8322872B7C58BD0069D68A /* Adjusted+.swift in Sources */,
+				FF0CF0AF2B871C2000B9DFC1 /* UserDefaultsManager.swift in Sources */,
 				FF0CF0A32B8671AA00B9DFC1 /* KeychainKeys.swift in Sources */,
 				FFD306AF2B83AC5E004B5AEA /* MakeDotchiEntity.swift in Sources */,
 				FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */,
@@ -772,6 +813,7 @@
 				FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */,
 				FF83229B2B7CD2250069D68A /* ClassNameProtocol.swift in Sources */,
 				FF018EA22B77FE3B006D5627 /* UIButton+.swift in Sources */,
+				FF0CF0A52B87076F00B9DFC1 /* CardRouter.swift in Sources */,
 				FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
