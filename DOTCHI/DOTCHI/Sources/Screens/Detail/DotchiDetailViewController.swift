@@ -59,12 +59,24 @@ final class DotchiDetailViewController: BaseViewController {
     
     // MARK: Properties
     
+    private var cardId: Int = 0
     private let disposeBag: DisposeBag = DisposeBag()
     private var comments: CommentsEntity = [
         .init(userId: 1, username: "초코", profileImageUrl: "."),
         .init(userId: 2, username: "뽀송이", profileImageUrl: "."),
         .init(userId: 3, username: "냥냥", profileImageUrl: ".")
     ]
+    // MARK: Initializer
+    
+    init(cardId: Int) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.cardId = cardId
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: View Life Cycle
     
