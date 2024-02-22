@@ -70,6 +70,7 @@ final class MakeDotchiPreviewViewController: BaseViewController {
         self.setBackButtonAction(self.navigationView.backButton)
         self.setTapGesture()
         self.setData(makeDotchiData: self.makeDotchiData)
+        self.setUploadButtonAction()
     }
     
     // MARK: Methods
@@ -100,6 +101,29 @@ final class MakeDotchiPreviewViewController: BaseViewController {
     private func setData(makeDotchiData: MakeDotchiEntity) {
         self.cardFrontView.setData(makeDotchiData: makeDotchiData)
         self.cardBackView.setData(makeDotchiData: makeDotchiData)
+    }
+    
+    private func setUploadButtonAction() {
+        self.uploadButton.setAction { [weak self] in
+            self?.postCard(data: self?.makeDotchiData ?? .init(), completion: {
+                self?.dismiss(animated: true)
+            })
+        }
+    }
+}
+
+// MARK: - Network
+
+extension MakeDotchiPreviewViewController {
+    private func postCard(data: MakeDotchiEntity, completion: @escaping () -> (Void)) {
+        CardService.shared.postCard(data: data.toPostCardRequestData()) { networkResult in
+            switch networkResult {
+            case .success:
+                completion()
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
 }
 
