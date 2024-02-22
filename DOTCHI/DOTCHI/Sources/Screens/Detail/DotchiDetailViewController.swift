@@ -63,6 +63,7 @@ final class DotchiDetailViewController: BaseViewController {
     private var luckyType: LuckyType = .lucky
     private let disposeBag: DisposeBag = DisposeBag()
     private var comments: CommentsEntity = []
+    private var user: CardUserEntity = CardUserEntity()
     
     // MARK: Initializer
     
@@ -152,7 +153,7 @@ final class DotchiDetailViewController: BaseViewController {
                 style: .default,
                 handler: { _ in
                     self.makeAlertWithCancel(
-                        title: "\("오뜨") 님을 차단합니다.",
+                        title: "\(self.user.username) 님을 차단합니다.",
                         message: nil,
                         okTitle: "차단") { _ in
                             // TODO: block user
@@ -168,7 +169,7 @@ final class DotchiDetailViewController: BaseViewController {
                 style: .default,
                 handler: { _ in
                     self.makeAlertWithCancel(
-                        title: "\("오뜨") 님을 신고합니다.",
+                        title: "\(self.user.username) 님을 신고합니다.",
                         okTitle: "신고") { _ in
                             // TODO: report user
                         }
@@ -238,6 +239,7 @@ extension DotchiDetailViewController {
                     self.comments = result.comments.map({ comment in
                         comment.toCommentEntity()
                     })
+                    self.user = result.card.toCardUserEntity()
                     
                     self.commentTableView.reloadData()
                     
