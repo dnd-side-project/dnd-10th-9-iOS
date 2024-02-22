@@ -90,7 +90,7 @@ final class SignInViewController: BaseViewController {
     private func getUserDataFromKeychain() -> SignInResponseDTO {
         return .init(
             memberID: Int(self.keychainManager.get(KeychainKeys.userID.rawValue) ?? "") ?? 0,
-            memberName: self.keychainManager.get(KeychainKeys.userID.rawValue) ?? "",
+            memberName: self.keychainManager.get(KeychainKeys.username.rawValue) ?? "",
             memberImageURL: self.keychainManager.get(KeychainKeys.profileImageUrl.rawValue) ?? "",
             accessToken: self.keychainManager.get(KeychainKeys.accessToken.rawValue) ?? ""
         )
