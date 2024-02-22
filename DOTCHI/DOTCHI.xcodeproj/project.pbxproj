@@ -34,6 +34,8 @@
 		FF0CF0A92B8707F400B9DFC1 /* PostCardRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0A82B8707F400B9DFC1 /* PostCardRequestDTO.swift */; };
 		FF0CF0AB2B870AAA00B9DFC1 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */; };
 		FF0CF0AD2B870D4000B9DFC1 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */; };
+		FF0CF0AF2B871C2000B9DFC1 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AE2B871C2000B9DFC1 /* UserDefaultsManager.swift */; };
+		FF0CF0B12B871C5A00B9DFC1 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */; };
@@ -141,6 +143,8 @@
 		FF0CF0A82B8707F400B9DFC1 /* PostCardRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardRequestDTO.swift; sourceTree = "<group>"; };
 		FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		FF0CF0AE2B871C2000B9DFC1 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewController.swift; sourceTree = "<group>"; };
@@ -579,6 +583,7 @@
 				FF4F9C072B83DD2600E3DE31 /* String+.swift */,
 				FF4F9C102B860A8C00E3DE31 /* UITableView+.swift */,
 				FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */,
+				FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 			children = (
 				FFD594442B7103D8003F1F3C /* UserInfo.swift */,
 				FFD594462B7103EF003F1F3C /* ImageCacheManager.swift */,
+				FF0CF0AE2B871C2000B9DFC1 /* UserDefaultsManager.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -762,6 +768,7 @@
 				FF0CF09E2B86697D00B9DFC1 /* SignInResponseDTO.swift in Sources */,
 				FFE8C1AF2B7DF78D008124E5 /* CardBackUIView.swift in Sources */,
 				FF0CF09C2B86695300B9DFC1 /* SignInRequestDTO.swift in Sources */,
+				FF0CF0B12B871C5A00B9DFC1 /* UserDefaults+.swift in Sources */,
 				FF0CF0A92B8707F400B9DFC1 /* PostCardRequestDTO.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
@@ -773,6 +780,7 @@
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */,
 				FF8322872B7C58BD0069D68A /* Adjusted+.swift in Sources */,
+				FF0CF0AF2B871C2000B9DFC1 /* UserDefaultsManager.swift in Sources */,
 				FF0CF0A32B8671AA00B9DFC1 /* KeychainKeys.swift in Sources */,
 				FFD306AF2B83AC5E004B5AEA /* MakeDotchiEntity.swift in Sources */,
 				FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */,
