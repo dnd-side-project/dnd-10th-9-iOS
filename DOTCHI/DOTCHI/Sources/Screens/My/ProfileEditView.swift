@@ -35,7 +35,6 @@ struct ProfileEditView: View {
         ZStack {
             Color.dotchiBlack.ignoresSafeArea()
             
-            
             VStack {
                 HStack {
                     CustomCloseButton()
@@ -122,6 +121,7 @@ struct ProfileEditView: View {
                             .frame(height: 142)
                             .padding(.horizontal, 20)
                             .multilineTextAlignment(.leading)
+                            .padding(.top, -40)
                             .background(
                                 RoundedRectangle(cornerRadius: 8)
                                     .foregroundColor(Color.dotchiMgray)
