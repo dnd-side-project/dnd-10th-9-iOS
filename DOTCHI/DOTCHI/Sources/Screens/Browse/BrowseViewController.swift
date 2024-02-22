@@ -160,6 +160,10 @@ extension BrowseViewController: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         cell.setData(data: self.cards[indexPath.row])
+        cell.commentButton.removeTarget(nil, action: nil, for: .touchUpInside)
+        cell.commentButton.setAction { [weak self] in
+            self?.navigationController?.pushViewController(DotchiDetailViewController(cardId: self?.cards[indexPath.row].front.cardId ?? 0), animated: true)
+        }
         
         self.zoomFocusCell(cell: cell, isFocus: self.isFirstScroll ? indexPath.row == 0 : false)
         self.isFirstScroll = false
