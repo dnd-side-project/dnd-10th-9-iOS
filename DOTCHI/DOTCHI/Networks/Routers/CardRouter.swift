@@ -21,7 +21,7 @@ extension CardRouter: TargetType {
     var path: String {
         switch self {
         case .postCard:
-            return "/card"
+            return "/cards"
         }
     }
 
@@ -44,14 +44,8 @@ extension CardRouter: TargetType {
         case .postCard:
             return [
                 "Content-Type": "multipart/form-data",
-                "Authorization": UserInfo.shared.accessToken,
+                "Authorization": "Bearer \(UserInfo.shared.accessToken)",
             ]
-//        default:
-//            return [
-//                "Content-Type": "application/json",
-//                "Authorization": UserInfo.shared.accessToken,
-//            ]
         }
     }
 }
-

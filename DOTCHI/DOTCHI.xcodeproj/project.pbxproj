@@ -36,6 +36,7 @@
 		FF0CF0AD2B870D4000B9DFC1 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */; };
 		FF0CF0AF2B871C2000B9DFC1 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0AE2B871C2000B9DFC1 /* UserDefaultsManager.swift */; };
 		FF0CF0B12B871C5A00B9DFC1 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */; };
+		FF0CF0B42B8732B100B9DFC1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */; };
@@ -704,6 +705,7 @@
 				107D6E622B78DEA0005B6261 /* Pretendard-SemiBold.ttf in Resources */,
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
 				107D6E612B78DE9E005B6261 /* Pretendard-Medium.ttf in Resources */,
+				FF0CF0B42B8732B100B9DFC1 /* Debug.xcconfig in Resources */,
 				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
 				FFAA7D372B70F36700C7620E /* Assets.xcassets in Resources */,
 				107D6E662B78E39B005B6261 /* Pretendard-Bold.ttf in Resources */,
