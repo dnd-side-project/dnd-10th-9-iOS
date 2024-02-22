@@ -15,6 +15,8 @@ struct HomeView: View {
         return dateFormatter.string(from: currentDate)
     }
     
+    @ObservedObject var homeViewModel = HomeViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -435,6 +437,9 @@ struct HomeView: View {
                 }
                 .navigationBarColor(backgroundColor: .dotchiBlack3)
             }
+        }
+        .onAppear() {
+            homeViewModel.fetchHome()
         }
     }
 }
