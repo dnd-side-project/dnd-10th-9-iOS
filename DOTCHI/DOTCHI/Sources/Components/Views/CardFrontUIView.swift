@@ -65,12 +65,12 @@ final class CardFrontUIView: UIView {
         }
     }
     
-    func setData(data: CardFrontEntity) {
-        self.setFrameImageView(luckyType: data.luckyType)
-        self.dotchiNameLabel.textColor = data.luckyType.uiColorDeep()
-        self.dotchiImageView.setImageUrl(data.imageUrl)
-        self.dotchiNameLabel.text = data.dotchiName
-        self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .front)
+    func setData(frontData: CardFrontEntity, userData: CardUserEntity) {
+        self.setFrameImageView(luckyType: frontData.luckyType)
+        self.dotchiNameLabel.textColor = frontData.luckyType.uiColorDeep()
+        self.dotchiImageView.setImageUrl(frontData.imageUrl)
+        self.dotchiNameLabel.text = frontData.dotchiName
+        self.cardProfileView.setData(data: userData, luckyType: frontData.luckyType, headType: .front)
     }
     
     func setData(makeDotchiData: MakeDotchiEntity) {
@@ -105,13 +105,13 @@ extension CardFrontUIView {
         }
         
         self.cardProfileView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(32.adjustedH)
+            make.centerY.equalToSuperview().multipliedBy(0.245)
             make.centerX.equalToSuperview()
             make.height.equalTo(34)
         }
         
         self.dotchiNameLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(34.adjustedH)
+            make.centerY.equalToSuperview().multipliedBy(1.75)
             make.horizontalEdges.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
         }

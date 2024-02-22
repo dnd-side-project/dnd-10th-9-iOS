@@ -24,13 +24,6 @@ final class CardBackUIView: UIView {
         return imageView
     }()
     
-    private let dotchiImageView: UIImageView = {
-        let imageView: UIImageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.makeRounded(cornerRadius: 16)
-        return imageView
-    }()
-    
     private let cardProfileView: CardProfileUIView = {
         let view: CardProfileUIView = CardProfileUIView()
         view.makeRounded(cornerRadius: 34 / 2)
@@ -100,12 +93,27 @@ final class CardBackUIView: UIView {
         }
     }
     
-    func setData(data: CardFrontEntity) {
-        self.setFrameImageView(luckyType: data.luckyType)
-        self.dotchiLuckyTypeLabel.textColor = data.luckyType.uiColorNormal()
-        self.dotchiLuckyTypeLabel.text = data.luckyType.toYouMessage()
-        self.dotchiImageView.setImageUrl(data.imageUrl)
-        self.cardProfileView.setData(data: data.mapCardUserEntity(), luckyType: data.luckyType, headType: .back)
+    func setData(backData: CardBackEntity, userData: CardUserEntity) {
+        self.setFrameImageView(luckyType: backData.luckyType)
+        
+        self.dotchiNameLabel.text = Text.nameGuide + backData.dotchiName
+        self.dotchiNameLabel.setColor(to: backData.dotchiName, with: backData.luckyType.uiColorNormal())
+        
+        self.dotchiMoodLabel.text = Text.moodGuide + backData.dotchiMood
+        self.dotchiMoodLabel.setColor(to: backData.dotchiMood, with: backData.luckyType.uiColorNormal())
+        
+        self.dotchiContentLabel.text = backData.dotchiContent
+        
+        self.dotchiLuckyTypeLabel.textColor = backData.luckyType.uiColorNormal()
+        self.dotchiLuckyTypeLabel.text = backData.luckyType.toYouMessage()
+        self.cardProfileView.setData(data: userData, luckyType: backData.luckyType, headType: .back)
+    }
+    
+    func setCommentViewData(backData: CardBackEntity, userData: CardUserEntity) {
+        self.setData(backData: backData, userData: userData)
+        [self.dotchiNameLabel, self.dotchiMoodLabel, self.dotchiContentLabel, self.dotchiToYouLabel, self.dotchiLuckyTypeLabel].forEach { label in
+            label.font = .body
+        }
     }
     
     func setData(makeDotchiData: MakeDotchiEntity) {
@@ -121,7 +129,6 @@ final class CardBackUIView: UIView {
         
         self.dotchiLuckyTypeLabel.textColor = makeDotchiData.luckyType.uiColorNormal()
         self.dotchiLuckyTypeLabel.text = makeDotchiData.luckyType.toYouMessage()
-        self.dotchiImageView.image = makeDotchiData.image
         self.cardProfileView.setData(
             data: .init(
                 userId: 0,
@@ -138,47 +145,43 @@ final class CardBackUIView: UIView {
 
 extension CardBackUIView {
     private func setLayout() {
-        self.addSubviews([dotchiImageView, frameImageView, cardProfileView, dotchiNameLabel, dotchiMoodLabel, dotchiContentLabel, dotchiToYouLabel, dotchiLuckyTypeLabel])
+        self.addSubviews([frameImageView, cardProfileView, dotchiNameLabel, dotchiMoodLabel, dotchiContentLabel, dotchiToYouLabel, dotchiLuckyTypeLabel])
         
         self.frameImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        self.dotchiImageView.snp.makeConstraints { make in
-            make.edges.equalTo(self.frameImageView)
-        }
-        
         self.cardProfileView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(32.adjustedH)
+            make.centerY.equalToSuperview().multipliedBy(0.245)
             make.centerX.equalToSuperview()
             make.height.equalTo(34)
         }
         
         self.dotchiNameLabel.snp.makeConstraints { make in
             make.top.equalTo(self.cardProfileView.snp.bottom).offset(24)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(24)
         }
         
         self.dotchiMoodLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiNameLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
         }
         
         self.dotchiContentLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiMoodLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
         }
         
         self.dotchiToYouLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiContentLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(24)
         }
         
         self.dotchiLuckyTypeLabel.snp.makeConstraints { make in
             make.top.equalTo(self.dotchiToYouLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(24)
         }
     }

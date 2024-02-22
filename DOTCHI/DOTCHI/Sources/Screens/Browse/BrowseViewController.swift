@@ -48,11 +48,47 @@ final class BrowseViewController: BaseViewController {
     
     // MARK: Properties
     
-    private var frontCards: [CardFrontEntity] = [
-        .init(cardId: 1, imageUrl: "/", luckyType: .lucky, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름1"), dotchiName: "따봉도치"),
-        .init(cardId: 1, imageUrl: "/", luckyType: .health, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름2"), dotchiName: "따봉도치2"),
-        .init(cardId: 1, imageUrl: "/", luckyType: .love, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름3"), dotchiName: "따봉도치3"),
-        .init(cardId: 1, imageUrl: "/", luckyType: .money, user: .init(userId: 1, profileImageUrl: "/", username: "유저이름4"), dotchiName: "따봉도치4")
+    private var cards: [CardEntity] = [
+        .init(
+            user: .init(
+                userId: 1,
+                profileImageUrl: ".",
+                username: "오뜨"
+            ),
+            front: .init(
+                cardId: 1,
+                imageUrl: ".",
+                luckyType: .love,
+                dotchiName: "따봉냥"
+            ),
+            back: .init(
+                cardId: 1,
+                dotchiName: "따봉냥",
+                dotchiMood: "엄지가 절로 올라가",
+                dotchiContent: "넌 지금 따봉도치와 눈이 마주쳤어!",
+                luckyType: .love
+            )
+        ),
+        .init(
+            user: .init(
+                userId: 1,
+                profileImageUrl: ".",
+                username: "오뜨"
+            ),
+            front: .init(
+                cardId: 1,
+                imageUrl: ".",
+                luckyType: .money,
+                dotchiName: "따봉냥"
+            ),
+            back: .init(
+                cardId: 1,
+                dotchiName: "따봉냥",
+                dotchiMood: "엄지가 절로 올라가",
+                dotchiContent: "넌 지금 따봉도치와 눈이 마주쳤어!",
+                luckyType: .money
+            )
+        )
     ]
     
     private var previousCellIndex: Int = 0
@@ -116,14 +152,14 @@ final class BrowseViewController: BaseViewController {
 
 extension BrowseViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.frontCards.count
+        return self.cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrowseUICollectionViewCell.className, for: indexPath) as? BrowseUICollectionViewCell
         else { return UICollectionViewCell() }
         
-        cell.setData(data: self.frontCards[indexPath.row])
+        cell.setData(data: self.cards[indexPath.row])
         
         self.zoomFocusCell(cell: cell, isFocus: self.isFirstScroll ? indexPath.row == 0 : false)
         self.isFirstScroll = false
