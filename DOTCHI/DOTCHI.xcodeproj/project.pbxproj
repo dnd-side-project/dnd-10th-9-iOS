@@ -20,6 +20,7 @@
 		10BC6B542B869432007D1D9A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BC6B532B869432007D1D9A /* LottieView.swift */; };
 		10BC6B562B86946F007D1D9A /* pung.json in Resources */ = {isa = PBXBuildFile; fileRef = 10BC6B552B86946F007D1D9A /* pung.json */; };
 		10BC6B582B869514007D1D9A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10BC6B572B869514007D1D9A /* Lottie */; };
+		10BC6B5A2B86ABA0007D1D9A /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BC6B592B86ABA0007D1D9A /* ProfileEditView.swift */; };
 		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -120,6 +121,7 @@
 		10BC6B4E2B85BACA007D1D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10BC6B532B869432007D1D9A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		10BC6B552B86946F007D1D9A /* pung.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pung.json; sourceTree = "<group>"; };
+		10BC6B592B86ABA0007D1D9A /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				100A1E2B2B7151C400AAC1E8 /* MyView.swift */,
+				10BC6B592B86ABA0007D1D9A /* ProfileEditView.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				FF4F9C162B860BB500E3DE31 /* CommentTableViewCell.swift in Sources */,
 				FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */,
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
+				10BC6B5A2B86ABA0007D1D9A /* ProfileEditView.swift in Sources */,
 				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
 				FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */,
