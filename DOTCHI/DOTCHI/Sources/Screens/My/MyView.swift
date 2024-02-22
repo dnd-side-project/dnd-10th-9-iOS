@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyView: View {
+    @State private var isProfileEditViewPresented = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -94,12 +96,17 @@ struct MyView: View {
                     .background(
                         RoundedRectangle(cornerRadius: 24)
                             .fill(Color.dotchiMgray)
-                    )
+                    ).fullScreenCover(isPresented: $isProfileEditViewPresented, content: {
+                        ProfileEditView()
+                            .transition(.move(edge: .trailing))
+                    })
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarTitle("", displayMode: .inline)
                 .navigationBarItems(trailing:
-                                        NavigationLink(destination: ProfileEditView()) {
+                                        Button(action: {
+                    isProfileEditViewPresented.toggle()
+                }) {
                     Image(.icnEdit)
                 }
                 )
