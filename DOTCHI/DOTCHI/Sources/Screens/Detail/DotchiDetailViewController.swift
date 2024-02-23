@@ -21,7 +21,7 @@ final class DotchiDetailViewController: BaseViewController {
     // MARK: UIComponents
     
     private let navigationView: DotchiNavigationUIView = {
-        let view: DotchiNavigationUIView = DotchiNavigationUIView(type: .backMore)
+        let view: DotchiNavigationUIView = DotchiNavigationUIView(type: .closeMore)
         return view
     }()
     
@@ -82,7 +82,7 @@ final class DotchiDetailViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setLayout()
-        self.setBackButtonAction(self.navigationView.backButton)
+        self.setCloseButtonAction(self.navigationView.closeButton)
         self.setCommentTableView()
         self.setTapGesture()
         self.setMoreButtonAction()
