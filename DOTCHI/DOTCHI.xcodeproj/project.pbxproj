@@ -76,6 +76,8 @@
 		FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */; };
 		FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D412B70F42200C7620E /* SnapKit */; };
 		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
+		FFC526132B88B7930018FA53 /* InstagramShareUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC526122B88B7930018FA53 /* InstagramShareUIView.swift */; };
+		FFC526152B88BAFA0018FA53 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC526142B88BAFA0018FA53 /* UIColor+.swift */; };
 		FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */; };
 		FFD306A42B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */; };
 		FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */; };
@@ -194,6 +196,8 @@
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFC526122B88B7930018FA53 /* InstagramShareUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramShareUIView.swift; sourceTree = "<group>"; };
+		FFC526142B88BAFA0018FA53 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiUICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 				FFE8C1AE2B7DF78D008124E5 /* CardBackUIView.swift */,
 				FFD306AA2B826975004B5AEA /* MakeDotchiLuckyTitleUIView.swift */,
 				FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */,
+				FFC526122B88B7930018FA53 /* InstagramShareUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -642,6 +647,7 @@
 				FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */,
 				FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */,
 				FF95B6FE2B87B92100073C4D /* UINavigationController+.swift */,
+				FFC526142B88BAFA0018FA53 /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -810,6 +816,7 @@
 				FF0CF0BA2B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift in Sources */,
 				107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */,
 				FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */,
+				FFC526132B88B7930018FA53 /* InstagramShareUIView.swift in Sources */,
 				FF95B6FF2B87B92100073C4D /* UINavigationController+.swift in Sources */,
 				FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */,
 				FFD306BA2B83C25D004B5AEA /* UITextField+.swift in Sources */,
@@ -861,6 +868,7 @@
 				FF8322902B7CA1FC0069D68A /* CardHeadType.swift in Sources */,
 				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,
+				FFC526152B88BAFA0018FA53 /* UIColor+.swift in Sources */,
 				FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */,
 				FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */,
 				FF83229B2B7CD2250069D68A /* ClassNameProtocol.swift in Sources */,
