@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-struct DotchiDetailViewControllerWrapper: UIViewControllerRepresentable {
-    let cardId: Int
-    
-    func makeUIViewController(context: Context) -> DotchiDetailViewController {
-        return DotchiDetailViewController(cardId: cardId)
-    }
-    
-    func updateUIViewController(_ uiViewController: DotchiDetailViewController, context: Context) {
-    }
-}
-
 struct HomeView: View {
     let currentDate = Date()
     var formattedDate: String {
@@ -27,6 +16,8 @@ struct HomeView: View {
     }
     
     @ObservedObject var homeViewModel = HomeViewModel()
+    @State private var isDetailPresented = false
+    @State private var selectedCardId: Int?
     
     var body: some View {
         NavigationStack {
@@ -65,19 +56,25 @@ struct HomeView: View {
                                     let secondToday = todayCards[1]
                                     
                                     ForEach([secondToday], id: \.cardId) { today in
-                                        NavigationLink(
-                                            destination: DotchiDetailViewControllerWrapper(cardId: today.cardId)
-                                                .navigationBarTitleDisplayMode(.inline)
-                                                .navigationBarBackButtonHidden(true)
-                                                .ignoresSafeArea()
-                                        ) {
+                                        Button(action: {
+                                            selectedCardId = today.cardId
+                                            isDetailPresented = true
+                                        }) {
                                             AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
                                                 .scaledToFill()
                                                 .frame(width: 82, height: 82)
                                                 .cornerRadius(25)
                                                 .padding(.bottom, 8)
                                         }
-                                        
+                                        .fullScreenCover(isPresented: Binding(
+                                            get: { isDetailPresented },
+                                            set: { isDetailPresented = $0; selectedCardId = nil }
+                                        )) {
+                                            DotchiDetailViewControllerRepresentable(cardId: selectedCardId ?? 0)
+                                                .transition(.move(edge: .trailing))
+                                                .ignoresSafeArea()
+                                        }
+                                       
                                         ZStack {
                                             RoundedRectangle(cornerRadius: 67)
                                                 .fill(Color.dotchiLBlack)
@@ -103,17 +100,23 @@ struct HomeView: View {
                                     
                                     ForEach([firstToday], id: \.cardId) { today in
                                         ZStack(alignment: .top) {
-                                            NavigationLink(
-                                                destination: DotchiDetailViewControllerWrapper(cardId: today.cardId)
-                                                    .navigationBarTitleDisplayMode(.inline)
-                                                    .navigationBarBackButtonHidden(true)
-                                                    .ignoresSafeArea()
-                                            ) {
+                                            Button(action: {
+                                                selectedCardId = today.cardId
+                                                isDetailPresented = true
+                                            }) {
                                                 AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                                    .frame(width: 112, height: 112)
                                                     .scaledToFill()
                                                     .cornerRadius(30)
-                                                    .frame(width: 112, height: 112)
                                                     .padding(.bottom, 8)
+                                            }
+                                            .fullScreenCover(isPresented: Binding(
+                                                get: { isDetailPresented },
+                                                set: { isDetailPresented = $0; selectedCardId = nil }
+                                            )) {
+                                                DotchiDetailViewControllerRepresentable(cardId: selectedCardId ?? 0)
+                                                    .transition(.move(edge: .trailing))
+                                                    .ignoresSafeArea()
                                             }
                                             
                                             RoundedRectangle(cornerRadius: 30)
@@ -150,17 +153,23 @@ struct HomeView: View {
                                     let thirdToday = todayCards[2]
                                     
                                     ForEach([thirdToday], id: \.cardId) { today in
-                                        NavigationLink(
-                                            destination: DotchiDetailViewControllerWrapper(cardId: today.cardId)
-                                                .navigationBarTitleDisplayMode(.inline)
-                                                .navigationBarBackButtonHidden(true)
-                                                .ignoresSafeArea()
-                                        ) {
+                                        Button(action: {
+                                            selectedCardId = today.cardId
+                                            isDetailPresented = true
+                                        }) {
                                             AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
                                                 .scaledToFill()
                                                 .frame(width: 82, height: 82)
                                                 .cornerRadius(25)
                                                 .padding(.bottom, 8)
+                                        }
+                                        .fullScreenCover(isPresented: Binding(
+                                            get: { isDetailPresented },
+                                            set: { isDetailPresented = $0; selectedCardId = nil }
+                                        )) {
+                                            DotchiDetailViewControllerRepresentable(cardId: selectedCardId ?? 0)
+                                                .transition(.move(edge: .trailing))
+                                                .ignoresSafeArea()
                                         }
                                         
                                         ZStack {
@@ -225,12 +234,10 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(alignment: .center, spacing: 12) {
                             ForEach(homeViewModel.homeResult?.result.recentCards ?? [], id: \.cardId) { card in
-                                NavigationLink(
-                                    destination: DotchiDetailViewControllerWrapper(cardId: card.cardId)
-                                        .navigationBarTitleDisplayMode(.inline)
-                                        .navigationBarBackButtonHidden(true)
-                                        .ignoresSafeArea()
-                                ) {
+                                Button(action: {
+                                    selectedCardId = card.cardId
+                                    isDetailPresented = true
+                                }) {
                                     ZStack(alignment: .bottom) {
                                         ZStack(alignment: .top) {
                                             AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
@@ -248,6 +255,14 @@ struct HomeView: View {
                                             .foregroundStyle(card.themeType.colorFont())
                                             .padding(.bottom, 16)
                                     }
+                                }
+                                .fullScreenCover(isPresented: Binding(
+                                    get: { isDetailPresented },
+                                    set: { isDetailPresented = $0; selectedCardId = nil }
+                                )) {
+                                    DotchiDetailViewControllerRepresentable(cardId: selectedCardId ?? 0)
+                                        .transition(.move(edge: .trailing))
+                                        .ignoresSafeArea()
                                 }
                             }
                         }

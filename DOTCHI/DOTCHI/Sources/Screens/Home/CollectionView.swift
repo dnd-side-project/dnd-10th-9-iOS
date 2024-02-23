@@ -103,14 +103,14 @@ struct CardGridView: View {
 
 struct CardView: View {
     let card: Card
-
+    @State private var isDetailPresented = false
+    @State private var selectedCardId: Int?
+    
     var body: some View {
-        NavigationLink(
-            destination: DotchiDetailViewControllerWrapper(cardId: card.cardId)
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden(true)
-                .ignoresSafeArea()
-        ) {
+        Button(action: {
+            selectedCardId = card.cardId
+            isDetailPresented = true
+        }) {
             ZStack(alignment: .bottom) {
                 ZStack(alignment: .top) {
                     AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
@@ -147,6 +147,14 @@ struct CardView: View {
                     .foregroundStyle(card.themeType.colorFont())
                     .padding(.bottom, 20)
             }
+        }
+        .fullScreenCover(isPresented: Binding(
+            get: { isDetailPresented },
+            set: { isDetailPresented = $0; selectedCardId = nil }
+        )) {
+            DotchiDetailViewControllerRepresentable(cardId: selectedCardId ?? 0)
+                .transition(.move(edge: .trailing))
+                .ignoresSafeArea()
         }
     }
 }
