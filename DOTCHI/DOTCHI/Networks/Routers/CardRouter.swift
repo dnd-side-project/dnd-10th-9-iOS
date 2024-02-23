@@ -11,6 +11,7 @@ import Moya
 enum CardRouter {
     case postCard(data: PostCardRequestDTO)
     case getComments(cardId: Int)
+    case postComment(cardId: Int)
 }
 
 extension CardRouter: TargetType {
@@ -23,14 +24,14 @@ extension CardRouter: TargetType {
         switch self {
         case .postCard:
             return "/cards"
-        case .getComments(let cardId):
+        case .getComments(let cardId), .postComment(let cardId):
             return "/cards/\(cardId)/comments"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .postCard:
+        case .postCard, .postComment:
             return .post
         case .getComments:
             return .get
@@ -41,7 +42,7 @@ extension CardRouter: TargetType {
         switch self {
         case .postCard(let data):
             return .uploadMultipart(data.toMultipartFormData())
-        case .getComments:
+        case .getComments, .postComment:
             return .requestPlain
         }
     }

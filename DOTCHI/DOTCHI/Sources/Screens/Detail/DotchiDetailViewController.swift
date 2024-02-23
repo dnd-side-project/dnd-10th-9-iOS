@@ -53,7 +53,6 @@ final class DotchiDetailViewController: BaseViewController {
     
     private let commentButton: DotchiDoneUIButton = {
         let button: DotchiDoneUIButton = DotchiDoneUIButton()
-        button.setTitle(Text.commentCenter, for: .normal)
         return button
     }()
     
@@ -88,6 +87,7 @@ final class DotchiDetailViewController: BaseViewController {
         self.setTapGesture()
         self.setMoreButtonAction()
         self.fetchData()
+        self.setCommentButtonAction()
     }
     
     // MARK: Methods
@@ -202,6 +202,12 @@ final class DotchiDetailViewController: BaseViewController {
         
         self.present(actionSheet, animated: true, completion: nil)
     }
+    
+    private func setCommentButtonAction() {
+        self.commentButton.setAction { [weak self] in
+            self?.postComment()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -240,7 +246,7 @@ extension DotchiDetailViewController {
                         comment.toCommentEntity()
                     })
                     self.user = result.card.toCardUserEntity()
-                    
+                    self.commentButton.isEnabled = !result.hasComment
                     self.commentTableView.reloadData()
                     
                     self.setData(
@@ -251,6 +257,17 @@ extension DotchiDetailViewController {
                         )
                     )
                 }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
+    
+    private func postComment() {
+        CardService.shared.postComment(cardId: self.cardId) { networkResult in
+            switch networkResult {
+            case .success:
+                self.fetchData()
             default:
                 self.showNetworkErrorAlert()
             }
