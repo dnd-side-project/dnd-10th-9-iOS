@@ -93,7 +93,7 @@
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
 		FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594032B70FCDD003F1F3C /* RxMoya */; };
-		FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594172B70FF2A003F1F3C /* Environment.swift */; };
+		FFD594182B70FF2A003F1F3C /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594172B70FF2A003F1F3C /* ServiceEnvironment.swift */; };
 		FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */; };
 		FFD594202B710135003F1F3C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5941F2B710135003F1F3C /* BaseService.swift */; };
 		FFD594222B710147003F1F3C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594212B710147003F1F3C /* AuthService.swift */; };
@@ -209,7 +209,7 @@
 		FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
 		FFD306B72B83C15E004B5AEA /* DotchiUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiUITextField.swift; sourceTree = "<group>"; };
 		FFD306B92B83C25D004B5AEA /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		FFD594172B70FF2A003F1F3C /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
 		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		FFD594212B710147003F1F3C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -469,7 +469,7 @@
 		FFD594152B70FF14003F1F3C /* Supports */ = {
 			isa = PBXGroup;
 			children = (
-				FFD594172B70FF2A003F1F3C /* Environment.swift */,
+				FFD594172B70FF2A003F1F3C /* ServiceEnvironment.swift */,
 				FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */,
 			);
 			path = Supports;
@@ -833,7 +833,7 @@
 				FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */,
 				FF4F9C112B860A8C00E3DE31 /* UITableView+.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
-				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
+				FFD594182B70FF2A003F1F3C /* ServiceEnvironment.swift in Sources */,
 				10FD9EB82B87A50900288506 /* HomeResponseDTO.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
 				FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */,
