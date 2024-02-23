@@ -34,9 +34,11 @@ struct AsyncImageView: View {
             if let image = loader.image {
                 Image(uiImage: image)
                     .resizable()
+                    .scaledToFill()
             } else {
                 Image(.imgTest)
                     .resizable()
+                    .scaledToFill()
             }
         }
         .onAppear {

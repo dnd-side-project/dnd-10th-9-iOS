@@ -55,6 +55,7 @@ struct HomeView: View {
                                     
                                     ForEach([secondToday], id: \.cardId) { today in
                                         AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                            .scaledToFill()
                                             .frame(width: 82, height: 82)
                                             .cornerRadius(25)
                                             .padding(.bottom, 8)
@@ -85,6 +86,7 @@ struct HomeView: View {
                                     ForEach([firstToday], id: \.cardId) { today in
                                         ZStack(alignment: .top) {
                                             AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                                .scaledToFill()
                                                 .cornerRadius(30)
                                                 .frame(width: 112, height: 112)
                                                 .padding(.bottom, 8)
@@ -124,6 +126,7 @@ struct HomeView: View {
                                     
                                     ForEach([thirdToday], id: \.cardId) { today in
                                         AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                            .scaledToFill()
                                             .frame(width: 82, height: 82)
                                             .cornerRadius(25)
                                             .padding(.bottom, 8)
@@ -190,6 +193,7 @@ struct HomeView: View {
                                 ZStack(alignment: .bottom) {
                                     ZStack(alignment: .top) {
                                         AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
+                                            .scaledToFill()
                                             .frame(width: 143, height: 211)
                                             .cornerRadius(8.46)
 
