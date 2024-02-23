@@ -14,6 +14,7 @@ final class DotchiNavigationUIView: UIView {
         case closeCenterTitle
         case backCenterTitle
         case backMore
+        case closeMore
     }
     
     // MARK: UIComponents
@@ -55,6 +56,7 @@ final class DotchiNavigationUIView: UIView {
         case .closeCenterTitle: self.setCloseCenterTitleLayout()
         case .backCenterTitle: self.setBackCenterTitleLayout()
         case .backMore: self.setBackMoreLayout()
+        case .closeMore: self.setCloseMoreLayout()
         }
     }
     
@@ -96,6 +98,13 @@ extension DotchiNavigationUIView {
         self.addSubviews([backButton, moreButton])
         
         self.setLeftButtonLayout(button: self.backButton)
+        self.setRightButtonLayout(button: self.moreButton)
+    }
+    
+    private func setCloseMoreLayout() {
+        self.addSubviews([closeButton, moreButton])
+        
+        self.setLeftButtonLayout(button: self.closeButton)
         self.setRightButtonLayout(button: self.moreButton)
     }
     

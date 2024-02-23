@@ -79,7 +79,7 @@ final class MakeDotchiPhotoViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setLayout()
-        self.setCloseButtonAction()
+        self.setCloseButtonAction(self.navigationView.closeButton)
         self.setCollectionViewLayout()
         self.setCollectionView()
         self.setImagePickerController()
@@ -87,12 +87,6 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     }
     
     // MARK: Methods
-    
-    private func setCloseButtonAction() {
-        self.navigationView.closeButton.setAction { [weak self] in
-            self?.dismiss(animated: true)
-        }
-    }
     
     private func setCollectionViewLayout() {
         let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
