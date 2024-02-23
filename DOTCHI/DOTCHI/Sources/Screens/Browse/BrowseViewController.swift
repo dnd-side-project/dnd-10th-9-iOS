@@ -46,6 +46,8 @@ final class BrowseViewController: BaseViewController {
         return collectionView
     }()
     
+    private let instagramShareView: InstagramShareUIView = InstagramShareUIView(frame: CGRect(x: 0, y: 0, width: 570, height: 424))
+    
     // MARK: Properties
     
     private var cards: [CardEntity] = [
@@ -146,6 +148,31 @@ final class BrowseViewController: BaseViewController {
              cell.transform = isFocus ? .identity : CGAffineTransform(scaleX: Number.scale, y: Number.scale)
          }, completion: nil)
      }
+    
+    func shareInstagram(data: CardEntity) {
+        self.instagramShareView.setData(data: data)
+        
+        if let storiesUrl = URL(string: "instagram-stories://share?source_application=\(APIConstants.facebookAppId)") {
+            if UIApplication.shared.canOpenURL(storiesUrl) {
+                let imageData = self.instagramShareView.toUIImage().png()
+                let pasteboardItems: [String: Any] = [
+                    "com.instagram.sharedSticker.stickerImage": imageData,
+                    "com.instagram.sharedSticker.backgroundTopColor": UIColor.dotchiBlack.toHexString(),
+                    "com.instagram.sharedSticker.backgroundBottomColor": UIColor.dotchiBlack.toHexString()
+                ]
+                let pasteboardOptions = [
+                    UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(300)
+                ]
+                UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
+                UIApplication.shared.open(storiesUrl, options: [:], completionHandler: nil)
+            } else {
+                print("User doesn't have instagram on their device.")
+                if let openStore = URL(string: "itms-apps://itunes.apple.com/app/instagram/id389801252"), UIApplication.shared.canOpenURL(openStore) {
+                    UIApplication.shared.open(openStore, options: [:], completionHandler: nil)
+                }
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -163,6 +190,13 @@ extension BrowseViewController: UICollectionViewDataSource {
         cell.commentButton.removeTarget(nil, action: nil, for: .touchUpInside)
         cell.commentButton.setAction { [weak self] in
             self?.navigationController?.pushViewController(DotchiDetailViewController(cardId: self?.cards[indexPath.row].front.cardId ?? 0), animated: true)
+        }
+        
+        cell.shareButton.removeTarget(nil, action: nil, for: .touchUpInside)
+        cell.shareButton.setAction { [weak self] in
+            if let card = self?.cards[indexPath.row] {
+                self?.shareInstagram(data: card)
+            }
         }
         
         self.zoomFocusCell(cell: cell, isFocus: self.isFirstScroll ? indexPath.row == 0 : false)

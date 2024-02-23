@@ -16,6 +16,7 @@ enum ServiceEnvironment: String {
         enum Plist {
             static let baseUrl = "BASE_URL"
             static let imageBaseUrl = "IMAGE_BASE_URL"
+            static let facebookAppId = "FacebookAppID"
         }
     }
     
@@ -34,6 +35,13 @@ enum ServiceEnvironment: String {
     static let IMAGE_BASE_URL: String = {
         guard let string = ServiceEnvironment.infoDictionary[Keys.Plist.imageBaseUrl] as? String else {
             fatalError("Image Base URL not set in plist for this environment")
+        }
+        return string
+    }()
+    
+    static let FACEBOOK_APP_ID: String = {
+        guard let string = ServiceEnvironment.infoDictionary[Keys.Plist.facebookAppId] as? String else {
+            fatalError("FACEBOOK_APP_ID not set in plist for this environment")
         }
         return string
     }()

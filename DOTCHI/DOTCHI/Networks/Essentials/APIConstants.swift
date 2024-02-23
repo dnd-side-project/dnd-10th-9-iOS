@@ -9,4 +9,5 @@ import Foundation
 
 struct APIConstants {
     static let baseURL = ServiceEnvironment.BASE_URL
+    static let facebookAppId = ServiceEnvironment.FACEBOOK_APP_ID
 }

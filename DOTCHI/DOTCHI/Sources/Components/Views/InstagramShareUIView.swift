@@ -24,8 +24,7 @@ final class InstagramShareUIView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.setLayout()
-        self.setUI()
+
     }
     
     required init?(coder: NSCoder) {
@@ -36,12 +35,15 @@ final class InstagramShareUIView: UIView {
     
     private func setUI() {
         self.makeRounded(cornerRadius: 18)
-        self.backgroundColor = .dotchiBlack
+        self.backgroundColor = .clear
     }
     
     func setData(data: CardEntity) {
         self.cardFrontView.setData(frontData: data.front, userData: data.user)
         self.cardBackView.setData(backData: data.back, userData: data.user)
+        
+        self.setLayout()
+        self.setUI()
     }
 }
 
