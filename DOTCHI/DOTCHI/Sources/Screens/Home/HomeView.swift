@@ -186,41 +186,19 @@ struct HomeView: View {
                     
                     ScrollView(.horizontal) {
                         HStack(alignment: .center, spacing: 12) {
-                            ForEach(1...3, id: \.self) { Index in
+                            ForEach(homeViewModel.homeResult?.result.recentCards ?? [], id: \.cardId) { card in
                                 ZStack(alignment: .bottom) {
                                     ZStack(alignment: .top) {
-                                        Image(.imgDefaultDummy)
-                                            .resizable()
+                                        AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
                                             .frame(width: 143, height: 211)
                                             .cornerRadius(8.46)
-                                        
+
                                         Image(.imgLuckyFront)
                                             .resizable()
                                             .frame(width: 143, height: 211)
-                                        
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 60.25)
-                                                .fill(Color.dotchiDeepGreen)
-                                                .frame(width: 51, height: 20)
-                                            
-                                            HStack(spacing: 0) {
-                                                Image(.imgDefaultDummy)
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(width: 14, height: 14)
-                                                    .clipShape(Circle())
-                                                
-                                                Text("오뜨")
-                                                    .font(.S_Sub)
-                                                    .foregroundStyle(Color.dotchiWhite)
-                                                    .padding(.leading, 4)
-                                            }
-                                            .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 12))
-                                        }
-                                        .padding(.top, 13)
                                     }
-                                    
-                                    Text("따봉멍멈무")
+
+                                    Text(card.backName)
                                         .font(.Dotchi_Name2)
                                         .foregroundStyle(Color.dotchiDeepGreen)
                                         .padding(.bottom, 16)
@@ -476,7 +454,7 @@ struct HomeView: View {
         }
     }
     
-    // 시간 차이를 계산하는 함수
+    // 시간 차이 계산하는 함수
     private func timeAgoSinceDate(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -537,8 +515,6 @@ extension View {
     }
 }
 
-
 #Preview {
     HomeView()
 }
-
