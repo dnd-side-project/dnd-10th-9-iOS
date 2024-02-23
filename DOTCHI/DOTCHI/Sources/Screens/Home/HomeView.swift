@@ -33,7 +33,7 @@ struct HomeView: View {
             ZStack {
                 Color.dotchiBlack.ignoresSafeArea()
                 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {
                         ZStack {
                             LottieView(filename: "pung", numberOfPlays: 3)
@@ -222,25 +222,32 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 50)
                     
-                    ScrollView(.horizontal) {
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack(alignment: .center, spacing: 12) {
                             ForEach(homeViewModel.homeResult?.result.recentCards ?? [], id: \.cardId) { card in
-                                ZStack(alignment: .bottom) {
-                                    ZStack(alignment: .top) {
-                                        AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
-                                            .scaledToFill()
-                                            .frame(width: 143, height: 211)
-                                            .cornerRadius(8.46)
+                                NavigationLink(
+                                    destination: DotchiDetailViewControllerWrapper(cardId: card.cardId)
+                                        .navigationBarTitleDisplayMode(.inline)
+                                        .navigationBarBackButtonHidden(true)
+                                        .ignoresSafeArea()
+                                ) {
+                                    ZStack(alignment: .bottom) {
+                                        ZStack(alignment: .top) {
+                                            AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
+                                                .scaledToFill()
+                                                .frame(width: 143, height: 211)
+                                                .cornerRadius(8.46)
+                                            
+                                            Image(.imgLuckyFront)
+                                                .resizable()
+                                                .frame(width: 143, height: 211)
+                                        }
                                         
-                                        Image(.imgLuckyFront)
-                                            .resizable()
-                                            .frame(width: 143, height: 211)
+                                        Text(card.backName)
+                                            .font(.Dotchi_Name2)
+                                            .foregroundStyle(Color.dotchiDeepGreen)
+                                            .padding(.bottom, 16)
                                     }
-                                    
-                                    Text(card.backName)
-                                        .font(.Dotchi_Name2)
-                                        .foregroundStyle(Color.dotchiDeepGreen)
-                                        .padding(.bottom, 16)
                                 }
                             }
                         }
