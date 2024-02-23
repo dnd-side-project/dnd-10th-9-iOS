@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MyView: View {
     @State private var isProfileEditViewPresented = false
-    
     @ObservedObject var myViewModel = MyViewModel()
     
     var body: some View {
@@ -19,9 +18,9 @@ struct MyView: View {
                 
                 VStack {
                     AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
+                        .scaledToFill()
                         .frame(width: 116, height: 116)
                         .cornerRadius(24)
-                        .scaledToFill()
                     
                     Text(myViewModel.myResult?.result.member.memberName ?? "")
                         .font(.Body)
@@ -65,7 +64,7 @@ struct MyView: View {
                             .fill(Color.dotchiMgray)
                     )
                     .fullScreenCover(isPresented: $isProfileEditViewPresented, content: {
-                        ProfileEditView()
+                        ProfileEditView(myViewModel: myViewModel)
                             .transition(.move(edge: .trailing))
                     })
                 }
@@ -124,6 +123,7 @@ struct MyCardGridView: View {
 
 struct MyCardView: View {
     let card: RecentCardDTO
+    
     @State private var isDetailPresented = false
     @State private var selectedCardId: Int?
     

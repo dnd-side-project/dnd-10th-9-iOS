@@ -36,7 +36,7 @@ struct AsyncImageView: View {
                     .resizable()
                     .scaledToFill()
             } else {
-                Image(.imgTest)
+                Image(.imgDefaultDummy)
                     .resizable()
                     .scaledToFill()
             }

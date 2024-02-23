@@ -25,13 +25,31 @@ struct ProfileEditView: View {
     
     @State private var openPhoto = false
     @State private var image = UIImage()
-    @State private var nickname = ""
-    @State private var introduce = ""
+    @State private var nickname : String
+    @State private var introduce : String
+    
+    @ObservedObject var myViewModel = MyViewModel()
+    @ObservedObject var editViewModel = EditViewModel()
+    
+    init(myViewModel: MyViewModel) {
+        self.myViewModel = myViewModel
+        _nickname = State(initialValue: myViewModel.myResult?.result.member.memberName ?? "")
+        _introduce = State(initialValue: myViewModel.myResult?.result.member.description ?? "")
+    }
     
     let nicknameLimit = 7
     let introduceLimit = 40
     
     var body: some View {
+        
+        let patchMembersRequestDTO: PatchMembersRequestDTO = {
+            PatchMembersRequestDTO(
+                memberImage: self.image,
+                memberName: self.nickname,
+                memberDescription: self.introduce
+            )
+        }()
+        
         ZStack {
             Color.dotchiBlack.ignoresSafeArea()
             
@@ -137,6 +155,7 @@ struct ProfileEditView: View {
                     
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
+                        editViewModel.fetchEdit(data: patchMembersRequestDTO)
                     }) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 8)
@@ -152,6 +171,9 @@ struct ProfileEditView: View {
                 }
             }
             .padding(.horizontal, 20)
+        }
+        .onDisappear() {
+            myViewModel.fetchMy(memberId: UserInfo.shared.userID, lastCardId: 999999)
         }
     }
 }
@@ -200,7 +222,8 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
-
+/*
 #Preview {
     ProfileEditView()
 }
+*/
