@@ -9,4 +9,5 @@ import Foundation
 
 struct APIConstants {
     static let baseURL = ServiceEnvironment.BASE_URL
+    static let pagingDefaultValue: Int = 999999999
 }

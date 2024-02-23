@@ -48,51 +48,10 @@ final class BrowseViewController: BaseViewController {
     
     // MARK: Properties
     
-    private var cards: [CardEntity] = [
-        .init(
-            user: .init(
-                userId: 1,
-                profileImageUrl: ".",
-                username: "오뜨"
-            ),
-            front: .init(
-                cardId: 1,
-                imageUrl: ".",
-                luckyType: .love,
-                dotchiName: "따봉냥"
-            ),
-            back: .init(
-                cardId: 1,
-                dotchiName: "따봉냥",
-                dotchiMood: "엄지가 절로 올라가",
-                dotchiContent: "넌 지금 따봉도치와 눈이 마주쳤어!",
-                luckyType: .love
-            )
-        ),
-        .init(
-            user: .init(
-                userId: 1,
-                profileImageUrl: ".",
-                username: "오뜨"
-            ),
-            front: .init(
-                cardId: 1,
-                imageUrl: ".",
-                luckyType: .money,
-                dotchiName: "따봉냥"
-            ),
-            back: .init(
-                cardId: 1,
-                dotchiName: "따봉냥",
-                dotchiMood: "엄지가 절로 올라가",
-                dotchiContent: "넌 지금 따봉도치와 눈이 마주쳤어!",
-                luckyType: .money
-            )
-        )
-    ]
-    
+    private var cards: [CardEntity] = []
     private var previousCellIndex: Int = 0
-    private var isFirstScroll: Bool = true
+    private var currentCellIndex: Int = 0
+    private var isLoadingData: Bool = false
     
     // MARK: View Life Cycle
     
@@ -102,7 +61,11 @@ final class BrowseViewController: BaseViewController {
         self.setLayout()
         self.setBackButtonAction(self.navigationView.backButton)
         self.setButtonToggle()
-        self.fetchData(isLatest: self.latestButton.isSelected)
+        self.fetchData(
+            isLatest: self.latestButton.isSelected,
+            lastCardId: self.cards.last?.front.cardId ?? APIConstants.pagingDefaultValue,
+            lastCommentCount: self.cards.last?.commentsCount ?? APIConstants.pagingDefaultValue
+        )
         self.setCollectionViewLayout()
         self.setCollectionView()
     }
@@ -116,8 +79,13 @@ final class BrowseViewController: BaseViewController {
             button.setAction { [weak self] in
                 self?.latestButton.isSelected.toggle()
                 self?.popularButton.isSelected.toggle()
-                
-                self?.fetchData(isLatest: self?.latestButton.isSelected ?? true)
+                self?.cards = []
+                self?.collectionView.reloadData()
+                self?.fetchData(
+                    isLatest: self?.latestButton.isSelected ?? true,
+                    lastCardId: self?.cards.last?.front.cardId ?? APIConstants.pagingDefaultValue,
+                    lastCommentCount: self?.cards.last?.commentsCount ?? APIConstants.pagingDefaultValue
+                )
             }
         })
     }
@@ -146,6 +114,14 @@ final class BrowseViewController: BaseViewController {
              cell.transform = isFocus ? .identity : CGAffineTransform(scaleX: Number.scale, y: Number.scale)
          }, completion: nil)
      }
+    
+    private func makeGetAllCardsRequestData(isLatest: Bool, lastCardId: Int, lastCommentCount: Int) -> GetAllCardsRequestDTO {
+        return GetAllCardsRequestDTO(
+            cardSortType: (isLatest ? CardSortType.latest : CardSortType.hot).rawValue,
+            lastCardID: lastCardId,
+            lastCardCommentCount: lastCommentCount
+        )
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -165,8 +141,7 @@ extension BrowseViewController: UICollectionViewDataSource {
             self?.navigationController?.pushViewController(DotchiDetailViewController(cardId: self?.cards[indexPath.row].front.cardId ?? 0), animated: true)
         }
         
-        self.zoomFocusCell(cell: cell, isFocus: self.isFirstScroll ? indexPath.row == 0 : false)
-        self.isFirstScroll = false
+        self.zoomFocusCell(cell: cell, isFocus: indexPath.row == self.currentCellIndex)
         return cell
     }
 }
@@ -187,6 +162,7 @@ extension BrowseViewController: UICollectionViewDelegateFlowLayout {
         targetContentOffset.pointee = offset
         
         let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
+        self.currentCellIndex = Int(roundedIndex)
         
         if let cell = self.collectionView.cellForItem(at: indexPath) {
             self.zoomFocusCell(cell: cell, isFocus: true)
@@ -200,14 +176,54 @@ extension BrowseViewController: UICollectionViewDelegateFlowLayout {
             self.previousCellIndex = indexPath.item
         }
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetX = scrollView.contentOffset.x
+        let contentWidth = scrollView.contentSize.width
+        
+        if offsetX > contentWidth - scrollView.frame.width {
+            self.fetchData(
+                isLatest: self.latestButton.isSelected,
+                lastCardId: self.cards.last?.front.cardId ?? APIConstants.pagingDefaultValue,
+                lastCommentCount: self.cards.last?.commentsCount ?? APIConstants.pagingDefaultValue
+            )
+        }
+    }
 }
 
 // MARK: - Network
 
 extension BrowseViewController {
-    private func fetchData(isLatest: Bool) {
-        // TODO: fetchData networking
-        debugPrint(#function, "isLatest \(isLatest)")
+    private func fetchData(isLatest: Bool, lastCardId: Int, lastCommentCount: Int) {
+        guard !self.isLoadingData else { return }
+        self.isLoadingData = true
+        
+        CardService.shared.getAllCards(data: self.makeGetAllCardsRequestData(isLatest: isLatest, lastCardId: lastCardId, lastCommentCount: lastCommentCount)) { networkResult in
+            switch networkResult {
+            case .success(let responseData):
+                if let result = responseData as? GetAllCardsResponseDTO {
+                    self.cards.append(contentsOf: result.cards.map({ card in
+                        card.toCardEntity()
+                    }))
+                    
+                    /// 최신순/인기순으로 불러올 때
+                    if lastCardId == APIConstants.pagingDefaultValue {
+                        self.currentCellIndex = 0
+                        self.previousCellIndex = 0
+                        self.collectionView.reloadData()
+                        self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: true)
+                    }
+                    
+                    /// 페이징으로 다음 데이터 불러올 때
+                    else {
+                        self.collectionView.reloadData()
+                    }
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+            self.isLoadingData = false
+        }
     }
 }
 

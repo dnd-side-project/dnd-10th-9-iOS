@@ -11,4 +11,5 @@ struct CardEntity {
     let user: CardUserEntity
     let front: CardFrontEntity
     let back: CardBackEntity
+    var commentsCount: Int = APIConstants.pagingDefaultValue
 }
