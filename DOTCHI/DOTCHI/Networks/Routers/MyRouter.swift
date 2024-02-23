@@ -10,6 +10,7 @@ import Moya
 
 enum MyRouter {
     case getMembers(memberId: Int, lastCardId: Int)
+    case patchMembers(data: PatchMembersRequestDTO)
 }
 
 extension MyRouter: TargetType {
@@ -22,6 +23,8 @@ extension MyRouter: TargetType {
         switch self {
         case .getMembers(let memberId, _):
             return "/members/\(memberId)"
+        case .patchMembers:
+            return "/members/me"
         }
     }
 
@@ -29,6 +32,8 @@ extension MyRouter: TargetType {
         switch self {
         case .getMembers:
             return .get
+        case .patchMembers:
+            return .patch
         }
     }
 
@@ -39,6 +44,8 @@ extension MyRouter: TargetType {
                 "lastCardId": lastCardId
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .patchMembers(let data):
+            return .uploadMultipart(data.toMultipartFormData())
         }
     }
 
@@ -47,6 +54,11 @@ extension MyRouter: TargetType {
         case .getMembers:
             return [
                 "Content-Type": "application/json",
+                "Authorization": "Bearer \(UserInfo.shared.accessToken)",
+            ]
+        case .patchMembers:
+            return [
+                "Content-Type": "multipart/form-data",
                 "Authorization": "Bearer \(UserInfo.shared.accessToken)",
             ]
         }
