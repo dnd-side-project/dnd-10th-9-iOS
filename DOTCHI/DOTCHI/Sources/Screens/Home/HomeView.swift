@@ -238,14 +238,14 @@ struct HomeView: View {
                                                 .frame(width: 143, height: 211)
                                                 .cornerRadius(8.46)
                                             
-                                            Image(.imgLuckyFront)
+                                            Image(getFrontImageName(forThemeId: card.themeId))
                                                 .resizable()
                                                 .frame(width: 143, height: 211)
                                         }
                                         
                                         Text(card.backName)
                                             .font(.Dotchi_Name2)
-                                            .foregroundStyle(Color.dotchiDeepGreen)
+                                            .foregroundStyle(card.themeType.colorFont())
                                             .padding(.bottom, 16)
                                     }
                                 }
