@@ -71,6 +71,21 @@ extension LuckyType {
         }
     }
     
+    func colorFont() -> Color {
+        switch self {
+        case .health:
+            return Color.dotchiDeepOrange
+        case .lucky:
+            return Color.dotchiDeepGreen
+        case .money:
+            return Color.dotchiDeepBlue
+        case .love:
+            return Color.dotchiDeepPink
+        default:
+            return Color.dotchiWhite
+        }
+    }
+    
     func uiColorNormal() -> UIColor {
         switch self {
         case .health:
@@ -120,6 +135,19 @@ extension LuckyType {
             return "imgMoney"
         case .love:
             return "imgLove"
+        }
+    }
+    
+    func imageNameFront() -> String {
+        switch self {
+        case .health:
+            return "imgHealthFront"
+        case .lucky:
+            return "imgLuckyFront"
+        case .money:
+            return "imgMoneyFront"
+        case .love:
+            return "imgLoveFront"
         }
     }
 }

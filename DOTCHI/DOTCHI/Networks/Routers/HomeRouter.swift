@@ -10,6 +10,7 @@ import Moya
 
 enum HomeRouter {
     case getMain
+    case getTheme(themeId: Int, cardSortType: String, lastCardId: Int, lastCardCommentCount: Int)
 }
 
 extension HomeRouter: TargetType {
@@ -21,13 +22,15 @@ extension HomeRouter: TargetType {
     var path: String {
         switch self {
         case .getMain:
-            return "cards/main"
+            return "/cards/main"
+        case .getTheme:
+            return "/cards/theme"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getMain:
+        case .getMain, .getTheme:
             return .get
         }
     }
@@ -36,12 +39,20 @@ extension HomeRouter: TargetType {
         switch self {
         case .getMain:
             return .requestPlain
+        case let .getTheme(themeId, cardSortType, lastCardId, lastCardCommentCount):
+            let parameters: [String: Any] = [
+                "themeId": themeId,
+                "cardSortType": cardSortType,
+                "lastCardId": lastCardId,
+                "lastCardCommentCount": lastCardCommentCount
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
 
     var headers: [String: String]? {
         switch self {
-        case .getMain:
+        case .getMain, .getTheme:
             return [
                 "Content-Type": "application/json",
                 "Authorization": "Bearer \(UserInfo.shared.accessToken)",

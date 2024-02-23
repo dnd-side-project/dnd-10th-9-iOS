@@ -21,7 +21,9 @@ struct CustomBackButton: View {
 
 struct CollectionView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var selectedButton: String = "최신순"
+    @State private var selectedButton: String = "LATEST"
+    
+    @ObservedObject var themeViewModel = ThemeViewModel()
     
     var themeId: Int
     
@@ -40,72 +42,35 @@ struct CollectionView: View {
                             
                         HStack {
                             Button(action: {
-                                selectedButton = "최신순"
+                                selectedButton = "LATEST"
+                                themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: 999999999, lastCardCommentCount: 999999999)
                             }) {
                                 Text("최신순")
                                     .font(.Head2)
-                                    .foregroundColor(selectedButton == "최신순" ? Color.dotchiGreen : Color.dotchiWhite)
-                                    .opacity(selectedButton == "최신순" ? 1.0 : 0.5)
+                                    .foregroundColor(selectedButton == "LATEST" ? Color.dotchiGreen : Color.dotchiWhite)
+                                    .opacity(selectedButton == "LATEST" ? 1.0 : 0.5)
                             }
                             
                             Button(action: {
-                                selectedButton = "인기순"
+                                selectedButton = "HOT"
+                                themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: 999999999, lastCardCommentCount: 999999999)
                             }) {
                                 Text("인기순")
                                     .font(.Head2)
-                                    .foregroundColor(selectedButton == "인기순" ? Color.dotchiGreen : Color.dotchiWhite)
-                                    .opacity(selectedButton == "인기순" ? 1.0 : 0.5)
+                                    .foregroundColor(selectedButton == "HOT" ? Color.dotchiGreen : Color.dotchiWhite)
+                                    .opacity(selectedButton == "HOT" ? 1.0 : 0.5)
                             }
                         }
                         
-                        VStack(spacing: 12) {
-                            ForEach(1...3, id: \.self) { rowIndex in
-                                HStack(alignment: .center, spacing: 12) {
-                                    ForEach(1...2, id: \.self) { colIndex in
-                                        ZStack(alignment: .bottom) {
-                                            ZStack(alignment: .top) {
-                                                Image(.imgDefaultDummy)
-                                                    .resizable()
-                                                    .frame(height: 241)
-                                                    .cornerRadius(9.64)
-                                                
-                                                Image(.imgLuckyFront)
-                                                    .resizable()
-                                                    .frame(height: 241)
-                                                
-                                                ZStack {
-                                                    RoundedRectangle(cornerRadius: 60.25)
-                                                        .fill(Color.dotchiDeepGreen)
-                                                        .frame(width: 51, height: 20)
-                                                    
-                                                    HStack(spacing: 0) {
-                                                        Image(.imgDefaultDummy)
-                                                            .resizable()
-                                                            .scaledToFill()
-                                                            .frame(width: 14, height: 14)
-                                                            .clipShape(Circle())
-                                                        
-                                                        Text("오뜨")
-                                                            .font(.S_Sub)
-                                                            .foregroundStyle(Color.dotchiWhite)
-                                                            .padding(.leading, 4)
-                                                    }
-                                                    .padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 12))
-                                                }
-                                                .padding(.top, 16)
-                                            }
-                                            
-                                            Text("따봉멍멈무")
-                                                .font(.Dotchi_Name2)
-                                                .foregroundStyle(Color.dotchiDeepGreen)
-                                                .padding(.bottom, 20)
-                                        }
-                                    }
-                                }
-                            }
+                        if let cards = themeViewModel.themeResult?.result.cards {
+                            CardGridView(cards: cards)
+                        } else {
+                            Text("Loading...")
+                                .font(.Title)
+                                .foregroundStyle(Color.dotchiWhite)
                         }
-                        .padding(.top, 16)
                     }
+                    .padding(.top, 16)
                 }
                 .padding(.vertical, 26)
                 .padding(.horizontal, 28)
@@ -113,8 +78,79 @@ struct CollectionView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CustomBackButton())
+            .navigationBarColor(backgroundColor: .dotchiBlack)
+        }
+        .onAppear() {
+            themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: 999999999, lastCardCommentCount: 999999999)
         }
     }
+}
+
+struct CardGridView: View {
+    let cards: [Card]
+
+    var body: some View {
+        LazyVGrid(columns: [
+            GridItem(.flexible(), spacing: 12),
+            GridItem(.flexible(), spacing: 12),
+        ], spacing: 12) {
+            ForEach(cards) { card in
+                CardView(card: card)
+            }
+        }
+    }
+}
+
+struct CardView: View {
+    let card: Card
+
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            ZStack(alignment: .top) {
+                AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
+                    .scaledToFill()
+                    .frame(width: 163, height: 241)
+                    .cornerRadius(9.64)
+                
+                Image(getFrontImageName(forThemeId: card.themeId))
+                    .resizable()
+                    .frame(width: 163, height: 241)
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 60.25)
+                        .fill(card.themeType.colorFont())
+                        .frame(width: 60, height: 20)
+                    
+                    HStack(spacing: 0) {
+                        AsyncImageView(url: URL(string: card.memberImageUrl ?? ""))
+                            .scaledToFill()
+                            .frame(width: 14, height: 14)
+                            .clipShape(Circle())
+                        
+                        Text(card.memberName)
+                            .font(.S_Sub)
+                            .foregroundStyle(Color.dotchiWhite)
+                            .padding(.leading, 4)
+                    }
+                }
+                .padding(.top, 16)
+            }
+            
+            Text(card.backName)
+                .font(.Dotchi_Name2)
+                .foregroundStyle(card.themeType.colorFont())
+                .padding(.bottom, 20)
+        }
+    }
+}
+
+func getLuckyType(forThemeId themeId: Int) -> LuckyType {
+    return LuckyType(rawValue: themeId) ?? .lucky
+}
+
+func getFrontImageName(forThemeId themeId: Int) -> String {
+    let luckyType = getLuckyType(forThemeId: themeId)
+    return luckyType.imageNameFront()
 }
 
 #Preview {

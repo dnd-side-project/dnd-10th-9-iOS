@@ -25,6 +25,7 @@
 		10FD9EB82B87A50900288506 /* HomeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */; };
 		10FD9EBA2B87A59400288506 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB92B87A59400288506 /* HomeService.swift */; };
 		10FD9EBC2B8868B300288506 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBB2B8868B300288506 /* AsyncImageView.swift */; };
+		10FD9EBE2B889D1100288506 /* ThemeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */; };
 		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -140,6 +141,7 @@
 		10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponseDTO.swift; sourceTree = "<group>"; };
 		10FD9EB92B87A59400288506 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		10FD9EBB2B8868B300288506 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeResponseDTO.swift; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */,
+				10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FF0CF0AD2B870D4000B9DFC1 /* CardService.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
+				10FD9EBE2B889D1100288506 /* ThemeResponseDTO.swift in Sources */,
 				FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */,
 				FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */,
 				FF4F9C132B860B2900E3DE31 /* CommentsEntity.swift in Sources */,
