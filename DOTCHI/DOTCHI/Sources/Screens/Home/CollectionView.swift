@@ -43,7 +43,7 @@ struct CollectionView: View {
                         HStack {
                             Button(action: {
                                 selectedButton = "LATEST"
-                                themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: 999999999, lastCardCommentCount: 999999999)
+                                themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: APIConstants.pagingDefaultValue, lastCardCommentCount: APIConstants.pagingDefaultValue)
                             }) {
                                 Text("최신순")
                                     .font(.Head2)
@@ -53,7 +53,7 @@ struct CollectionView: View {
                             
                             Button(action: {
                                 selectedButton = "HOT"
-                                themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: 999999999, lastCardCommentCount: 999999999)
+                                themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: APIConstants.pagingDefaultValue, lastCardCommentCount: APIConstants.pagingDefaultValue)
                             }) {
                                 Text("인기순")
                                     .font(.Head2)
@@ -81,7 +81,7 @@ struct CollectionView: View {
             .navigationBarColor(backgroundColor: .dotchiBlack)
         }
         .onAppear() {
-            themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: 999999999, lastCardCommentCount: 999999999)
+            themeViewModel.fetchTheme(themeId: themeId, cardSortType: selectedButton, lastCardId: APIConstants.pagingDefaultValue, lastCardCommentCount: APIConstants.pagingDefaultValue)
         }
     }
 }
