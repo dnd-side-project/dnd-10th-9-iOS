@@ -23,6 +23,8 @@ struct CollectionView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var selectedButton: String = "최신순"
     
+    var themeId: Int
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -30,9 +32,11 @@ struct CollectionView: View {
                 
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 22) {
-                        Text("행운" + "을 빌어주는 따봉도치")
-                            .font(.Title)
-                            .foregroundStyle(Color.dotchiWhite)
+                        if let luckyTypeName = LuckyType(rawValue: themeId)?.name() {
+                            Text("\(luckyTypeName)" + "을 빌어주는 따봉도치")
+                                .font(.Title)
+                                .foregroundStyle(Color.dotchiWhite)
+                        }
                             
                         HStack {
                             Button(action: {
@@ -114,5 +118,5 @@ struct CollectionView: View {
 }
 
 #Preview {
-    CollectionView()
+    CollectionView(themeId: 1)
 }
