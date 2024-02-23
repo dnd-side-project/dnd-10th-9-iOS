@@ -124,45 +124,60 @@ struct MyCardGridView: View {
 
 struct MyCardView: View {
     let card: RecentCardDTO
+    @State private var isDetailPresented = false
+    @State private var selectedCardId: Int?
     
     @ObservedObject var myViewModel = MyViewModel()
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            ZStack(alignment: .top) {
-                AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
-                    .scaledToFill()
-                    .frame(width: 163, height: 241)
-                    .cornerRadius(9.64)
-                
-                Image(getFrontImageName(forThemeId: card.themeId))
-                    .resizable()
-                    .frame(width: 163, height: 241)
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 60.25)
-                        .fill(card.themeType.colorFont())
-                        .frame(width: 60, height: 20)
+        Button(action: {
+            selectedCardId = card.cardId
+            isDetailPresented = true
+        }) {
+            ZStack(alignment: .bottom) {
+                ZStack(alignment: .top) {
+                    AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
+                        .scaledToFill()
+                        .frame(width: 163, height: 241)
+                        .cornerRadius(9.64)
                     
-                    HStack(spacing: 0) {
-                        AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
-                            .scaledToFill()
-                            .frame(width: 14, height: 14)
-                            .clipShape(Circle())
+                    Image(getFrontImageName(forThemeId: card.themeId))
+                        .resizable()
+                        .frame(width: 163, height: 241)
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 60.25)
+                            .fill(card.themeType.colorFont())
+                            .frame(width: 60, height: 20)
                         
-                        Text(card.memberName)
-                            .font(.S_Sub)
-                            .foregroundStyle(Color.dotchiWhite)
-                            .padding(.leading, 4)
+                        HStack(spacing: 0) {
+                            AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
+                                .scaledToFill()
+                                .frame(width: 14, height: 14)
+                                .clipShape(Circle())
+                            
+                            Text(card.memberName)
+                                .font(.S_Sub)
+                                .foregroundStyle(Color.dotchiWhite)
+                                .padding(.leading, 4)
+                        }
                     }
+                    .padding(.top, 16)
                 }
-                .padding(.top, 16)
+                
+                Text(card.backName)
+                    .font(.Dotchi_Name2)
+                    .foregroundStyle(card.themeType.colorFont())
+                    .padding(.bottom, 20)
             }
-            
-            Text(card.backName)
-                .font(.Dotchi_Name2)
-                .foregroundStyle(card.themeType.colorFont())
-                .padding(.bottom, 20)
+        }
+        .fullScreenCover(isPresented: Binding(
+            get: { isDetailPresented },
+            set: { isDetailPresented = $0; selectedCardId = nil }
+        )) {
+            DotchiDetailViewControllerRepresentable(cardId: selectedCardId ?? 0)
+                .transition(.move(edge: .trailing))
+                .ignoresSafeArea()
         }
     }
 }

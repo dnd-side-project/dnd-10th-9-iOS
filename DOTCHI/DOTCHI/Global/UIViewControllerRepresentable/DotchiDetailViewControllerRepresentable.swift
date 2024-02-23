@@ -9,17 +9,13 @@ import SwiftUI
 import UIKit
 
 struct DotchiDetailViewControllerRepresentable: UIViewControllerRepresentable {
-    
-    @Binding var isPresented: Bool
     var cardId: Int
     
-    func makeUIViewController(context: Context) -> UIViewController {
-        let makeDotchiPhotoViewController = BaseUINavigationController(rootViewController: DotchiDetailViewController(cardId: self.cardId))
-        
-        return makeDotchiPhotoViewController
+    func makeUIViewController(context: Context) -> DotchiDetailViewController {
+            return DotchiDetailViewController(cardId: cardId)
     }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+
+    func updateUIViewController(_ uiViewController: DotchiDetailViewController, context: Context) {
         
     }
 }
