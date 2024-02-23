@@ -78,6 +78,7 @@
 		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
 		FFC526132B88B7930018FA53 /* InstagramShareUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC526122B88B7930018FA53 /* InstagramShareUIView.swift */; };
 		FFC526152B88BAFA0018FA53 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC526142B88BAFA0018FA53 /* UIColor+.swift */; };
+		FFC526182B88C7750018FA53 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FFC526172B88C7750018FA53 /* FacebookCore */; };
 		FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */; };
 		FFD306A42B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */; };
 		FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */; };
@@ -236,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */,
+				FFC526182B88C7750018FA53 /* FacebookCore in Frameworks */,
 				FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */,
 				10BC6B582B869514007D1D9A /* Lottie in Frameworks */,
 				FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */,
@@ -718,6 +720,7 @@
 				FFE8C1B12B7DF7ED008124E5 /* RxGesture */,
 				10BC6B512B869193007D1D9A /* Lottie */,
 				10BC6B572B869514007D1D9A /* Lottie */,
+				FFC526172B88C7750018FA53 /* FacebookCore */,
 			);
 			productName = DOTCHI;
 			productReference = FFAA7D2F2B70F36600C7620E /* DOTCHI.app */;
@@ -753,6 +756,7 @@
 				FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */,
 				FFE8C1B02B7DF7ED008124E5 /* XCRemoteSwiftPackageReference "RxGesture" */,
 				10BC6B502B869193007D1D9A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				FFC526162B88C7750018FA53 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = FFAA7D302B70F36600C7620E /* Products */;
 			projectDirPath = "";
@@ -1110,6 +1114,14 @@
 				minimumVersion = 21.0.0;
 			};
 		};
+		FFC526162B88C7750018FA53 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
 		FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1148,6 +1160,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		FFC526172B88C7750018FA53 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFC526162B88C7750018FA53 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
 		};
 		FFD593FD2B70FCDD003F1F3C /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
