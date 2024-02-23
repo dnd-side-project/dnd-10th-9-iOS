@@ -59,7 +59,8 @@ struct GetAllCardsResponseDTO: Decodable {
                     dotchiMood: self.backMood,
                     dotchiContent: self.backContent,
                     luckyType: LuckyType(rawValue: self.themeID) ?? .lucky
-                )
+                ),
+                commentsCount: self.commentCount
             )
         }
     }
