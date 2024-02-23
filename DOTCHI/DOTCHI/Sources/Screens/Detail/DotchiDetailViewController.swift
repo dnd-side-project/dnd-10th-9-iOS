@@ -28,6 +28,7 @@ final class DotchiDetailViewController: BaseViewController {
     private let cardBackgroundView: UIView = UIView()
     private let cardFrontView: CardFrontUIView = CardFrontUIView()
     private let cardBackView: CardBackUIView = CardBackUIView()
+    var browseViewController: BrowseViewController?
     
     private let commentBackgroundView: UIView = {
         let view: UIView = UIView()
@@ -283,7 +284,9 @@ extension DotchiDetailViewController {
         CardService.shared.deleteCard(cardId: self.cardId) { networkResult in
             switch networkResult {
             case .success:
-                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true) {
+                    self.browseViewController?.resetAndFetchData()
+                }
             default:
                 self.showNetworkErrorAlert()
             }

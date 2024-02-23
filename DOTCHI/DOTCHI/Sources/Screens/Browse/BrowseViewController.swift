@@ -74,6 +74,18 @@ final class BrowseViewController: BaseViewController {
     
     // MARK: Methods
     
+    func resetAndFetchData() {
+        self.currentCellIndex = 0
+        self.previousCellIndex = 0
+        self.cards = []
+        self.collectionView.reloadData()
+        self.fetchData(
+            isLatest: self.latestButton.isSelected,
+            lastCardId: self.cards.last?.front.cardId ?? APIConstants.pagingDefaultValue,
+            lastCommentCount: self.cards.last?.commentsCount ?? APIConstants.pagingDefaultValue
+        )
+    }
+    
     private func setButtonToggle() {
         self.latestButton.isSelected = true
         
@@ -163,9 +175,12 @@ extension BrowseViewController: UICollectionViewDataSource {
         else { return UICollectionViewCell() }
         
         cell.setData(data: self.cards[indexPath.row])
+        cell.setCardFlipDefault()
         cell.commentButton.removeTarget(nil, action: nil, for: .touchUpInside)
         cell.commentButton.setAction { [weak self] in
-            self?.present(DotchiDetailViewController(cardId: self?.cards[indexPath.row].front.cardId ?? 0), animated: true)
+            let viewController = DotchiDetailViewController(cardId: self?.cards[indexPath.row].front.cardId ?? 0)
+            viewController.browseViewController = self
+            self?.present(viewController, animated: true)
         }
         
         cell.shareButton.removeTarget(nil, action: nil, for: .touchUpInside)

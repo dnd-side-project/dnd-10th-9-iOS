@@ -84,6 +84,11 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
             }
         }
     }
+    
+    func setCardFlipDefault() {
+        self.cardFrontView.isHidden = false
+        self.cardBackView.isHidden = true
+    }
 }
 
 // MARK: - Layout
