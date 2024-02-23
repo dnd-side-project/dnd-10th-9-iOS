@@ -21,6 +21,7 @@
 		10BC6B562B86946F007D1D9A /* pung.json in Resources */ = {isa = PBXBuildFile; fileRef = 10BC6B552B86946F007D1D9A /* pung.json */; };
 		10BC6B582B869514007D1D9A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10BC6B572B869514007D1D9A /* Lottie */; };
 		10BC6B5A2B86ABA0007D1D9A /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BC6B592B86ABA0007D1D9A /* ProfileEditView.swift */; };
+		10F9685F2B89095600019982 /* EditResonseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F9685E2B89095600019982 /* EditResonseDTO.swift */; };
 		10FD9EB42B87A3AD00288506 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB32B87A3AD00288506 /* HomeRouter.swift */; };
 		10FD9EB82B87A50900288506 /* HomeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */; };
 		10FD9EBA2B87A59400288506 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB92B87A59400288506 /* HomeService.swift */; };
@@ -29,6 +30,7 @@
 		10FD9EC02B88C24700288506 /* MyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBF2B88C24700288506 /* MyRouter.swift */; };
 		10FD9EC22B88C3E000288506 /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC12B88C3E000288506 /* MyService.swift */; };
 		10FD9EC62B88C46800288506 /* MyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC52B88C46800288506 /* MyResponseDTO.swift */; };
+		10FD9EC92B88D98A00288506 /* PatchMembersRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC82B88D98A00288506 /* PatchMembersRequestDTO.swift */; };
 		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -146,6 +148,7 @@
 		10BC6B532B869432007D1D9A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		10BC6B552B86946F007D1D9A /* pung.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pung.json; sourceTree = "<group>"; };
 		10BC6B592B86ABA0007D1D9A /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		10F9685E2B89095600019982 /* EditResonseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditResonseDTO.swift; sourceTree = "<group>"; };
 		10FD9EB32B87A3AD00288506 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponseDTO.swift; sourceTree = "<group>"; };
 		10FD9EB92B87A59400288506 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 		10FD9EBF2B88C24700288506 /* MyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRouter.swift; sourceTree = "<group>"; };
 		10FD9EC12B88C3E000288506 /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		10FD9EC52B88C46800288506 /* MyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponseDTO.swift; sourceTree = "<group>"; };
+		10FD9EC82B88D98A00288506 /* PatchMembersRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchMembersRequestDTO.swift; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 		10FD9EC32B88C44E00288506 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				10FD9EC72B88D98100288506 /* Request */,
 				10FD9EC42B88C45D00288506 /* Response */,
 			);
 			path = My;
@@ -295,8 +300,17 @@
 			isa = PBXGroup;
 			children = (
 				10FD9EC52B88C46800288506 /* MyResponseDTO.swift */,
+				10F9685E2B89095600019982 /* EditResonseDTO.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		10FD9EC72B88D98100288506 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				10FD9EC82B88D98A00288506 /* PatchMembersRequestDTO.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		FF018E7E2B7531F8006D5627 /* Buttons */ = {
@@ -875,6 +889,7 @@
 				FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */,
 				FF4F9C132B860B2900E3DE31 /* CommentsEntity.swift in Sources */,
 				FFD306B82B83C15E004B5AEA /* DotchiUITextField.swift in Sources */,
+				10FD9EC92B88D98A00288506 /* PatchMembersRequestDTO.swift in Sources */,
 				FF0CF0952B8659B600B9DFC1 /* CardEntity.swift in Sources */,
 				FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */,
 				10FD9EC62B88C46800288506 /* MyResponseDTO.swift in Sources */,
@@ -900,6 +915,7 @@
 				FF0CF0972B86616700B9DFC1 /* SignInViewControllerRepresentable.swift in Sources */,
 				10FD9EBC2B8868B300288506 /* AsyncImageView.swift in Sources */,
 				FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */,
+				10F9685F2B89095600019982 /* EditResonseDTO.swift in Sources */,
 				FF0CF0A12B866F3600B9DFC1 /* Message.swift in Sources */,
 				FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */,
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
