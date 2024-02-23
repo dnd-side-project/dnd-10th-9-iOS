@@ -17,9 +17,9 @@ struct MyView: View {
                 Color.dotchiBlack.ignoresSafeArea()
                 
                 VStack {
-                    AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
-                        .scaledToFill()
+                    AsyncImage(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
                         .frame(width: 116, height: 116)
+                        .scaledToFill()
                         .cornerRadius(24)
                     
                     Text(myViewModel.myResult?.result.member.memberName ?? "")
@@ -81,7 +81,7 @@ struct MyView: View {
             }
         }
         .onAppear() {
-            myViewModel.fetchMy(memberId: UserInfo.shared.userID, lastCardId: 999999)
+            myViewModel.fetchMy(memberId: UserInfo.shared.userID, lastCardId: APIConstants.pagingDefaultValue)
         }
     }
 }
@@ -151,7 +151,7 @@ struct MyCardView: View {
                             .frame(width: 60, height: 20)
                         
                         HStack(spacing: 0) {
-                            AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
+                            AsyncImage(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
                                 .scaledToFill()
                                 .frame(width: 14, height: 14)
                                 .clipShape(Circle())
