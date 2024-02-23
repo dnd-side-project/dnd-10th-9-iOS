@@ -24,6 +24,7 @@
 		10FD9EB42B87A3AD00288506 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB32B87A3AD00288506 /* HomeRouter.swift */; };
 		10FD9EB82B87A50900288506 /* HomeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */; };
 		10FD9EBA2B87A59400288506 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB92B87A59400288506 /* HomeService.swift */; };
+		10FD9EBC2B8868B300288506 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBB2B8868B300288506 /* AsyncImageView.swift */; };
 		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -135,6 +136,7 @@
 		10FD9EB32B87A3AD00288506 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponseDTO.swift; sourceTree = "<group>"; };
 		10FD9EB92B87A59400288506 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		10FD9EBB2B8868B300288506 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				FFD594392B710367003F1F3C /* HomeView.swift */,
 				100182F22B7AAA440024813A /* CollectionView.swift */,
 				10BC6B532B869432007D1D9A /* LottieView.swift */,
+				10FD9EBB2B8868B300288506 /* AsyncImageView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				100A1E2C2B7151C400AAC1E8 /* MyView.swift in Sources */,
 				FF8322852B7C58A60069D68A /* UICollectionView+.swift in Sources */,
 				FF0CF0972B86616700B9DFC1 /* SignInViewControllerRepresentable.swift in Sources */,
+				10FD9EBC2B8868B300288506 /* AsyncImageView.swift in Sources */,
 				FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */,
 				FF0CF0A12B866F3600B9DFC1 /* Message.swift in Sources */,
 				FFD306B12B83B36E004B5AEA /* LoadPhotoUIView.swift in Sources */,
