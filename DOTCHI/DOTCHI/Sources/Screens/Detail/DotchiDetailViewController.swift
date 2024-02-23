@@ -249,6 +249,7 @@ extension DotchiDetailViewController {
                         comment.toCommentEntity()
                     })
                     self.user = result.card.toCardUserEntity()
+                    self.luckyType = LuckyType(rawValue: result.card.themeID) ?? .lucky
                     self.commentButton.isEnabled = !result.hasComment
                     self.commentTableView.reloadData()
                     
