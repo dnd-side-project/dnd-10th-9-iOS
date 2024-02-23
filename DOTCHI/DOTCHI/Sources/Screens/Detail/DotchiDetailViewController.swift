@@ -276,6 +276,17 @@ extension DotchiDetailViewController {
             }
         }
     }
+    
+    private func deleteCard() {
+        CardService.shared.deleteCard(cardId: self.cardId) { networkResult in
+            switch networkResult {
+            case .success:
+                self.navigationController?.popViewController(animated: true)
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
 }
 
 // MARK: - Layout

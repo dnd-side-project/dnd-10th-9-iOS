@@ -12,6 +12,7 @@ enum CardRouter {
     case postCard(data: PostCardRequestDTO)
     case getComments(cardId: Int)
     case postComment(cardId: Int)
+    case deleteCard(cardId: Int)
 }
 
 extension CardRouter: TargetType {
@@ -26,6 +27,8 @@ extension CardRouter: TargetType {
             return "/cards"
         case .getComments(let cardId), .postComment(let cardId):
             return "/cards/\(cardId)/comments"
+        case .deleteCard(let cardId):
+            return "/cards/\(cardId)"
         }
     }
 
@@ -35,6 +38,8 @@ extension CardRouter: TargetType {
             return .post
         case .getComments:
             return .get
+        case .deleteCard:
+            return .delete
         }
     }
 
@@ -42,7 +47,7 @@ extension CardRouter: TargetType {
         switch self {
         case .postCard(let data):
             return .uploadMultipart(data.toMultipartFormData())
-        case .getComments, .postComment:
+        case .getComments, .postComment, .deleteCard:
             return .requestPlain
         }
     }
