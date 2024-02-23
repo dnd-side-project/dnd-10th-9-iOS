@@ -64,6 +64,7 @@ final class DotchiDetailViewController: BaseViewController {
     private let disposeBag: DisposeBag = DisposeBag()
     private var comments: CommentsEntity = []
     private var user: CardUserEntity = CardUserEntity()
+    private var card: CardEntity?
     
     // MARK: Initializer
     
@@ -124,6 +125,7 @@ final class DotchiDetailViewController: BaseViewController {
     }
     
     private func setData(data: CardEntity) {
+        self.card = data
         self.cardFrontView.setData(frontData: data.front, userData: data.user)
         self.cardBackView.setCommentViewData(backData: data.back, userData: data.user)
         self.commentButton.setTitle(data.front.dotchiName + Text.commentCenter + data.front.luckyType.nameWithHeart() + Text.commentTrail, for: .normal)
@@ -226,7 +228,7 @@ extension DotchiDetailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.className, for: indexPath) as? CommentTableViewCell 
         else { return UITableViewCell() }
         
-        cell.setData(data: self.comments[indexPath.row], dotchiName: "따봉도치", luckyType: self.luckyType)
+        cell.setData(data: self.comments[indexPath.row], dotchiName: self.card?.front.dotchiName ?? "따봉도치", luckyType: self.luckyType)
         return cell
     }
 }
