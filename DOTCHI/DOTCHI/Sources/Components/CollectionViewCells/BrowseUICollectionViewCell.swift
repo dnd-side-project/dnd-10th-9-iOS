@@ -26,8 +26,8 @@ final class BrowseUICollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    private let shareButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .share)
-    private let commentButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .comment)
+    let shareButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .share)
+    let commentButton: DotchiCircleUIButton = DotchiCircleUIButton(type: .comment)
     
     
     // MARK: Properties

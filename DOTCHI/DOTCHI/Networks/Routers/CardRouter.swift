@@ -10,6 +10,9 @@ import Moya
 
 enum CardRouter {
     case postCard(data: PostCardRequestDTO)
+    case getComments(cardId: Int)
+    case postComment(cardId: Int)
+    case deleteCard(cardId: Int)
 }
 
 extension CardRouter: TargetType {
@@ -22,13 +25,21 @@ extension CardRouter: TargetType {
         switch self {
         case .postCard:
             return "/cards"
+        case .getComments(let cardId), .postComment(let cardId):
+            return "/cards/\(cardId)/comments"
+        case .deleteCard(let cardId):
+            return "/cards/\(cardId)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .postCard:
+        case .postCard, .postComment:
             return .post
+        case .getComments:
+            return .get
+        case .deleteCard:
+            return .delete
         }
     }
 
@@ -36,6 +47,8 @@ extension CardRouter: TargetType {
         switch self {
         case .postCard(let data):
             return .uploadMultipart(data.toMultipartFormData())
+        case .getComments, .postComment, .deleteCard:
+            return .requestPlain
         }
     }
 
@@ -44,6 +57,11 @@ extension CardRouter: TargetType {
         case .postCard:
             return [
                 "Content-Type": "multipart/form-data",
+                "Authorization": "Bearer \(UserInfo.shared.accessToken)",
+            ]
+        default:
+            return [
+                "Content-Type": "application/json",
                 "Authorization": "Bearer \(UserInfo.shared.accessToken)",
             ]
         }

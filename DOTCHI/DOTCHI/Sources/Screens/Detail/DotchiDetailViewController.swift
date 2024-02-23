@@ -53,18 +53,28 @@ final class DotchiDetailViewController: BaseViewController {
     
     private let commentButton: DotchiDoneUIButton = {
         let button: DotchiDoneUIButton = DotchiDoneUIButton()
-        button.setTitle(Text.commentCenter, for: .normal)
         return button
     }()
     
     // MARK: Properties
     
+    private var cardId: Int = 0
+    private var luckyType: LuckyType = .lucky
     private let disposeBag: DisposeBag = DisposeBag()
-    private var comments: CommentsEntity = [
-        .init(userId: 1, username: "초코", profileImageUrl: "."),
-        .init(userId: 2, username: "뽀송이", profileImageUrl: "."),
-        .init(userId: 3, username: "냥냥", profileImageUrl: ".")
-    ]
+    private var comments: CommentsEntity = []
+    private var user: CardUserEntity = CardUserEntity()
+    
+    // MARK: Initializer
+    
+    init(cardId: Int) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.cardId = cardId
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: View Life Cycle
     
@@ -77,6 +87,7 @@ final class DotchiDetailViewController: BaseViewController {
         self.setTapGesture()
         self.setMoreButtonAction()
         self.fetchData()
+        self.setCommentButtonAction()
     }
     
     // MARK: Methods
@@ -114,10 +125,10 @@ final class DotchiDetailViewController: BaseViewController {
         self.cardFrontView.setData(frontData: data.front, userData: data.user)
         self.cardBackView.setCommentViewData(backData: data.back, userData: data.user)
         self.commentButton.setTitle(data.front.dotchiName + Text.commentCenter + data.front.luckyType.nameWithHeart() + Text.commentTrail, for: .normal)
-        self.totalLuckyLabel.text = Text.total + "\(33)"
+        self.totalLuckyLabel.text = Text.total + "\(self.comments.count)"
         
         
-        self.totalLuckyLabel.setColor(to: "\(33)", with: data.front.luckyType.uiColorNormal())
+        self.totalLuckyLabel.setColor(to: "\(self.comments.count)", with: data.front.luckyType.uiColorNormal())
         self.commentButton.setBackgroundColor(data.front.luckyType.uiColorNormal(), for: .normal)
         self.commentButton.setBackgroundColor(data.front.luckyType.uiColorNormal().withAlphaComponent(0.5), for: .disabled)
         self.commentButton.titleLabel?.font = .button
@@ -136,50 +147,53 @@ final class DotchiDetailViewController: BaseViewController {
             preferredStyle: .actionSheet
         )
         
-        actionSheet.addAction(
-            UIAlertAction(
-                title: "차단하기",
-                style: .default,
-                handler: { _ in
-                    self.makeAlertWithCancel(
-                        title: "\("오뜨") 님을 차단합니다.",
-                        message: nil,
-                        okTitle: "차단") { _ in
-                            // TODO: block user
-                            self.navigationController?.popViewController(animated: true)
-                        }
-                }
+        if UserInfo.shared.userID != self.user.userId {
+            actionSheet.addAction(
+                UIAlertAction(
+                    title: "차단하기",
+                    style: .default,
+                    handler: { _ in
+                        self.makeAlertWithCancel(
+                            title: "\(self.user.username) 님을 차단합니다.",
+                            message: nil,
+                            okTitle: "차단") { _ in
+                                // TODO: block user
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                    }
+                )
             )
-        )
+            
+            actionSheet.addAction(
+                UIAlertAction(
+                    title: "신고하기",
+                    style: .default,
+                    handler: { _ in
+                        self.makeAlertWithCancel(
+                            title: "\(self.user.username) 님을 신고합니다.",
+                            okTitle: "신고") { _ in
+                                // TODO: report user
+                            }
+                    }
+                )
+            )
+        }
         
-        actionSheet.addAction(
-            UIAlertAction(
-                title: "신고하기",
-                style: .default,
-                handler: { _ in
-                    self.makeAlertWithCancel(
-                        title: "\("오뜨") 님을 신고합니다.",
-                        okTitle: "신고") { _ in
-                            // TODO: report user
-                        }
-                }
+        if UserInfo.shared.userID == self.user.userId {
+            actionSheet.addAction(
+                UIAlertAction(
+                    title: "삭제하기",
+                    style: .destructive,
+                    handler: { _ in
+                        self.makeAlertWithCancel(
+                            title: "정말 삭제할까요?",
+                            okTitle: "삭제") { _ in
+                                self.deleteCard()
+                            }
+                    }
+                )
             )
-        )
-        
-        // TODO: 내 카드인 경우
-        actionSheet.addAction(
-            UIAlertAction(
-                title: "삭제하기",
-                style: .destructive,
-                handler: { _ in
-                    self.makeAlertWithCancel(
-                        title: "정말 삭제할까요?",
-                        okTitle: "삭제") { _ in
-                            // TODO: delete
-                        }
-                }
-            )
-        )
+        }
         
         actionSheet.addAction(
             UIAlertAction(
@@ -190,6 +204,12 @@ final class DotchiDetailViewController: BaseViewController {
         )
         
         self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func setCommentButtonAction() {
+        self.commentButton.setAction { [weak self] in
+            self?.postComment()
+        }
     }
 }
 
@@ -204,7 +224,7 @@ extension DotchiDetailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.className, for: indexPath) as? CommentTableViewCell 
         else { return UITableViewCell() }
         
-        cell.setData(data: self.comments[indexPath.row], dotchiName: "따봉도치", luckyType: .love)
+        cell.setData(data: self.comments[indexPath.row], dotchiName: "따봉도치", luckyType: self.luckyType)
         return cell
     }
 }
@@ -221,29 +241,51 @@ extension DotchiDetailViewController: UITableViewDelegate {
 
 extension DotchiDetailViewController {
     private func fetchData() {
-        // TODO: 더미데이터 빼고 API 연결
-        self.setData(
-            data: .init(
-                user: .init(
-                    userId: 1,
-                    profileImageUrl: ".",
-                    username: "오뜨"
-                ),
-                front: .init(
-                    cardId: 1,
-                    imageUrl: ".",
-                    luckyType: .love,
-                    dotchiName: "따봉냥"
-                ),
-                back: .init(
-                    cardId: 1,
-                    dotchiName: "따봉냥",
-                    dotchiMood: "엄지가 절로 올라가",
-                    dotchiContent: "넌 지금 따봉도치와 눈이 마주쳤어!",
-                    luckyType: .love
-                )
-            )
-        )
+        CardService.shared.getComments(cardId: self.cardId) { networkResult in
+            switch networkResult {
+            case .success(let responseData):
+                if let result = responseData as? GetCommentsResponseDTO {
+                    self.comments = result.comments.map({ comment in
+                        comment.toCommentEntity()
+                    })
+                    self.user = result.card.toCardUserEntity()
+                    self.commentButton.isEnabled = !result.hasComment
+                    self.commentTableView.reloadData()
+                    
+                    self.setData(
+                        data: CardEntity(
+                            user: result.card.toCardUserEntity(),
+                            front: result.card.toCardFrontEntity(),
+                            back: result.card.toCardBackEntity()
+                        )
+                    )
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
+    
+    private func postComment() {
+        CardService.shared.postComment(cardId: self.cardId) { networkResult in
+            switch networkResult {
+            case .success:
+                self.fetchData()
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
+    
+    private func deleteCard() {
+        CardService.shared.deleteCard(cardId: self.cardId) { networkResult in
+            switch networkResult {
+            case .success:
+                self.navigationController?.popViewController(animated: true)
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
 }
 
