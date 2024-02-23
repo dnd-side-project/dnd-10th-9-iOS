@@ -255,11 +255,15 @@ struct HomeView: View {
                                             Image(.icnNextWhite)
                                         }
                                         
-                                        Text("3분전")
-                                            .font(.Sub)
-                                            .foregroundStyle(Color.dotchiWhite)
-                                            .opacity(0.5)
-                                            .padding(.top, 1)
+                                        ForEach(homeViewModel.homeResult?.result.themes ?? [], id: \.themeId) { theme in
+                                            if theme.themeId == 2 { //행운
+                                                Text("\(timeAgoSinceDate(theme.lastCardCreateAt))")
+                                                    .font(.Sub)
+                                                    .foregroundStyle(Color.dotchiWhite)
+                                                    .opacity(0.5)
+                                                    .padding(.top, 1)
+                                            }
+                                        }
                                     }
                                     .padding(.bottom, 15)
                                     .padding(.leading, -10)
@@ -300,11 +304,15 @@ struct HomeView: View {
                                             Image(.icnNextWhite)
                                         }
                                         
-                                        Text("3분전")
-                                            .font(.Sub)
-                                            .foregroundStyle(Color.dotchiWhite)
-                                            .opacity(0.5)
-                                            .padding(.top, 1)
+                                        ForEach(homeViewModel.homeResult?.result.themes ?? [], id: \.themeId) { theme in
+                                            if theme.themeId == 4 { //애정운
+                                                Text("\(timeAgoSinceDate(theme.lastCardCreateAt))")
+                                                    .font(.Sub)
+                                                    .foregroundStyle(Color.dotchiWhite)
+                                                    .opacity(0.5)
+                                                    .padding(.top, 1)
+                                            }
+                                        }
                                     }
                                     .padding(.bottom, 15)
                                     .padding(.leading, -10)
@@ -350,11 +358,15 @@ struct HomeView: View {
                                             Image(.icnNextWhite)
                                         }
                                         
-                                        Text("3분전")
-                                            .font(.Sub)
-                                            .foregroundStyle(Color.dotchiWhite)
-                                            .opacity(0.5)
-                                            .padding(.top, 1)
+                                        ForEach(homeViewModel.homeResult?.result.themes ?? [], id: \.themeId) { theme in
+                                            if theme.themeId == 1 { //건강운
+                                                Text("\(timeAgoSinceDate(theme.lastCardCreateAt))")
+                                                    .font(.Sub)
+                                                    .foregroundStyle(Color.dotchiWhite)
+                                                    .opacity(0.5)
+                                                    .padding(.top, 1)
+                                            }
+                                        }
                                     }
                                     .padding(.bottom, 15)
                                     .padding(.leading, -10)
@@ -395,11 +407,15 @@ struct HomeView: View {
                                             Image(.icnNextWhite)
                                         }
                                         
-                                        Text("3분전")
-                                            .font(.Sub)
-                                            .foregroundStyle(Color.dotchiWhite)
-                                            .opacity(0.5)
-                                            .padding(.top, 1)
+                                        ForEach(homeViewModel.homeResult?.result.themes ?? [], id: \.themeId) { theme in
+                                            if theme.themeId == 3 { //재물운
+                                                Text("\(timeAgoSinceDate(theme.lastCardCreateAt))")
+                                                    .font(.Sub)
+                                                    .foregroundStyle(Color.dotchiWhite)
+                                                    .opacity(0.5)
+                                                    .padding(.top, 1)
+                                            }
+                                        }
                                     }
                                     .padding(.bottom, 15)
                                     .padding(.leading, -10)
@@ -442,24 +458,47 @@ struct HomeView: View {
             homeViewModel.fetchHome()
         }
     }
+    
+    // 시간 차이를 계산하는 함수
+    private func timeAgoSinceDate(_ dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.minute, .hour, .day], from: date, to: Date())
+            
+            if let days = components.day, days > 0 {
+                return "\(days)일전"
+            } else if let hours = components.hour, hours > 0 {
+                return "\(hours)시간전"
+            } else if let minutes = components.minute, minutes > 0 {
+                return "\(minutes)분전"
+            } else {
+                return "방금전"
+            }
+        }
+        
+        return ""
+    }
 }
 
 // 네비게이션바 배경색 변경
 struct NavigationBarModifier: ViewModifier {
-
+    
     var backgroundColor: UIColor?
-
+    
     init(backgroundColor: UIColor?) {
         self.backgroundColor = backgroundColor
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithTransparentBackground()
         coloredAppearance.backgroundColor = backgroundColor
-
+        
         UINavigationBar.appearance().standardAppearance = coloredAppearance
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }
-
+    
     func body(content: Content) -> some View {
         ZStack{
             content

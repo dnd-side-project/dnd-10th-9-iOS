@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 class HomeViewModel: ObservableObject {
-    @Published var homeResult: HomeResultDTO?
+    @Published var homeResult: HomeResponseDTO?
     
     private let provider = DotchiMoyaProvider<HomeRouter>(isLoggingOn: true)
     
@@ -18,14 +18,17 @@ class HomeViewModel: ObservableObject {
             switch result {
             case let .success(response):
                 do {
-                    let MainResponse = try response.map(HomeResultDTO.self)
-                    self.homeResult = MainResponse
+                    let mainResponse = try response.map(HomeResponseDTO.self)
+                    print("Decoded response: \(mainResponse)")
+                    self.homeResult = mainResponse
                 } catch {
                     print("Error parsing response: \(error)")
+                    self.homeResult = nil
                 }
                 
             case let .failure(error):
                 print("Network request failed: \(error)")
+                self.homeResult = nil
             }
         }
     }
