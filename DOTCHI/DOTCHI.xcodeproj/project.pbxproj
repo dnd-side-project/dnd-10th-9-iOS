@@ -71,6 +71,9 @@
 		FF8322992B7CD1580069D68A /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322982B7CD1580069D68A /* UIStackView+.swift */; };
 		FF83229B2B7CD2250069D68A /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83229A2B7CD2250069D68A /* ClassNameProtocol.swift */; };
 		FF95B6FF2B87B92100073C4D /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF95B6FE2B87B92100073C4D /* UINavigationController+.swift */; };
+		FF95B7022B887EF900073C4D /* GetAllCardsRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF95B7012B887EF900073C4D /* GetAllCardsRequestDTO.swift */; };
+		FF95B7042B88831400073C4D /* GetAllCardsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF95B7032B88831400073C4D /* GetAllCardsResponseDTO.swift */; };
+		FF95B7062B888DC500073C4D /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF95B7052B888DC500073C4D /* Encodable+.swift */; };
 		FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */; };
 		FFAA7D352B70F36600C7620E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA7D342B70F36600C7620E /* ContentView.swift */; };
 		FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */; };
@@ -193,6 +196,9 @@
 		FF8322982B7CD1580069D68A /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		FF83229A2B7CD2250069D68A /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		FF95B6FE2B87B92100073C4D /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		FF95B7012B887EF900073C4D /* GetAllCardsRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCardsRequestDTO.swift; sourceTree = "<group>"; };
+		FF95B7032B88831400073C4D /* GetAllCardsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCardsResponseDTO.swift; sourceTree = "<group>"; };
+		FF95B7052B888DC500073C4D /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		FFAA7D2F2B70F36600C7620E /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -340,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0CF0A82B8707F400B9DFC1 /* PostCardRequestDTO.swift */,
+				FF95B7012B887EF900073C4D /* GetAllCardsRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -348,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0CF0B72B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift */,
+				FF95B7032B88831400073C4D /* GetAllCardsResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -650,6 +658,7 @@
 				FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */,
 				FF95B6FE2B87B92100073C4D /* UINavigationController+.swift */,
 				FFC526142B88BAFA0018FA53 /* UIColor+.swift */,
+				FF95B7052B888DC500073C4D /* Encodable+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -798,6 +807,7 @@
 				FF4F9C162B860BB500E3DE31 /* CommentTableViewCell.swift in Sources */,
 				FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */,
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
+				FF95B7042B88831400073C4D /* GetAllCardsResponseDTO.swift in Sources */,
 				10BC6B5A2B86ABA0007D1D9A /* ProfileEditView.swift in Sources */,
 				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
@@ -822,6 +832,7 @@
 				FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */,
 				FFC526132B88B7930018FA53 /* InstagramShareUIView.swift in Sources */,
 				FF95B6FF2B87B92100073C4D /* UINavigationController+.swift in Sources */,
+				FF95B7022B887EF900073C4D /* GetAllCardsRequestDTO.swift in Sources */,
 				FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */,
 				FFD306BA2B83C25D004B5AEA /* UITextField+.swift in Sources */,
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
@@ -848,6 +859,7 @@
 				FF0CF09E2B86697D00B9DFC1 /* SignInResponseDTO.swift in Sources */,
 				FFE8C1AF2B7DF78D008124E5 /* CardBackUIView.swift in Sources */,
 				FF0CF09C2B86695300B9DFC1 /* SignInRequestDTO.swift in Sources */,
+				FF95B7062B888DC500073C4D /* Encodable+.swift in Sources */,
 				FF0CF0B12B871C5A00B9DFC1 /* UserDefaults+.swift in Sources */,
 				FF0CF0A92B8707F400B9DFC1 /* PostCardRequestDTO.swift in Sources */,
 				FFD594262B710173003F1F3C /* BaseResponseType.swift in Sources */,
