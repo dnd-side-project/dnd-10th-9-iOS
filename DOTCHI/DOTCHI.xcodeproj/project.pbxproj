@@ -80,6 +80,9 @@
 		FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */; };
 		FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D412B70F42200C7620E /* SnapKit */; };
 		FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFAA7D442B70F44500C7620E /* KeychainSwift */; };
+		FFC526132B88B7930018FA53 /* InstagramShareUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC526122B88B7930018FA53 /* InstagramShareUIView.swift */; };
+		FFC526152B88BAFA0018FA53 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC526142B88BAFA0018FA53 /* UIColor+.swift */; };
+		FFC526182B88C7750018FA53 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = FFC526172B88C7750018FA53 /* FacebookCore */; };
 		FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */; };
 		FFD306A42B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */; };
 		FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */; };
@@ -95,7 +98,7 @@
 		FFD594002B70FCDD003F1F3C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD593FF2B70FCDD003F1F3C /* Moya */; };
 		FFD594022B70FCDD003F1F3C /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594012B70FCDD003F1F3C /* ReactiveMoya */; };
 		FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFD594032B70FCDD003F1F3C /* RxMoya */; };
-		FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594172B70FF2A003F1F3C /* Environment.swift */; };
+		FFD594182B70FF2A003F1F3C /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594172B70FF2A003F1F3C /* ServiceEnvironment.swift */; };
 		FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */; };
 		FFD594202B710135003F1F3C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5941F2B710135003F1F3C /* BaseService.swift */; };
 		FFD594222B710147003F1F3C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD594212B710147003F1F3C /* AuthService.swift */; };
@@ -202,6 +205,8 @@
 		FFAA7D322B70F36600C7620E /* DOTCHIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTCHIApp.swift; sourceTree = "<group>"; };
 		FFAA7D342B70F36600C7620E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FFAA7D392B70F36700C7620E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFC526122B88B7930018FA53 /* InstagramShareUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramShareUIView.swift; sourceTree = "<group>"; };
+		FFC526142B88BAFA0018FA53 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		FFD306A12B809960004B5AEA /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FFD306A32B80AE6E004B5AEA /* MakeDotchiPhotoViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		FFD306A82B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiUICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -213,7 +218,7 @@
 		FFD306B42B83BE21004B5AEA /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
 		FFD306B72B83C15E004B5AEA /* DotchiUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiUITextField.swift; sourceTree = "<group>"; };
 		FFD306B92B83C25D004B5AEA /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		FFD594172B70FF2A003F1F3C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		FFD594172B70FF2A003F1F3C /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
 		FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFD5941F2B710135003F1F3C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		FFD594212B710147003F1F3C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -240,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFD594042B70FCDD003F1F3C /* RxMoya in Frameworks */,
+				FFC526182B88C7750018FA53 /* FacebookCore in Frameworks */,
 				FFAA7D452B70F44500C7620E /* KeychainSwift in Frameworks */,
 				10BC6B582B869514007D1D9A /* Lottie in Frameworks */,
 				FFAA7D422B70F42200C7620E /* SnapKit in Frameworks */,
@@ -309,6 +315,7 @@
 				FFE8C1AE2B7DF78D008124E5 /* CardBackUIView.swift */,
 				FFD306AA2B826975004B5AEA /* MakeDotchiLuckyTitleUIView.swift */,
 				FFD306B02B83B36E004B5AEA /* LoadPhotoUIView.swift */,
+				FFC526122B88B7930018FA53 /* InstagramShareUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,7 +482,7 @@
 		FFD594152B70FF14003F1F3C /* Supports */ = {
 			isa = PBXGroup;
 			children = (
-				FFD594172B70FF2A003F1F3C /* Environment.swift */,
+				FFD594172B70FF2A003F1F3C /* ServiceEnvironment.swift */,
 				FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */,
 			);
 			path = Supports;
@@ -653,6 +660,7 @@
 				FF0CF0AA2B870AAA00B9DFC1 /* UIImage+.swift */,
 				FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */,
 				FF95B6FE2B87B92100073C4D /* UINavigationController+.swift */,
+				FFC526142B88BAFA0018FA53 /* UIColor+.swift */,
 				FF95B7052B888DC500073C4D /* Encodable+.swift */,
 			);
 			path = Extensions;
@@ -724,6 +732,7 @@
 				FFE8C1B12B7DF7ED008124E5 /* RxGesture */,
 				10BC6B512B869193007D1D9A /* Lottie */,
 				10BC6B572B869514007D1D9A /* Lottie */,
+				FFC526172B88C7750018FA53 /* FacebookCore */,
 			);
 			productName = DOTCHI;
 			productReference = FFAA7D2F2B70F36600C7620E /* DOTCHI.app */;
@@ -759,6 +768,7 @@
 				FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */,
 				FFE8C1B02B7DF7ED008124E5 /* XCRemoteSwiftPackageReference "RxGesture" */,
 				10BC6B502B869193007D1D9A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				FFC526162B88C7750018FA53 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = FFAA7D302B70F36600C7620E /* Products */;
 			projectDirPath = "";
@@ -823,6 +833,7 @@
 				FF0CF0BA2B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift in Sources */,
 				107D6E5F2B78DB61005B6261 /* FontManager.swift in Sources */,
 				FF0CF0932B8658C300B9DFC1 /* CardBackEntity.swift in Sources */,
+				FFC526132B88B7930018FA53 /* InstagramShareUIView.swift in Sources */,
 				FF95B6FF2B87B92100073C4D /* UINavigationController+.swift in Sources */,
 				FF95B7022B887EF900073C4D /* GetAllCardsRequestDTO.swift in Sources */,
 				FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */,
@@ -841,7 +852,7 @@
 				FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */,
 				FF4F9C112B860A8C00E3DE31 /* UITableView+.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
-				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
+				FFD594182B70FF2A003F1F3C /* ServiceEnvironment.swift in Sources */,
 				10FD9EB82B87A50900288506 /* HomeResponseDTO.swift in Sources */,
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
 				FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */,
@@ -877,6 +888,7 @@
 				FF8322902B7CA1FC0069D68A /* CardHeadType.swift in Sources */,
 				FFD594282B710183003F1F3C /* DotchiMoyaProvider.swift in Sources */,
 				FFAA7D332B70F36600C7620E /* DOTCHIApp.swift in Sources */,
+				FFC526152B88BAFA0018FA53 /* UIColor+.swift in Sources */,
 				FFD5944B2B710457003F1F3C /* LuckyType.swift in Sources */,
 				FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */,
 				FF83229B2B7CD2250069D68A /* ClassNameProtocol.swift in Sources */,
@@ -1118,6 +1130,14 @@
 				minimumVersion = 21.0.0;
 			};
 		};
+		FFC526162B88C7750018FA53 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
 		FFD593FC2B70FCDD003F1F3C /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1156,6 +1176,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFAA7D432B70F44500C7620E /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		FFC526172B88C7750018FA53 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFC526162B88C7750018FA53 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
 		};
 		FFD593FD2B70FCDD003F1F3C /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
