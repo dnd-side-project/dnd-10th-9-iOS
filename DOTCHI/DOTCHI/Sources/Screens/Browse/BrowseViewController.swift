@@ -165,7 +165,7 @@ extension BrowseViewController: UICollectionViewDataSource {
         cell.setData(data: self.cards[indexPath.row])
         cell.commentButton.removeTarget(nil, action: nil, for: .touchUpInside)
         cell.commentButton.setAction { [weak self] in
-            self?.navigationController?.pushViewController(DotchiDetailViewController(cardId: self?.cards[indexPath.row].front.cardId ?? 0), animated: true)
+            self?.present(DotchiDetailViewController(cardId: self?.cards[indexPath.row].front.cardId ?? 0), animated: true)
         }
         
         cell.shareButton.removeTarget(nil, action: nil, for: .touchUpInside)

@@ -70,6 +70,7 @@ final class DotchiDetailViewController: BaseViewController {
         super.init(nibName: nil, bundle: nil)
         
         self.cardId = cardId
+        self.modalPresentationStyle = .overFullScreen
     }
     
     required init?(coder: NSCoder) {
