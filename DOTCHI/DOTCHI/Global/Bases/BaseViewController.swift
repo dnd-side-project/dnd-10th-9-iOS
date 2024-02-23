@@ -44,6 +44,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    /// CloseButton에 dismiss Action을 간편하게 주는 메서드.
+    /// - 필요 시 override하여 사용
+    @objc
+    func setCloseButtonAction(_ button: UIButton) {
+        button.setAction { [weak self] in
+            self?.dismiss(animated: true)
+        }
+    }
+    
     /// 화면 터치 시 키보드 내리는 메서드
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
