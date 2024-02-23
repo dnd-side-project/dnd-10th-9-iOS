@@ -147,50 +147,53 @@ final class DotchiDetailViewController: BaseViewController {
             preferredStyle: .actionSheet
         )
         
-        actionSheet.addAction(
-            UIAlertAction(
-                title: "차단하기",
-                style: .default,
-                handler: { _ in
-                    self.makeAlertWithCancel(
-                        title: "\(self.user.username) 님을 차단합니다.",
-                        message: nil,
-                        okTitle: "차단") { _ in
-                            // TODO: block user
-                            self.navigationController?.popViewController(animated: true)
-                        }
-                }
+        if UserInfo.shared.userID != self.user.userId {
+            actionSheet.addAction(
+                UIAlertAction(
+                    title: "차단하기",
+                    style: .default,
+                    handler: { _ in
+                        self.makeAlertWithCancel(
+                            title: "\(self.user.username) 님을 차단합니다.",
+                            message: nil,
+                            okTitle: "차단") { _ in
+                                // TODO: block user
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                    }
+                )
             )
-        )
+            
+            actionSheet.addAction(
+                UIAlertAction(
+                    title: "신고하기",
+                    style: .default,
+                    handler: { _ in
+                        self.makeAlertWithCancel(
+                            title: "\(self.user.username) 님을 신고합니다.",
+                            okTitle: "신고") { _ in
+                                // TODO: report user
+                            }
+                    }
+                )
+            )
+        }
         
-        actionSheet.addAction(
-            UIAlertAction(
-                title: "신고하기",
-                style: .default,
-                handler: { _ in
-                    self.makeAlertWithCancel(
-                        title: "\(self.user.username) 님을 신고합니다.",
-                        okTitle: "신고") { _ in
-                            // TODO: report user
-                        }
-                }
+        if UserInfo.shared.userID == self.user.userId {
+            actionSheet.addAction(
+                UIAlertAction(
+                    title: "삭제하기",
+                    style: .destructive,
+                    handler: { _ in
+                        self.makeAlertWithCancel(
+                            title: "정말 삭제할까요?",
+                            okTitle: "삭제") { _ in
+                                self.deleteCard()
+                            }
+                    }
+                )
             )
-        )
-        
-        // TODO: 내 카드인 경우
-        actionSheet.addAction(
-            UIAlertAction(
-                title: "삭제하기",
-                style: .destructive,
-                handler: { _ in
-                    self.makeAlertWithCancel(
-                        title: "정말 삭제할까요?",
-                        okTitle: "삭제") { _ in
-                            // TODO: delete
-                        }
-                }
-            )
-        )
+        }
         
         actionSheet.addAction(
             UIAlertAction(
