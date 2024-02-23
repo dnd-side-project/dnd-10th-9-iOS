@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+struct DotchiDetailViewControllerWrapper: UIViewControllerRepresentable {
+    let cardId: Int
+    
+    func makeUIViewController(context: Context) -> DotchiDetailViewController {
+        return DotchiDetailViewController(cardId: cardId)
+    }
+    
+    func updateUIViewController(_ uiViewController: DotchiDetailViewController, context: Context) {
+    }
+}
+
 struct HomeView: View {
     let currentDate = Date()
     var formattedDate: String {
