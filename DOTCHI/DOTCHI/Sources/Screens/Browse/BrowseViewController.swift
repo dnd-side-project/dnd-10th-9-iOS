@@ -79,8 +79,8 @@ final class BrowseViewController: BaseViewController {
         
         [self.latestButton, self.popularButton].forEach({ button in
             button.setAction { [weak self] in
-                self?.latestButton.isSelected.toggle()
-                self?.popularButton.isSelected.toggle()
+                self?.latestButton.isSelected = button == self?.latestButton
+                self?.popularButton.isSelected = button == self?.popularButton
                 self?.cards = []
                 self?.collectionView.reloadData()
                 self?.fetchData(
