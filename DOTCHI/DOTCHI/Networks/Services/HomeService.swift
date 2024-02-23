@@ -19,15 +19,12 @@ class HomeViewModel: ObservableObject {
             case let .success(response):
                 do {
                     let mainResponse = try response.map(HomeResponseDTO.self)
-                    print("Decoded response: \(mainResponse)")
                     self.homeResult = mainResponse
                 } catch {
-                    print("Error parsing response: \(error)")
                     self.homeResult = nil
                 }
                 
             case let .failure(error):
-                print("Network request failed: \(error)")
                 self.homeResult = nil
             }
         }
@@ -45,15 +42,12 @@ class ThemeViewModel: ObservableObject {
             case let .success(response):
                 do {
                     let mainResponse = try response.map(ThemeResponseDTO.self)
-                    print("Decoded response: \(mainResponse)")
                     self.themeResult = mainResponse
                 } catch {
-                    print("Error parsing response: \(error)")
                     self.themeResult = nil
                 }
                 
             case let .failure(error):
-                print("Network request failed: \(error)")
                 self.themeResult = nil
             }
         }

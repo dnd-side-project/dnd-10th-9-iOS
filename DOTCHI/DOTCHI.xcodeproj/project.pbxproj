@@ -26,6 +26,9 @@
 		10FD9EBA2B87A59400288506 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB92B87A59400288506 /* HomeService.swift */; };
 		10FD9EBC2B8868B300288506 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBB2B8868B300288506 /* AsyncImageView.swift */; };
 		10FD9EBE2B889D1100288506 /* ThemeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */; };
+		10FD9EC02B88C24700288506 /* MyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBF2B88C24700288506 /* MyRouter.swift */; };
+		10FD9EC22B88C3E000288506 /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC12B88C3E000288506 /* MyService.swift */; };
+		10FD9EC62B88C46800288506 /* MyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC52B88C46800288506 /* MyResponseDTO.swift */; };
 		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -142,6 +145,9 @@
 		10FD9EB92B87A59400288506 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		10FD9EBB2B8868B300288506 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeResponseDTO.swift; sourceTree = "<group>"; };
+		10FD9EBF2B88C24700288506 /* MyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRouter.swift; sourceTree = "<group>"; };
+		10FD9EC12B88C3E000288506 /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
+		10FD9EC52B88C46800288506 /* MyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponseDTO.swift; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -261,6 +267,22 @@
 			children = (
 				10FD9EB72B87A50900288506 /* HomeResponseDTO.swift */,
 				10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		10FD9EC32B88C44E00288506 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				10FD9EC42B88C45D00288506 /* Response */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		10FD9EC42B88C45D00288506 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				10FD9EC52B88C46800288506 /* MyResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -488,6 +510,7 @@
 		FFD594192B70FF47003F1F3C /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				10FD9EC32B88C44E00288506 /* My */,
 				10FD9EB52B87A4D900288506 /* Home */,
 				FF0CF0A62B8707E200B9DFC1 /* Card */,
 				FFD5942B2B7101B0003F1F3C /* Auth */,
@@ -513,6 +536,7 @@
 				FFD594212B710147003F1F3C /* AuthService.swift */,
 				FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */,
 				10FD9EB92B87A59400288506 /* HomeService.swift */,
+				10FD9EC12B88C3E000288506 /* MyService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -523,6 +547,7 @@
 				FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */,
 				FF0CF0A42B87076F00B9DFC1 /* CardRouter.swift */,
 				10FD9EB32B87A3AD00288506 /* HomeRouter.swift */,
+				10FD9EBF2B88C24700288506 /* MyRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -792,6 +817,7 @@
 				FFD5944F2B710475003F1F3C /* UIViewcontroller+.swift in Sources */,
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
 				10BC6B5A2B86ABA0007D1D9A /* ProfileEditView.swift in Sources */,
+				10FD9EC02B88C24700288506 /* MyRouter.swift in Sources */,
 				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
 				FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */,
@@ -818,6 +844,7 @@
 				FFD306BA2B83C25D004B5AEA /* UITextField+.swift in Sources */,
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
 				FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */,
+				10FD9EC22B88C3E000288506 /* MyService.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FF0CF0AD2B870D4000B9DFC1 /* CardService.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
@@ -828,6 +855,7 @@
 				FFD306B82B83C15E004B5AEA /* DotchiUITextField.swift in Sources */,
 				FF0CF0952B8659B600B9DFC1 /* CardEntity.swift in Sources */,
 				FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */,
+				10FD9EC62B88C46800288506 /* MyResponseDTO.swift in Sources */,
 				FF4F9C112B860A8C00E3DE31 /* UITableView+.swift in Sources */,
 				FFD594242B710166003F1F3C /* APIConstants.swift in Sources */,
 				FFD594182B70FF2A003F1F3C /* Environment.swift in Sources */,
