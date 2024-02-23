@@ -126,7 +126,7 @@ final class BrowseViewController: BaseViewController {
         let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewLayout.itemSize = .init(
             width: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)),
-            height: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)) * 1.476014
+            height: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)) * 1.671186
         )
         collectionViewLayout.minimumLineSpacing = 12.adjustedH
         collectionViewLayout.scrollDirection = .horizontal
@@ -236,7 +236,7 @@ extension BrowseViewController {
         }
         
         self.collectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.latestButton.snp.bottom).offset(32.adjustedH)
+            make.top.equalTo(self.latestButton.snp.bottom).offset(0)
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalToSuperview().inset(48.adjustedH)
         }

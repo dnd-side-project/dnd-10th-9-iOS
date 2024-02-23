@@ -150,8 +150,11 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        // TODO: 따봉도치 둘러보기 뷰로 이동
-                        NavigationLink(destination: EmptyView()) {
+                        NavigationLink(
+                            destination: BrowseViewControllerRepresentable()
+                                .toolbar(.hidden, for: .navigationBar)
+                                .ignoresSafeArea()
+                        ) {
                             HStack {
                                 Text("전체보기")
                                     .font(.Sub)
