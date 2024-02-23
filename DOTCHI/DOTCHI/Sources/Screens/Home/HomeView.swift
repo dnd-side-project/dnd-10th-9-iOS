@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+struct DotchiDetailViewControllerWrapper: UIViewControllerRepresentable {
+    let cardId: Int
+    
+    func makeUIViewController(context: Context) -> DotchiDetailViewController {
+        return DotchiDetailViewController(cardId: cardId)
+    }
+    
+    func updateUIViewController(_ uiViewController: DotchiDetailViewController, context: Context) {
+    }
+}
+
 struct HomeView: View {
     let currentDate = Date()
     var formattedDate: String {
@@ -54,11 +65,18 @@ struct HomeView: View {
                                     let secondToday = todayCards[1]
                                     
                                     ForEach([secondToday], id: \.cardId) { today in
-                                        AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
-                                            .scaledToFill()
-                                            .frame(width: 82, height: 82)
-                                            .cornerRadius(25)
-                                            .padding(.bottom, 8)
+                                        NavigationLink(
+                                            destination: DotchiDetailViewControllerWrapper(cardId: today.cardId)
+                                                .navigationBarTitleDisplayMode(.inline)
+                                                .navigationBarBackButtonHidden(true)
+                                                .ignoresSafeArea()
+                                        ) {
+                                            AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                                .scaledToFill()
+                                                .frame(width: 82, height: 82)
+                                                .cornerRadius(25)
+                                                .padding(.bottom, 8)
+                                        }
                                         
                                         ZStack {
                                             RoundedRectangle(cornerRadius: 67)
@@ -85,11 +103,18 @@ struct HomeView: View {
                                     
                                     ForEach([firstToday], id: \.cardId) { today in
                                         ZStack(alignment: .top) {
-                                            AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
-                                                .scaledToFill()
-                                                .cornerRadius(30)
-                                                .frame(width: 112, height: 112)
-                                                .padding(.bottom, 8)
+                                            NavigationLink(
+                                                destination: DotchiDetailViewControllerWrapper(cardId: today.cardId)
+                                                    .navigationBarTitleDisplayMode(.inline)
+                                                    .navigationBarBackButtonHidden(true)
+                                                    .ignoresSafeArea()
+                                            ) {
+                                                AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                                    .scaledToFill()
+                                                    .cornerRadius(30)
+                                                    .frame(width: 112, height: 112)
+                                                    .padding(.bottom, 8)
+                                            }
                                             
                                             RoundedRectangle(cornerRadius: 30)
                                                 .stroke(Color.dotchiGreen, lineWidth: 2)
@@ -125,11 +150,18 @@ struct HomeView: View {
                                     let thirdToday = todayCards[2]
                                     
                                     ForEach([thirdToday], id: \.cardId) { today in
-                                        AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
-                                            .scaledToFill()
-                                            .frame(width: 82, height: 82)
-                                            .cornerRadius(25)
-                                            .padding(.bottom, 8)
+                                        NavigationLink(
+                                            destination: DotchiDetailViewControllerWrapper(cardId: today.cardId)
+                                                .navigationBarTitleDisplayMode(.inline)
+                                                .navigationBarBackButtonHidden(true)
+                                                .ignoresSafeArea()
+                                        ) {
+                                            AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                                .scaledToFill()
+                                                .frame(width: 82, height: 82)
+                                                .cornerRadius(25)
+                                                .padding(.bottom, 8)
+                                        }
                                         
                                         ZStack {
                                             RoundedRectangle(cornerRadius: 67)
