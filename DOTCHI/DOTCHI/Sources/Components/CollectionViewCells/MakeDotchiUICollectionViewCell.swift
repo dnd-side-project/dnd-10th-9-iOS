@@ -76,7 +76,10 @@ extension MakeDotchiUICollectionViewCell {
         }
         
         self.photoImageView.snp.makeConstraints { make in
-            make.edges.equalTo(self.cardFrontView)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().multipliedBy((200.0 - 16.0) / 200.0)
+            make.width.equalToSuperview().multipliedBy(210.0 / 270.0)
+            make.height.equalTo(self.photoImageView.snp.width)
         }
         
         self.loadPhotoView.snp.makeConstraints { make in
