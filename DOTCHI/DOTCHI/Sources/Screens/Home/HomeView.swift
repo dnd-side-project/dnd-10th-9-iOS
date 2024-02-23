@@ -50,84 +50,101 @@ struct HomeView: View {
                         
                         HStack(alignment: .bottom) {
                             VStack {
-                                Image(.imgDefaultDummy)
-                                    .frame(width: 82, height: 82)
-                                    .cornerRadius(25)
-                                    .padding(.bottom, 8)
-                                
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 67)
-                                        .fill(Color.dotchiLBlack)
-                                        .frame(width: 60, height: 32)
+                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count > 1 {
+                                    let secondToday = todayCards[1]
                                     
-                                    Text("이름")
-                                        .font(.Sub)
-                                        .foregroundStyle(Color.dotchiWhite)
+                                    ForEach([secondToday], id: \.cardId) { today in
+                                        AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                            .frame(width: 82, height: 82)
+                                            .cornerRadius(25)
+                                            .padding(.bottom, 8)
+                                        
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 67)
+                                                .fill(Color.dotchiLBlack)
+                                                .frame(width: 110, height: 32)
+                                            
+                                            Text(today.backName)
+                                                .font(.Sub)
+                                                .foregroundStyle(Color.dotchiWhite)
+                                        }
+                                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                        
+                                        Text("2위")
+                                            .font(.Sub_Sbold)
+                                            .foregroundStyle(Color.dotchiGray)
+                                            .padding(.top, 3)
+                                    }
                                 }
-                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                                
-                                Text("2위")
-                                    .font(.Sub_Sbold)
-                                    .foregroundStyle(Color.dotchiGray)
-                                    .padding(.top, 3)
                             }
                             
                             VStack {
-                                ZStack(alignment: .top) {
-                                    Image(.imgDefaultDummy)
-                                        .resizable()
-                                        .cornerRadius(30)
-                                        .frame(width: 112, height: 112)
-                                        .padding(.bottom, 8)
+                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count > 1 {
+                                    let firstToday = todayCards[0]
                                     
-                                    RoundedRectangle(cornerRadius: 30)
-                                        .stroke(Color.dotchiGreen, lineWidth: 2)
-                                        .frame(width: 112, height: 112)
-                                    
-                                    Image(.icnPlus)
-                                        .resizable()
-                                        .frame(width: 64, height: 64)
-                                        .offset(y: -30)
+                                    ForEach([firstToday], id: \.cardId) { today in
+                                        ZStack(alignment: .top) {
+                                            AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                                .cornerRadius(30)
+                                                .frame(width: 112, height: 112)
+                                                .padding(.bottom, 8)
+                                            
+                                            RoundedRectangle(cornerRadius: 30)
+                                                .stroke(Color.dotchiGreen, lineWidth: 2)
+                                                .frame(width: 112, height: 112)
+                                            
+                                            Image(.icnPlus)
+                                                .resizable()
+                                                .frame(width: 64, height: 64)
+                                                .offset(y: -30)
+                                        }
+                                        
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 67)
+                                                .fill(Color.dotchiLBlack)
+                                                .frame(width: 110, height: 32)
+                                            
+                                            Text(today.backName)
+                                                .font(.Sub)
+                                                .foregroundStyle(Color.dotchiWhite)
+                                        }
+                                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                        
+                                        Text("1위")
+                                            .font(.Sub_Sbold)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .padding(.top, 3)
+                                    }
                                 }
-                                
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 67)
-                                        .fill(Color.dotchiLBlack)
-                                        .frame(width: 60, height: 32)
-                                    
-                                    Text("이름")
-                                        .font(.Sub)
-                                        .foregroundStyle(Color.dotchiWhite)
-                                }
-                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                                
-                                Text("1위")
-                                    .font(.Sub_Sbold)
-                                    .foregroundStyle(Color.dotchiWhite)
-                                    .padding(.top, 3)
                             }
                             
                             VStack {
-                                Image(.imgDefaultDummy)
-                                    .frame(width: 82, height: 82)
-                                    .cornerRadius(25)
-                                    .padding(.bottom, 8)
-                                
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 67)
-                                        .fill(Color.dotchiLBlack)
-                                        .frame(width: 60, height: 32)
+                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count > 1 {
+                                    let thirdToday = todayCards[2]
                                     
-                                    Text("이름")
-                                        .font(.Sub)
-                                        .foregroundStyle(Color.dotchiWhite)
+                                    ForEach([thirdToday], id: \.cardId) { today in
+                                        AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
+                                            .frame(width: 82, height: 82)
+                                            .cornerRadius(25)
+                                            .padding(.bottom, 8)
+                                        
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 67)
+                                                .fill(Color.dotchiLBlack)
+                                                .frame(width: 110, height: 32)
+                                            
+                                            Text(today.backName)
+                                                .font(.Sub)
+                                                .foregroundStyle(Color.dotchiWhite)
+                                        }
+                                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                        
+                                        Text("3위")
+                                            .font(.Sub_Sbold)
+                                            .foregroundStyle(Color.dotchiGray)
+                                            .padding(.top, 3)
+                                    }
                                 }
-                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                                
-                                Text("3위")
-                                    .font(.Sub_Sbold)
-                                    .foregroundStyle(Color.dotchiGray)
-                                    .padding(.top, 3)
                             }
                         }
                         .padding(.top, 30)
@@ -524,3 +541,4 @@ extension View {
 #Preview {
     HomeView()
 }
+
