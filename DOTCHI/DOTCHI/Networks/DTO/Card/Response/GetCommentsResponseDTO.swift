@@ -29,6 +29,7 @@ struct GetCommentsResponseDTO: Decodable {
         let backMood: String
         let backContent: String
         let commentCount: Int
+        let memberImageUrl: String
 
         enum CodingKeys: String, CodingKey {
             case cardID = "cardId"
@@ -40,12 +41,13 @@ struct GetCommentsResponseDTO: Decodable {
             case backMood = "backMood"
             case backContent = "backContent"
             case commentCount = "commentCount"
+            case memberImageUrl = "memberImageUrl"
         }
         
         func toCardUserEntity() -> CardUserEntity {
             return CardUserEntity(
                 userId: self.memberID,
-                profileImageUrl: "",
+                profileImageUrl: self.memberImageUrl,
                 username: self.memberName
             )
         }
