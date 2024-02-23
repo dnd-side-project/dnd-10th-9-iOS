@@ -34,6 +34,32 @@ class HomeViewModel: ObservableObject {
     }
 }
 
+class ThemeViewModel: ObservableObject {
+    @Published var themeResult: ThemeResponseDTO?
+    
+    private let provider = DotchiMoyaProvider<HomeRouter>(isLoggingOn: true)
+    
+    func fetchTheme(themeId: Int, cardSortType: String, lastCardId: Int, lastCardCommentCount: Int ) {
+        provider.request(.getTheme(themeId: themeId, cardSortType: cardSortType, lastCardId: lastCardId, lastCardCommentCount: lastCardCommentCount)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let mainResponse = try response.map(ThemeResponseDTO.self)
+                    print("Decoded response: \(mainResponse)")
+                    self.themeResult = mainResponse
+                } catch {
+                    print("Error parsing response: \(error)")
+                    self.themeResult = nil
+                }
+                
+            case let .failure(error):
+                print("Network request failed: \(error)")
+                self.themeResult = nil
+            }
+        }
+    }
+}
+
 /*
 internal protocol HomeServiceProtocol {
     func getMain(completion: @escaping (NetworkResult<Any>) -> (Void))

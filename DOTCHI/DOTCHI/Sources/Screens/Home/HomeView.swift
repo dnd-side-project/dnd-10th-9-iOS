@@ -199,12 +199,12 @@ struct HomeView: View {
                                             .scaledToFill()
                                             .frame(width: 143, height: 211)
                                             .cornerRadius(8.46)
-
+                                        
                                         Image(.imgLuckyFront)
                                             .resizable()
                                             .frame(width: 143, height: 211)
                                     }
-
+                                    
                                     Text(card.backName)
                                         .font(.Dotchi_Name2)
                                         .foregroundStyle(Color.dotchiDeepGreen)
@@ -235,7 +235,7 @@ struct HomeView: View {
                     
                     HStack {
                         HStack {
-                            NavigationLink(destination: CollectionView()) {
+                            NavigationLink(destination: CollectionView(themeId: 2)) {
                                 ZStack(alignment: .bottomTrailing) {
                                     VStack(alignment: .leading) {
                                         HStack {
@@ -284,7 +284,7 @@ struct HomeView: View {
                         }
                         
                         HStack {
-                            NavigationLink(destination: CollectionView()) {
+                            NavigationLink(destination: CollectionView(themeId: 4)) {
                                 ZStack(alignment: .bottomTrailing) {
                                     VStack(alignment: .leading) {
                                         HStack {
@@ -338,7 +338,7 @@ struct HomeView: View {
                     
                     HStack {
                         HStack {
-                            NavigationLink(destination: CollectionView()) {
+                            NavigationLink(destination: CollectionView(themeId: 1)) {
                                 ZStack(alignment: .bottomTrailing) {
                                     VStack(alignment: .leading) {
                                         HStack {
@@ -387,7 +387,7 @@ struct HomeView: View {
                         }
                         
                         HStack {
-                            NavigationLink(destination: CollectionView()) {
+                            NavigationLink(destination: CollectionView(themeId: 3)) {
                                 ZStack(alignment: .bottomTrailing) {
                                     VStack(alignment: .leading) {
                                         HStack {
