@@ -12,8 +12,8 @@ final class InstagramShareUIView: UIView {
     
     // MARK: UIComponents
     
-    private let cardFrontView: CardFrontUIView = CardFrontUIView(frame: .init(x: 0, y: 0, width: 270, height: 400))
-    private let cardBackView: CardBackUIView = CardBackUIView(frame: .init(x: 0, y: 0, width: 270, height: 400))
+    private let cardFrontView: CardFrontUIView = CardFrontUIView()
+    private let cardBackView: CardBackUIView = CardBackUIView()
     
     // MARK: Properties
     
@@ -24,7 +24,8 @@ final class InstagramShareUIView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-
+        self.setUI()
+        self.setLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -35,15 +36,12 @@ final class InstagramShareUIView: UIView {
     
     private func setUI() {
         self.makeRounded(cornerRadius: 18)
-        self.backgroundColor = .clear
+        self.backgroundColor = .dotchiBlack
     }
     
     func setData(data: CardEntity) {
         self.cardFrontView.setData(frontData: data.front, userData: data.user)
         self.cardBackView.setData(backData: data.back, userData: data.user)
-        
-        self.setLayout()
-        self.setUI()
     }
 }
 
@@ -55,11 +53,13 @@ extension InstagramShareUIView {
         
         self.cardFrontView.snp.makeConstraints { make in
             make.top.leading.bottom.equalToSuperview().inset(12)
+            make.width.equalToSuperview().multipliedBy(0.470383)
         }
         
         self.cardBackView.snp.makeConstraints { make in
             make.top.trailing.bottom.equalToSuperview().inset(12)
-            make.leading.equalTo(self.cardFrontView.snp.trailing).offset(8)
+            make.width.equalToSuperview().multipliedBy(0.470383)
+//            make.leading.equalTo(self.cardFrontView.snp.trailing).offset(8)
         }
     }
 }

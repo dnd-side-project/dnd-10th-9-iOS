@@ -46,8 +46,6 @@ final class BrowseViewController: BaseViewController {
         return collectionView
     }()
     
-    private let instagramShareView: InstagramShareUIView = InstagramShareUIView(frame: CGRect(x: 0, y: 0, width: 570, height: 424))
-    
     // MARK: Properties
     
     private var cards: [CardEntity] = []
@@ -130,25 +128,27 @@ final class BrowseViewController: BaseViewController {
      }
     
     private func shareInstagram(data: CardEntity) {
-        self.instagramShareView.setData(data: data)
-        
-        if let storiesUrl = URL(string: "instagram-stories://share?source_application=\(APIConstants.facebookAppId)") {
-            if UIApplication.shared.canOpenURL(storiesUrl) {
-                let imageData = self.instagramShareView.toUIImage().png()
-                let pasteboardItems: [String: Any] = [
-                    "com.instagram.sharedSticker.stickerImage": imageData,
-                    "com.instagram.sharedSticker.backgroundTopColor": UIColor.dotchiBlack.toHexString(),
-                    "com.instagram.sharedSticker.backgroundBottomColor": UIColor.dotchiBlack.toHexString()
-                ]
-                let pasteboardOptions = [
-                    UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(300)
-                ]
-                UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
-                UIApplication.shared.open(storiesUrl, options: [:], completionHandler: nil)
-            } else {
-                print("User doesn't have instagram on their device.")
-                if let openStore = URL(string: "itms-apps://itunes.apple.com/app/instagram/id389801252"), UIApplication.shared.canOpenURL(openStore) {
-                    UIApplication.shared.open(openStore, options: [:], completionHandler: nil)
+        let instagramShareView: InstagramShareUIView = InstagramShareUIView(frame: CGRect(x: 0, y: 0, width: 570, height: 424))
+        instagramShareView.setData(data: data)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if let storiesUrl = URL(string: "instagram-stories://share?source_application=\(APIConstants.facebookAppId)") {
+                if UIApplication.shared.canOpenURL(storiesUrl) {
+                    let imageData = instagramShareView.toUIImage().png()
+                    let pasteboardItems: [String: Any] = [
+                        "com.instagram.sharedSticker.stickerImage": imageData,
+                        "com.instagram.sharedSticker.backgroundTopColor": UIColor.dotchiBlack.toHexString(),
+                        "com.instagram.sharedSticker.backgroundBottomColor": UIColor.dotchiBlack.toHexString()
+                    ]
+                    let pasteboardOptions = [
+                        UIPasteboard.OptionsKey.expirationDate: Date().addingTimeInterval(300)
+                    ]
+                    UIPasteboard.general.setItems([pasteboardItems], options: pasteboardOptions)
+                    UIApplication.shared.open(storiesUrl, options: [:], completionHandler: nil)
+                } else {
+                    print("User doesn't have instagram on their device.")
+                    if let openStore = URL(string: "itms-apps://itunes.apple.com/app/instagram/id389801252"), UIApplication.shared.canOpenURL(openStore) {
+                        UIApplication.shared.open(openStore, options: [:], completionHandler: nil)
+                    }
                 }
             }
         }
