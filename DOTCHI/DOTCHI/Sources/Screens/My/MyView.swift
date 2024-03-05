@@ -17,10 +17,42 @@ struct MyView: View {
                 Color.dotchiBlack.ignoresSafeArea()
                 
                 VStack {
-                    AsyncImage(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
-                        .frame(width: 116, height: 116)
-                        .scaledToFill()
-                        .cornerRadius(24)
+                    AsyncImage(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? "")) { phase in
+                        switch phase {
+                        case .empty:
+                            Image(.imgDefaultDummy)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        case .failure:
+                            Image(.imgDefaultDummy)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        @unknown default:
+                            Image(.imgDefaultDummy)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        }
+                    }
                     
                     Text(myViewModel.myResult?.result.member.memberName ?? "")
                         .font(.Body)
