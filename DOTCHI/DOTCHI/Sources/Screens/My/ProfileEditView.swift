@@ -173,7 +173,7 @@ struct ProfileEditView: View {
             .padding(.horizontal, 20)
         }
         .onDisappear() {
-            myViewModel.fetchMy(memberId: UserInfo.shared.userID, lastCardId: 999999)
+            myViewModel.fetchMy(memberId: UserInfo.shared.userID, lastCardId: APIConstants.pagingDefaultValue)
         }
     }
 }

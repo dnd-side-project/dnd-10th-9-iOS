@@ -17,10 +17,42 @@ struct MyView: View {
                 Color.dotchiBlack.ignoresSafeArea()
                 
                 VStack {
-                    AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
-                        .scaledToFill()
-                        .frame(width: 116, height: 116)
-                        .cornerRadius(24)
+                    AsyncImage(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? "")) { phase in
+                        switch phase {
+                        case .empty:
+                            Image(.imgDefaultDummy)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        case .failure:
+                            Image(.imgDefaultDummy)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        @unknown default:
+                            Image(.imgDefaultDummy)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 116, height: 116)
+                                .cornerRadius(24)
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        }
+                    }
                     
                     Text(myViewModel.myResult?.result.member.memberName ?? "")
                         .font(.Body)
@@ -81,7 +113,7 @@ struct MyView: View {
             }
         }
         .onAppear() {
-            myViewModel.fetchMy(memberId: UserInfo.shared.userID, lastCardId: 999999)
+            myViewModel.fetchMy(memberId: UserInfo.shared.userID, lastCardId: APIConstants.pagingDefaultValue)
         }
     }
 }
@@ -144,25 +176,6 @@ struct MyCardView: View {
                     Image(getFrontImageName(forThemeId: card.themeId))
                         .resizable()
                         .frame(width: 163, height: 241)
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 60.25)
-                            .fill(card.themeType.colorFont())
-                            .frame(width: 60, height: 20)
-                        
-                        HStack(spacing: 0) {
-                            AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
-                                .scaledToFill()
-                                .frame(width: 14, height: 14)
-                                .clipShape(Circle())
-                            
-                            Text(card.memberName)
-                                .font(.S_Sub)
-                                .foregroundStyle(Color.dotchiWhite)
-                                .padding(.leading, 4)
-                        }
-                    }
-                    .padding(.top, 16)
                 }
                 
                 Text(card.backName)
