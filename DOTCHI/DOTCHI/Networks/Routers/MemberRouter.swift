@@ -10,6 +10,7 @@ import Moya
 
 enum MemberRouter {
     case blockUser(userId: Int)
+    case reportUser(userId: Int, data: ReportUserRequestDTO)
 }
 
 extension MemberRouter: TargetType {
@@ -22,12 +23,14 @@ extension MemberRouter: TargetType {
         switch self {
         case .blockUser(let userId):
             return "/blacklists/\(userId)"
+        case .reportUser(let userId, _):
+            return "/reports/\(userId)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .blockUser:
+        case .blockUser, .reportUser:
             return .post
         }
     }
@@ -36,6 +39,8 @@ extension MemberRouter: TargetType {
         switch self {
         case .blockUser:
             return .requestPlain
+        case .reportUser(_, let data):
+            return .requestJSONEncodable(data)
         }
     }
 

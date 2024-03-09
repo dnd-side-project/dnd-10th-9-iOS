@@ -55,6 +55,7 @@
 		FF0CF0B42B8732B100B9DFC1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */; };
 		FF0CF0B82B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0B72B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift */; };
 		FF0CF0BA2B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0B92B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift */; };
+		FF2528B92B9C50CC00A9BC0B /* ReportUserRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2528B82B9C50CC00A9BC0B /* ReportUserRequestDTO.swift */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */; };
@@ -188,6 +189,7 @@
 		FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		FF0CF0B72B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentsResponseDTO.swift; sourceTree = "<group>"; };
 		FF0CF0B92B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		FF2528B82B9C50CC00A9BC0B /* ReportUserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserRequestDTO.swift; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +405,22 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		FF2528B62B9C50BA00A9BC0B /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				FF2528B72B9C50C000A9BC0B /* Request */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		FF2528B72B9C50C000A9BC0B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FF2528B82B9C50CC00A9BC0B /* ReportUserRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		FF4F9C0B2B86015F00E3DE31 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +561,7 @@
 		FFD594192B70FF47003F1F3C /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FF2528B62B9C50BA00A9BC0B /* Member */,
 				10FD9EC32B88C44E00288506 /* My */,
 				10FD9EB52B87A4D900288506 /* Home */,
 				FF0CF0A62B8707E200B9DFC1 /* Card */,
@@ -908,6 +927,7 @@
 				FFD5941E2B70FF66003F1F3C /* AuthRouter.swift in Sources */,
 				FFD306A92B80B51A004B5AEA /* MakeDotchiUICollectionViewCell.swift in Sources */,
 				FF8322952B7CACE00069D68A /* UIImageView+.swift in Sources */,
+				FF2528B92B9C50CC00A9BC0B /* ReportUserRequestDTO.swift in Sources */,
 				FF4F9C0F2B86048D00E3DE31 /* DotchiDetailViewControllerRepresentable.swift in Sources */,
 				FF018EA02B77FA6C006D5627 /* DotchiNavigationUIView.swift in Sources */,
 				FFD594222B710147003F1F3C /* AuthService.swift in Sources */,
