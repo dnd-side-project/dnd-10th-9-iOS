@@ -55,6 +55,7 @@
 		FF0CF0B42B8732B100B9DFC1 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */; };
 		FF0CF0B82B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0B72B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift */; };
 		FF0CF0BA2B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CF0B92B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift */; };
+		FF2528BE2B9C6C0000A9BC0B /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF2528BD2B9C6C0000A9BC0B /* Release.xcconfig */; };
 		FF4F9C082B83DD2600E3DE31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C072B83DD2600E3DE31 /* String+.swift */; };
 		FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */; };
 		FF4F9C0D2B86016C00E3DE31 /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */; };
@@ -186,6 +187,7 @@
 		FF0CF0B02B871C5A00B9DFC1 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		FF0CF0B72B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentsResponseDTO.swift; sourceTree = "<group>"; };
 		FF0CF0B92B87B06200B9DFC1 /* BrowseViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		FF2528BD2B9C6C0000A9BC0B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FF4F9C072B83DD2600E3DE31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		FF4F9C092B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
 		FF4F9C0C2B86016C00E3DE31 /* DotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewController.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 			children = (
 				FFD594172B70FF2A003F1F3C /* ServiceEnvironment.swift */,
 				FF0CF09F2B866AE900B9DFC1 /* Debug.xcconfig */,
+				FF2528BD2B9C6C0000A9BC0B /* Release.xcconfig */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				107D6E622B78DEA0005B6261 /* Pretendard-SemiBold.ttf in Resources */,
 				FFAA7D3A2B70F36700C7620E /* Preview Assets.xcassets in Resources */,
 				10BC6B562B86946F007D1D9A /* pung.json in Resources */,
+				FF2528BE2B9C6C0000A9BC0B /* Release.xcconfig in Resources */,
 				107D6E612B78DE9E005B6261 /* Pretendard-Medium.ttf in Resources */,
 				FF0CF0B42B8732B100B9DFC1 /* Debug.xcconfig in Resources */,
 				FFD594362B710311003F1F3C /* Colorsets.xcassets in Resources */,
@@ -1011,6 +1015,7 @@
 		};
 		FFAA7D3C2B70F36700C7620E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF2528BD2B9C6C0000A9BC0B /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1059,6 +1064,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -1098,6 +1104,7 @@
 		};
 		FFAA7D3F2B70F36700C7620E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF2528BD2B9C6C0000A9BC0B /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
