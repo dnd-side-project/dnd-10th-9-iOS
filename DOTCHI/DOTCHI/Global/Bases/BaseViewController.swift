@@ -10,6 +10,10 @@ import SnapKit
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
+    private enum Text {
+        static let cancel = "취소하기"
+    }
+    
     // MARK: UIComponents
     
     
@@ -18,6 +22,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    let reportReasons: [String] = ["유해한 콘텐츠", "스팸/홍보", "도배", "도용", "기타"]
     
     // MARK: View Life Cycle
     
@@ -64,13 +69,62 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     func showNetworkErrorAlert() {
         self.makeAlert(title: Message.networkError.text)
     }
+    
+    /// 신고 사유 선택 action sheet
+    func reportActionSheet(userId: Int) -> UIAlertController {
+        let reportActionSheet: UIAlertController = UIAlertController(
+            title: "신고 사유를 선택해 주세요.",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        var reportUserRequestDTO: ReportUserRequestDTO = ReportUserRequestDTO()
+        
+        self.reportReasons.forEach { reason in
+            reportActionSheet.addAction(
+                UIAlertAction(
+                    title: reason,
+                    style: .default,
+                    handler: { action in
+                        reportUserRequestDTO.reason = reason
+                        self.requestReportUser(userId: userId, data: reportUserRequestDTO) {
+                            self.makeAlert(title: "", message: Message.completedReport.text)
+                        }
+                    }
+                )
+            )
+        }
+        
+        reportActionSheet.addAction(
+            UIAlertAction(
+                title: Text.cancel,
+                style: .cancel
+            )
+        )
+        
+        return reportActionSheet
+    }
 }
 
 // MARK: - Network
 
 extension BaseViewController {
+    
+    /// 유저 차단
     func requestBlockUser(userId: Int, completion: @escaping () -> ()) {
         MemberService.shared.blockUser(userId: userId) { networkResult in
+            switch networkResult {
+            case .success:
+                completion()
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
+    
+    /// 유저 신고
+    func requestReportUser(userId: Int, data: ReportUserRequestDTO, completion: @escaping () -> ()) {
+        MemberService.shared.reportUser(userId: userId, data: data) { networkResult in
             switch networkResult {
             case .success:
                 completion()
