@@ -62,6 +62,8 @@
 		FF4F9C112B860A8C00E3DE31 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C102B860A8C00E3DE31 /* UITableView+.swift */; };
 		FF4F9C132B860B2900E3DE31 /* CommentsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C122B860B2900E3DE31 /* CommentsEntity.swift */; };
 		FF4F9C162B860BB500E3DE31 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4F9C152B860BB500E3DE31 /* CommentTableViewCell.swift */; };
+		FF6BF5A32B9A1EBD001BB8C3 /* MemberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6BF5A22B9A1EBD001BB8C3 /* MemberRouter.swift */; };
+		FF6BF5A52B9A1F5A001BB8C3 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6BF5A42B9A1F5A001BB8C3 /* MemberService.swift */; };
 		FF83227F2B7BCAC80069D68A /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF83227E2B7BCAC80069D68A /* UILabel+.swift */; };
 		FF8322812B7BD2190069D68A /* DotchiSortUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */; };
 		FF8322832B7C540B0069D68A /* CardSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8322822B7C540B0069D68A /* CardSortType.swift */; };
@@ -193,6 +195,8 @@
 		FF4F9C102B860A8C00E3DE31 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		FF4F9C122B860B2900E3DE31 /* CommentsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsEntity.swift; sourceTree = "<group>"; };
 		FF4F9C152B860BB500E3DE31 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		FF6BF5A22B9A1EBD001BB8C3 /* MemberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRouter.swift; sourceTree = "<group>"; };
+		FF6BF5A42B9A1F5A001BB8C3 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		FF83227E2B7BCAC80069D68A /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		FF8322802B7BD2190069D68A /* DotchiSortUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortUIButton.swift; sourceTree = "<group>"; };
 		FF8322822B7C540B0069D68A /* CardSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortType.swift; sourceTree = "<group>"; };
@@ -566,6 +570,7 @@
 				FF0CF0AC2B870D4000B9DFC1 /* CardService.swift */,
 				10FD9EB92B87A59400288506 /* HomeService.swift */,
 				10FD9EC12B88C3E000288506 /* MyService.swift */,
+				FF6BF5A42B9A1F5A001BB8C3 /* MemberService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				FF0CF0A42B87076F00B9DFC1 /* CardRouter.swift */,
 				10FD9EB32B87A3AD00288506 /* HomeRouter.swift */,
 				10FD9EBF2B88C24700288506 /* MyRouter.swift */,
+				FF6BF5A22B9A1EBD001BB8C3 /* MemberRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -876,11 +882,13 @@
 				FFC526132B88B7930018FA53 /* InstagramShareUIView.swift in Sources */,
 				FF95B6FF2B87B92100073C4D /* UINavigationController+.swift in Sources */,
 				FF95B7022B887EF900073C4D /* GetAllCardsRequestDTO.swift in Sources */,
+				FF6BF5A32B9A1EBD001BB8C3 /* MemberRouter.swift in Sources */,
 				FFD306AD2B8336E9004B5AEA /* DotchiDoneUIButton.swift in Sources */,
 				FFD306BA2B83C25D004B5AEA /* UITextField+.swift in Sources */,
 				FF018E9D2B77F9D7006D5627 /* UIView+.swift in Sources */,
 				FF018EA52B7803CE006D5627 /* UIViewControllerToSwiftUI.swift in Sources */,
 				10FD9EC22B88C3E000288506 /* MyService.swift in Sources */,
+				FF6BF5A52B9A1F5A001BB8C3 /* MemberService.swift in Sources */,
 				FFD594312B7101E1003F1F3C /* SocialLoginRequestDTO.swift in Sources */,
 				FF0CF0AD2B870D4000B9DFC1 /* CardService.swift in Sources */,
 				FFD5942A2B7101A2003F1F3C /* NetworkResult.swift in Sources */,
