@@ -65,3 +65,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         self.makeAlert(title: Message.networkError.text)
     }
 }
+
+// MARK: - Network
+
+extension BaseViewController {
+    func requestBlockUser(userId: Int, completion: @escaping () -> ()) {
+        MemberService.shared.blockUser(userId: userId) { networkResult in
+            switch networkResult {
+            case .success:
+                completion()
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
+}

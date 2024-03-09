@@ -161,8 +161,9 @@ final class DotchiDetailViewController: BaseViewController {
                             title: "\(self.user.username) 님을 차단합니다.",
                             message: nil,
                             okTitle: "차단") { _ in
-                                // TODO: block user
-                                self.navigationController?.popViewController(animated: true)
+                                self.requestBlockUser(userId: self.user.userId) {
+                                    self.dismiss(animated: true)
+                                }
                             }
                     }
                 )
