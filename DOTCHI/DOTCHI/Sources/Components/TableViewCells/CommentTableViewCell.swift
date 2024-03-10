@@ -38,6 +38,9 @@ final class CommentTableViewCell: UITableViewCell {
     private let commentLabel: UILabel = {
         let label: UILabel = UILabel()
         label.setStyle(.subSbold, .dotchiWhite)
+        label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.7
         return label
     }()
     
