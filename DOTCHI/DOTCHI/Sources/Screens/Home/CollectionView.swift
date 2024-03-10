@@ -121,25 +121,6 @@ struct CardView: View {
                     Image(getFrontImageName(forThemeId: card.themeId))
                         .resizable()
                         .frame(width: 163, height: 241)
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 60.25)
-                            .fill(card.themeType.colorFont())
-                            .frame(width: 60, height: 20)
-                        
-                        HStack(spacing: 0) {
-                            AsyncImageView(url: URL(string: card.memberImageUrl ?? ""))
-                                .scaledToFill()
-                                .frame(width: 14, height: 14)
-                                .clipShape(Circle())
-                            
-                            Text(card.memberName)
-                                .font(.S_Sub)
-                                .foregroundStyle(Color.dotchiWhite)
-                                .padding(.leading, 4)
-                        }
-                    }
-                    .padding(.top, 16)
                 }
                 
                 Text(card.backName)
