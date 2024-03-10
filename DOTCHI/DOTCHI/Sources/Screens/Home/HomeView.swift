@@ -42,10 +42,17 @@ struct HomeView: View {
                                 .frame(height: 170)
                             
                             VStack {
-                                Text("가장 많은 행운을\n나눠준 오늘의 따봉도치")
-                                    .font(.Head)
-                                    .foregroundStyle(.dotchiWhite)
-                                    .multilineTextAlignment(.center)
+                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count != 0 {
+                                    Text("가장 많은 행운을\n나눠준 오늘의 따봉도치")
+                                        .font(.Head)
+                                        .foregroundStyle(.dotchiWhite)
+                                        .multilineTextAlignment(.center)
+                                } else {
+                                    Text("아직 오늘의\n따봉도치가 없어요 🥹")
+                                        .font(.Head)
+                                        .foregroundStyle(.dotchiWhite)
+                                        .multilineTextAlignment(.center)
+                                }
                                 
                                 HStack {
                                     Image(.icnGraph)
@@ -58,7 +65,7 @@ struct HomeView: View {
                                 .padding(.top, 5)
                                 .padding(.bottom, 17)
                             }
-                            .padding(.top, 50)
+                            .padding(.top, 35)
                         }
                         
                         HStack(alignment: .bottom) {
@@ -75,7 +82,7 @@ struct HomeView: View {
                                                 .scaledToFill()
                                                 .frame(width: 82, height: 82)
                                                 .cornerRadius(25)
-                                                .padding(.bottom, 8)
+                                                .padding(.bottom, 10)
                                         }
                                         .fullScreenCover(isPresented: Binding(
                                             get: { isDetailPresented },
@@ -85,28 +92,49 @@ struct HomeView: View {
                                                 .transition(.move(edge: .trailing))
                                                 .ignoresSafeArea()
                                         }
-                                       
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 67)
-                                                .fill(Color.dotchiLBlack)
-                                                .frame(width: 110, height: 32)
-                                            
-                                            Text(today.backName)
-                                                .font(.Sub)
-                                                .foregroundStyle(Color.dotchiWhite)
-                                        }
-                                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                        
+                                        Text(today.backName)
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 67)
+                                                    .fill(Color.dotchiLBlack)
+                                                    .frame(height: 30)
+                                            )
                                         
                                         Text("2위")
                                             .font(.Sub_Sbold)
                                             .foregroundStyle(Color.dotchiGray)
-                                            .padding(.top, 3)
+                                            .padding(.top, 5)
                                     }
+                                } else {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 25)
+                                            .fill(Color.dotchiBlack5)
+                                            .frame(width: 82, height: 82)
+                                        
+                                        Image(.imgClover)
+                                            .resizable()
+                                            .frame(width: 38, height: 51)
+                                            .scaledToFit()
+                                    }
+                                    .padding(.bottom, 10)
+                                    
+                                    RoundedRectangle(cornerRadius: 67)
+                                        .fill(Color.dotchiLBlack)
+                                        .frame(width: 82, height: 30)
+                                    
+                                    Text("2위")
+                                        .font(.Sub_Sbold)
+                                        .foregroundStyle(Color.dotchiGray)
+                                        .padding(.top, 5)
                                 }
                             }
+                            .frame(maxWidth: .infinity)
                             
                             VStack {
-                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count > 1 {
+                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count > 0 {
                                     let firstToday = todayCards[0]
                                     
                                     ForEach([firstToday], id: \.cardId) { today in
@@ -116,10 +144,10 @@ struct HomeView: View {
                                                 isDetailPresented = true
                                             }) {
                                                 AsyncImageView(url: URL(string: today.cardImageUrl ?? ""))
-                                                    .frame(width: 112, height: 112)
                                                     .scaledToFill()
+                                                    .frame(width: 112, height: 112)
                                                     .cornerRadius(30)
-                                                    .padding(.bottom, 8)
+                                                    .padding(.bottom, 10)
                                             }
                                             .fullScreenCover(isPresented: Binding(
                                                 get: { isDetailPresented },
@@ -140,27 +168,58 @@ struct HomeView: View {
                                                 .offset(y: -30)
                                         }
                                         
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 67)
-                                                .fill(Color.dotchiLBlack)
-                                                .frame(width: 110, height: 32)
-                                            
-                                            Text(today.backName)
-                                                .font(.Sub)
-                                                .foregroundStyle(Color.dotchiWhite)
-                                        }
-                                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                        Text(today.backName)
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 67)
+                                                    .fill(Color.dotchiLBlack)
+                                                    .frame(height: 30)
+                                            )
                                         
                                         Text("1위")
                                             .font(.Sub_Sbold)
                                             .foregroundStyle(Color.dotchiWhite)
-                                            .padding(.top, 3)
+                                            .padding(.top, 5)
                                     }
+                                } else {
+                                    ZStack(alignment: .top) {
+                                        RoundedRectangle(cornerRadius: 25)
+                                            .fill(Color.dotchiBlack5)
+                                            .frame(width: 112, height: 112)
+                                        
+                                        Image(.imgClover)
+                                            .resizable()
+                                            .frame(width: 51, height: 68)
+                                            .scaledToFit()
+                                            .padding(.top, 25)
+                                        
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .stroke(Color.dotchiGreen, lineWidth: 2)
+                                            .frame(width: 112, height: 112)
+                                        
+                                        Image(.icnPlus)
+                                            .resizable()
+                                            .frame(width: 64, height: 64)
+                                            .offset(y: -30)
+                                    }
+                                    .padding(.bottom, 10)
+                                    
+                                    RoundedRectangle(cornerRadius: 67)
+                                        .fill(Color.dotchiLBlack)
+                                        .frame(width: 114, height: 30)
+                                    
+                                    Text("1위")
+                                        .font(.Sub_Sbold)
+                                        .foregroundStyle(Color.dotchiWhite)
+                                        .padding(.top, 5)
                                 }
                             }
+                            .frame(maxWidth: .infinity)
                             
                             VStack {
-                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count > 1 {
+                                if let todayCards = homeViewModel.homeResult?.result.todayCards, todayCards.count > 2 {
                                     let thirdToday = todayCards[2]
                                     
                                     ForEach([thirdToday], id: \.cardId) { today in
@@ -172,7 +231,7 @@ struct HomeView: View {
                                                 .scaledToFill()
                                                 .frame(width: 82, height: 82)
                                                 .cornerRadius(25)
-                                                .padding(.bottom, 8)
+                                                .padding(.bottom, 10)
                                         }
                                         .fullScreenCover(isPresented: Binding(
                                             get: { isDetailPresented },
@@ -183,26 +242,48 @@ struct HomeView: View {
                                                 .ignoresSafeArea()
                                         }
                                         
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 67)
-                                                .fill(Color.dotchiLBlack)
-                                                .frame(width: 110, height: 32)
-                                            
-                                            Text(today.backName)
-                                                .font(.Sub)
-                                                .foregroundStyle(Color.dotchiWhite)
-                                        }
-                                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                                        Text(today.backName)
+                                            .font(.Sub)
+                                            .foregroundStyle(Color.dotchiWhite)
+                                            .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 67)
+                                                    .fill(Color.dotchiLBlack)
+                                                    .frame(height: 30)
+                                            )
                                         
                                         Text("3위")
                                             .font(.Sub_Sbold)
                                             .foregroundStyle(Color.dotchiGray)
-                                            .padding(.top, 3)
+                                            .padding(.top, 5)
                                     }
+                                } else {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 25)
+                                            .fill(Color.dotchiBlack5)
+                                            .frame(width: 82, height: 82)
+                                        
+                                        Image(.imgClover)
+                                            .resizable()
+                                            .frame(width: 38, height: 51)
+                                            .scaledToFit()
+                                    }
+                                    .padding(.bottom, 10)
+                                    
+                                    RoundedRectangle(cornerRadius: 67)
+                                        .fill(Color.dotchiLBlack)
+                                        .frame(width: 82, height: 30)
+                                    
+                                    Text("3위")
+                                        .font(.Sub_Sbold)
+                                        .foregroundStyle(Color.dotchiGray)
+                                        .padding(.top, 5)
                                 }
                             }
+                            .frame(maxWidth: .infinity)
                         }
-                        .padding(.top, 30)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 26)
                     }
                     .background(
                         Rectangle()
@@ -590,4 +671,3 @@ extension View {
 #Preview {
     HomeView()
 }
-
