@@ -27,7 +27,6 @@
 		10FD9EBA2B87A59400288506 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EB92B87A59400288506 /* HomeService.swift */; };
 		10FD9EBC2B8868B300288506 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBB2B8868B300288506 /* AsyncImageView.swift */; };
 		10FD9EBE2B889D1100288506 /* ThemeResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */; };
-		10FD9EC02B88C24700288506 /* MyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EBF2B88C24700288506 /* MyRouter.swift */; };
 		10FD9EC22B88C3E000288506 /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC12B88C3E000288506 /* MyService.swift */; };
 		10FD9EC62B88C46800288506 /* MyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC52B88C46800288506 /* MyResponseDTO.swift */; };
 		10FD9EC92B88D98A00288506 /* PatchMembersRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC82B88D98A00288506 /* PatchMembersRequestDTO.swift */; };
@@ -158,7 +157,6 @@
 		10FD9EB92B87A59400288506 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		10FD9EBB2B8868B300288506 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		10FD9EBD2B889D1100288506 /* ThemeResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeResponseDTO.swift; sourceTree = "<group>"; };
-		10FD9EBF2B88C24700288506 /* MyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRouter.swift; sourceTree = "<group>"; };
 		10FD9EC12B88C3E000288506 /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		10FD9EC52B88C46800288506 /* MyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponseDTO.swift; sourceTree = "<group>"; };
 		10FD9EC82B88D98A00288506 /* PatchMembersRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchMembersRequestDTO.swift; sourceTree = "<group>"; };
@@ -603,7 +601,6 @@
 				FFD5941D2B70FF66003F1F3C /* AuthRouter.swift */,
 				FF0CF0A42B87076F00B9DFC1 /* CardRouter.swift */,
 				10FD9EB32B87A3AD00288506 /* HomeRouter.swift */,
-				10FD9EBF2B88C24700288506 /* MyRouter.swift */,
 				FF6BF5A22B9A1EBD001BB8C3 /* MemberRouter.swift */,
 			);
 			path = Routers;
@@ -880,7 +877,6 @@
 				100A1E2E2B71576B00AAC1E8 /* UploadView.swift in Sources */,
 				FF95B7042B88831400073C4D /* GetAllCardsResponseDTO.swift in Sources */,
 				10BC6B5A2B86ABA0007D1D9A /* ProfileEditView.swift in Sources */,
-				10FD9EC02B88C24700288506 /* MyRouter.swift in Sources */,
 				FFD306A22B809960004B5AEA /* MakeDotchiPhotoViewController.swift in Sources */,
 				FF83228A2B7C59540069D68A /* BrowseUICollectionViewCell.swift in Sources */,
 				FF0CF09A2B86618500B9DFC1 /* SignInViewController.swift in Sources */,
