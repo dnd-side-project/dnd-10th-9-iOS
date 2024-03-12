@@ -69,14 +69,21 @@ struct ProfileEditView: View {
                 
                 VStack(alignment: .center, spacing: 0) {
                     ZStack(alignment:.center) {
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.dotchiMgray)
-                            .frame(width: 132, height: 132)
-                        
-                        Image(.imgClover)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 60, height: 80)
+                        if myViewModel.myResult?.result.member.memberImageUrl == nil {
+                            RoundedRectangle(cornerRadius: 30)
+                                .fill(Color.dotchiMgray)
+                                .frame(width: 132, height: 132)
+                            
+                            Image(.imgClover)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60, height: 80)
+                        } else {
+                            AsyncImageView(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? ""))
+                                .scaledToFill()
+                                .frame(width: 132, height: 132)
+                                .cornerRadius(30)
+                        }
                         
                         Image(uiImage: self.image)
                             .resizable()
