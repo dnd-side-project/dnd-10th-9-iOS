@@ -118,6 +118,7 @@ struct CardView: View {
                             .scaledToFill()
                             .frame(width: geometry.size.width * (210.0 / 270.0),
                                    height: geometry.size.width * (210.0 / 270.0))
+                            .clipped()
                             .position(x: geometry.size.width * 0.5,
                                       y: geometry.size.height * 0.46)
                     }
