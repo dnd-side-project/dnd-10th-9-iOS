@@ -113,10 +113,14 @@ struct CardView: View {
         }) {
             ZStack(alignment: .bottom) {
                 ZStack(alignment: .top) {
-                    AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
-                        .scaledToFill()
-                        .frame(width: 163, height: 241)
-                        .cornerRadius(9.64)
+                    GeometryReader { geometry in
+                        AsyncImageView(url: URL(string: card.cardImageUrl ?? ""))
+                            .scaledToFill()
+                            .frame(width: geometry.size.width * (210.0 / 270.0),
+                                   height: geometry.size.width * (210.0 / 270.0))
+                            .position(x: geometry.size.width * 0.5,
+                                      y: geometry.size.height * 0.46)
+                    }
                     
                     Image(getFrontImageName(forThemeId: card.themeId))
                         .resizable()
