@@ -67,7 +67,7 @@ struct MyView: View {
                     
                     ScrollView(showsIndicators: false) {
                         HStack {
-                            Text("나의 따봉도치")
+                            Text("공유 따봉도치")
                                 .font(.Head2)
                                 .foregroundStyle(Color.dotchiWhite)
                             
