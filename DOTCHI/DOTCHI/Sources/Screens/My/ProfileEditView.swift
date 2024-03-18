@@ -119,20 +119,36 @@ struct ProfileEditView: View {
                             .padding(.top, 43)
                             .padding(.bottom, 10)
                         
-                        TextField("최대 7글자", text: $nickname)
-                            .font(.Head2)
-                            .foregroundColor(Color.dotchiLgray)
-                            .frame(height: 40)
-                            .padding(.horizontal, 20)
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor(Color.dotchiMgray)
-                            )
-                            .onChange(of: nickname) { newValue in
-                                if newValue.count > nicknameLimit {
-                                    nickname = String(newValue.prefix(nicknameLimit))
+                        HStack {
+                            TextField("최대 7글자", text: $nickname)
+                                .font(.Head2)
+                                .foregroundColor(Color.dotchiLgray)
+                                .frame(height: 48)
+                                .padding(.leading, 20)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .foregroundColor(Color.dotchiMgray)
+                                )
+                                .onChange(of: nickname) { newValue in
+                                    if newValue.count > nicknameLimit {
+                                        nickname = String(newValue.prefix(nicknameLimit))
+                                    }
+                                }
+                            
+                            Button(action: {
+                               
+                            }) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .foregroundStyle(Color.dotchiGreen)
+                                        .frame(width: 128, height: 48)
+                                    
+                                    Text("중복확인")
+                                        .foregroundStyle(Color.dotchiWhite)
+                                        .font(.Head2)
                                 }
                             }
+                        }
                         
                         Text("간단한 소개를 작성해주세요.")
                             .font(.Sub)
@@ -143,7 +159,7 @@ struct ProfileEditView: View {
                         TextField("최대 40글자", text: $introduce, axis: .vertical)
                             .font(.Head2)
                             .foregroundColor(Color.dotchiLgray)
-                            .frame(height: 142)
+                            .frame(height: 138)
                             .padding(.horizontal, 20)
                             .multilineTextAlignment(.leading)
                             .padding(.top, -40)
