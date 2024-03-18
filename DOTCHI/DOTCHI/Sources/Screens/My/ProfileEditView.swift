@@ -59,7 +59,7 @@ struct ProfileEditView: View {
                     
                     Spacer()
                     
-                    Text("프로필 수정하기")
+                    Text("프로필 수정")
                         .font(.Sub_Title)
                         .foregroundStyle(Color.dotchiWhite)
                         .padding(.trailing, 20)
@@ -121,7 +121,7 @@ struct ProfileEditView: View {
                         
                         TextField("최대 7글자", text: $nickname)
                             .font(.Head2)
-                            .foregroundColor(Color.dotchiWhite)
+                            .foregroundColor(Color.dotchiLgray)
                             .frame(height: 40)
                             .padding(.horizontal, 20)
                             .background(
@@ -142,7 +142,7 @@ struct ProfileEditView: View {
                         
                         TextField("최대 40글자", text: $introduce, axis: .vertical)
                             .font(.Head2)
-                            .foregroundColor(Color.dotchiWhite)
+                            .foregroundColor(Color.dotchiLgray)
                             .frame(height: 142)
                             .padding(.horizontal, 20)
                             .multilineTextAlignment(.leading)
@@ -171,7 +171,7 @@ struct ProfileEditView: View {
                             
                             Text("저장하기")
                                 .foregroundStyle(Color.dotchiWhite)
-                                .font(.Big_Button)
+                                .font(.Head2)
                         }
                         .padding(.bottom, 20)
                     }
