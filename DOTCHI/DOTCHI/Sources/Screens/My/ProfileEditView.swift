@@ -27,6 +27,7 @@ struct ProfileEditView: View {
     @State private var image = UIImage()
     @State private var nickname : String
     @State private var introduce : String
+    @State private var isNicknameDuplicated = false
     
     @ObservedObject var myViewModel = MyViewModel()
     @ObservedObject var editViewModel = EditViewModel()
@@ -39,6 +40,13 @@ struct ProfileEditView: View {
     
     let nicknameLimit = 7
     let introduceLimit = 40
+    
+    func checkForDuplicateNickname() {
+        // 닉네임 중복 확인 로직 수행
+        // 중복 확인 결과를 isNicknameDuplicated에 할당
+        // isNicknameDuplicated를 사용하여 UI 업데이트
+        isNicknameDuplicated = true // 테스트 코드, 실제로는 중복 확인 로직 수행
+    }
     
     var body: some View {
         
@@ -125,6 +133,10 @@ struct ProfileEditView: View {
                                 .foregroundColor(Color.dotchiLgray)
                                 .frame(height: 48)
                                 .padding(.leading, 20)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(isNicknameDuplicated ? Color.dotchiOrange : Color.dotchiMgray, lineWidth: 1)
+                                )
                                 .background(
                                     RoundedRectangle(cornerRadius: 8)
                                         .foregroundColor(Color.dotchiMgray)
@@ -133,11 +145,10 @@ struct ProfileEditView: View {
                                     if newValue.count > nicknameLimit {
                                         nickname = String(newValue.prefix(nicknameLimit))
                                     }
+                                    isNicknameDuplicated = false
                                 }
                             
-                            Button(action: {
-                               
-                            }) {
+                            Button(action: checkForDuplicateNickname) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 8)
                                         .foregroundStyle(Color.dotchiGreen)
@@ -148,6 +159,12 @@ struct ProfileEditView: View {
                                         .font(.Head2)
                                 }
                             }
+                        }
+
+                        if isNicknameDuplicated {
+                            Text("중복된 닉네임입니다.")
+                                .foregroundColor(Color.dotchiOrange)
+                                .font(.S_Sub)
                         }
                         
                         Text("간단한 소개를 작성해주세요.")
