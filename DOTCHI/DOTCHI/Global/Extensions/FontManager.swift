@@ -22,5 +22,7 @@ extension Font {
     static let Button: Font = .custom("Pretendard-ExtraBold", size: 14)
     static let S_Sub: Font = .custom("Pretendard-SemiBold", size: 12)
     static let Sub_Title: Font = .custom("Pretendard-Bold", size: 18)
+    static let Sub_Sbold2: Font = .custom("Pretendard-SemiBold", size: 16)
+    static let Sub_Medium: Font = .custom("Pretendard-Medium", size: 16)
     
 }
