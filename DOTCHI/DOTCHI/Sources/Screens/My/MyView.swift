@@ -59,11 +59,25 @@ struct MyView: View {
                         .foregroundColor(Color.dotchiWhite)
                         .padding(.top, 15)
                     
-                    Text(myViewModel.myResult?.result.member.description ?? "")
-                        .font(.Sub_Sbold)
-                        .foregroundColor(Color.dotchiLgray)
-                        .padding(.top, 10)
-                        .padding(.bottom, 31)
+                    let description = myViewModel.myResult?.result.member.description ?? ""
+                    if description.count > 20 {
+                        let firstLineIndex = description.index(description.startIndex, offsetBy: 20)
+                        let firstLine = String(description.prefix(upTo: firstLineIndex))
+                        let secondLine = String(description.suffix(from: firstLineIndex))
+                        
+                        Text(firstLine + "\n" + secondLine)
+                            .font(.Sub_Sbold)
+                            .foregroundColor(Color.dotchiLgray)
+                            .padding(.top, 4)
+                            .padding(.bottom, 22)
+                            .multilineTextAlignment(.center)
+                    } else {
+                        Text(description)
+                            .font(.Sub_Sbold)
+                            .foregroundColor(Color.dotchiLgray)
+                            .padding(.top, 4)
+                            .padding(.bottom, 38)
+                    }
                     
                     ScrollView(showsIndicators: false) {
                         HStack {
@@ -96,7 +110,7 @@ struct MyView: View {
                             .fill(Color.dotchiMgray)
                     )
                     .fullScreenCover(isPresented: $isProfileEditViewPresented, content: {
-                        ProfileEditView(myViewModel: myViewModel)
+                        SettingView()
                             .transition(.move(edge: .trailing))
                     })
                 }
@@ -106,7 +120,7 @@ struct MyView: View {
                                         Button(action: {
                     isProfileEditViewPresented.toggle()
                 }) {
-                    Image(.icnEdit)
+                    Image(.icnSetting)
                 }
                 )
                 .navigationBarColor(backgroundColor: .dotchiBlack)
