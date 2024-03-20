@@ -316,6 +316,7 @@ struct HomeView: View {
                                     .foregroundStyle(.dotchiLgray)
                                 
                                 Image(.icnNext)
+                                    .resizable()
                                     .frame(width: 14, height: 14)
                             }
                         }
