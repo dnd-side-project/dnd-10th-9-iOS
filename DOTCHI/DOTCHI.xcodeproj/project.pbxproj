@@ -30,6 +30,7 @@
 		10FD9EC22B88C3E000288506 /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC12B88C3E000288506 /* MyService.swift */; };
 		10FD9EC62B88C46800288506 /* MyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC52B88C46800288506 /* MyResponseDTO.swift */; };
 		10FD9EC92B88D98A00288506 /* PatchMembersRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD9EC82B88D98A00288506 /* PatchMembersRequestDTO.swift */; };
+		1E886AFB2BA7147A008EE4C2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E886AFA2BA7147A008EE4C2 /* SettingView.swift */; };
 		FF018E802B75321B006D5627 /* DotchiCircleUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */; };
 		FF018E942B77F2E6006D5627 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E932B77F2E6006D5627 /* UIFont+.swift */; };
 		FF018E9B2B77F95F006D5627 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018E9A2B77F95F006D5627 /* BrowseViewController.swift */; };
@@ -160,6 +161,7 @@
 		10FD9EC12B88C3E000288506 /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		10FD9EC52B88C46800288506 /* MyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponseDTO.swift; sourceTree = "<group>"; };
 		10FD9EC82B88D98A00288506 /* PatchMembersRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchMembersRequestDTO.swift; sourceTree = "<group>"; };
+		1E886AFA2BA7147A008EE4C2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		FF018E7F2B75321B006D5627 /* DotchiCircleUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleUIButton.swift; sourceTree = "<group>"; };
 		FF018E922B77F243006D5627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF018E932B77F2E6006D5627 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -764,6 +766,7 @@
 			isa = PBXGroup;
 			children = (
 				100A1E2B2B7151C400AAC1E8 /* MyView.swift */,
+				1E886AFA2BA7147A008EE4C2 /* SettingView.swift */,
 				10BC6B592B86ABA0007D1D9A /* ProfileEditView.swift */,
 			);
 			path = My;
@@ -949,6 +952,7 @@
 				FFD594202B710135003F1F3C /* BaseService.swift in Sources */,
 				FF0CF0B82B87AC7800B9DFC1 /* GetCommentsResponseDTO.swift in Sources */,
 				FF4F9C0A2B85ECF000E3DE31 /* MakeDotchiPreviewViewController.swift in Sources */,
+				1E886AFB2BA7147A008EE4C2 /* SettingView.swift in Sources */,
 				FF8322872B7C58BD0069D68A /* Adjusted+.swift in Sources */,
 				FF0CF0AF2B871C2000B9DFC1 /* UserDefaultsManager.swift in Sources */,
 				FF0CF0A32B8671AA00B9DFC1 /* KeychainKeys.swift in Sources */,
