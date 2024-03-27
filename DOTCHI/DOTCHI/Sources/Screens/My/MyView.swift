@@ -14,7 +14,7 @@ struct MyView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.dotchiBlack.ignoresSafeArea()
+                Color.dotchiBlack5.ignoresSafeArea()
                 
                 VStack {
                     AsyncImage(url: URL(string: myViewModel.myResult?.result.member.memberImageUrl ?? "")) { phase in
@@ -111,8 +111,10 @@ struct MyView: View {
                     )
                     .fullScreenCover(isPresented: $isProfileEditViewPresented, content: {
                         SettingView()
-                            .transition(.move(edge: .trailing))
                     })
+                    .transaction { transaction in
+                        transaction.disablesAnimations = true // 모달 애니메이션 없애기
+                    }
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarTitle("", displayMode: .inline)
@@ -123,7 +125,7 @@ struct MyView: View {
                     Image(.icnSetting)
                 }
                 )
-                .navigationBarColor(backgroundColor: .dotchiBlack)
+                .navigationBarColor(backgroundColor: .dotchiBlack5)
             }
         }
         .onAppear() {
