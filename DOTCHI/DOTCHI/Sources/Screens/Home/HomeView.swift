@@ -33,7 +33,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.dotchiBlack.ignoresSafeArea()
+                Color.dotchiBlack5.ignoresSafeArea()
                 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {

@@ -59,7 +59,7 @@ struct ProfileEditView: View {
         }()
         
         ZStack {
-            Color.dotchiBlack.ignoresSafeArea()
+            Color.dotchiBlack5.ignoresSafeArea()
             
             VStack {
                 HStack {
