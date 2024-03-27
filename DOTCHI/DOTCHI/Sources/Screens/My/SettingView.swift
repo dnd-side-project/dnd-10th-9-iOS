@@ -141,9 +141,7 @@ struct SettingView: View {
                         }
                         .frame(width:.infinity, height: 36)
                         
-                        Button(action: {
-                            
-                        }) {
+                        Link(destination: URL(string: "https://www.dnd.ac/project/74")!) {
                             HStack {
                                 Text("서비스 이용 약관")
                                     .font(.Sub_Sbold2)
@@ -155,12 +153,10 @@ struct SettingView: View {
                                     .resizable()
                                     .frame(width: 18, height: 18)
                             }
+                            .frame(width:.infinity, height: 36)
                         }
-                        .frame(width:.infinity, height: 36)
                         
-                        Button(action: {
-                            
-                        }) {
+                        Link(destination: URL(string: "https://www.dnd.ac/project/74")!) {
                             HStack {
                                 Text("개인정보 처리 방침")
                                     .font(.Sub_Sbold2)
@@ -172,8 +168,8 @@ struct SettingView: View {
                                     .resizable()
                                     .frame(width: 18, height: 18)
                             }
+                            .frame(width:.infinity, height: 36)
                         }
-                        .frame(width:.infinity, height: 36)
                     }
                     .padding(.horizontal, 20)
                     
